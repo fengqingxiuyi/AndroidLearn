@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JetpackLearn</string>
+    <string name="open_constraint">Open ConstraintActivity</string>
+    <string name="edit_text">Edit Text</string>
 </resources>

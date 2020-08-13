@@ -1,8 +1,11 @@
 package com.example.jetpacklearn
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.jetpacklearn.constraint.ConstraintActivity
 import com.example.jetpacklearn.koin.MyViewModel
 import com.example.jetpacklearn.room.AppDatabase
 import com.example.jetpacklearn.room.User
@@ -47,5 +50,9 @@ class MainActivity : AppCompatActivity() {
             Log.i("ROOM_TEST", dao.getAll().toString())
             Log.i("ROOM_TEST", dao.loadAllByIds(intArrayOf(2)).toString())
         }, "ROOM_TEST").start()
+    }
+
+    fun openConstraint(view: View) {
+        startActivity(Intent(this, ConstraintActivity::class.java))
     }
 }
