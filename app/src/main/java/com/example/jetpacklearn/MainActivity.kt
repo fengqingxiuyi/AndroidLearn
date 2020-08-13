@@ -3,14 +3,27 @@ package com.example.jetpacklearn
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.jetpacklearn.koin.MyViewModel
 import com.example.jetpacklearn.room.AppDatabase
 import com.example.jetpacklearn.room.User
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class MainActivity : AppCompatActivity() {
+
+    // Lazy Inject ViewModel
+//    val myViewModel: MyViewModel by viewModel()
+    val myViewModel: MyViewModel by viewModel { parametersOf("koin from activity") }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         testRoom()
+        testKoin()
+    }
+
+    private fun testKoin() {
+        Log.i("KOIN_TEST", myViewModel.sayHello())
     }
 
     /**
