@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.jetpacklearn.annotation.BindRuntime
+import com.example.jetpacklearn.annotation.Binding
 import com.example.jetpacklearn.constraint.ConstraintActivity
 import com.example.jetpacklearn.koin.MyViewModel
 import com.example.jetpacklearn.room.AppDatabase
@@ -17,12 +20,22 @@ class MainActivity : AppCompatActivity() {
     // Lazy Inject ViewModel
 //    val myViewModel: MyViewModel by viewModel()
     val myViewModel: MyViewModel by viewModel { parametersOf("koin from activity") }
+    //运行时注解
+    @BindRuntime(R.id.bindText) var bindText: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        testAnnotation()
         testRoom()
         testKoin()
+    }
+
+    private fun testAnnotation() {
+        //运行时注解
+        Binding.bindRuntime(this)
+        //效果验证
+        bindText?.text = "Binding Success"
     }
 
     private fun testKoin() {
