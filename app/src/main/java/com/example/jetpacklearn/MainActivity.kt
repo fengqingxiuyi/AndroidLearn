@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         Binding.bindRuntime(this)
         bindRuntimeText?.text = "Binding Runtime Success"
         //编译时注解
-        Binding.bindCompile(this)
+        com.example.annotation.Binding.bindCompile(this)
         bindCompileText?.text = "Binding Compile Success"
         bindCompileText2?.text = "Binding Compile Success 2"
     }
