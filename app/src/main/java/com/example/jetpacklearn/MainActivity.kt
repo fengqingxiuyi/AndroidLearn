@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.annotation.BindCompile
 import com.example.jetpacklearn.annotation.BindRuntime
 import com.example.jetpacklearn.annotation.Binding
 import com.example.jetpacklearn.constraint.ConstraintActivity
@@ -21,7 +22,10 @@ class MainActivity : AppCompatActivity() {
 //    val myViewModel: MyViewModel by viewModel()
     val myViewModel: MyViewModel by viewModel { parametersOf("koin from activity") }
     //运行时注解
-    @BindRuntime(R.id.bindText) var bindText: TextView? = null
+    @BindRuntime(R.id.bindRuntimeText) var bindRuntimeText: TextView? = null
+    //编译时注解
+    @BindCompile(R.id.bindCompileText) var bindCompileText: TextView? = null
+    @BindCompile(R.id.bindCompileText2) var bindCompileText2: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +38,11 @@ class MainActivity : AppCompatActivity() {
     private fun testAnnotation() {
         //运行时注解
         Binding.bindRuntime(this)
-        //效果验证
-        bindText?.text = "Binding Success"
+        bindRuntimeText?.text = "Binding Runtime Success"
+        //编译时注解
+        Binding.bindCompile(this)
+        bindCompileText?.text = "Binding Compile Success"
+        bindCompileText2?.text = "Binding Compile Success 2"
     }
 
     private fun testKoin() {

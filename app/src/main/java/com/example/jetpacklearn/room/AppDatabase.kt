@@ -8,8 +8,12 @@ import androidx.room.RoomDatabase
 /**
  * @author fqxyi
  * @date 2020/8/13
+ *
+ * add exportSchema = false in order to fix
+ * Schema export directory is not provided to the annotation processor so we cannot export the schema.
+ * You can either provide `room.schemaLocation` annotation processor argument OR set exportSchema to false.
  */
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     companion object {

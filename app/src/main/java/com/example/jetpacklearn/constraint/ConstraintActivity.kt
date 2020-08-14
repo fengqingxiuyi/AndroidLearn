@@ -1,8 +1,11 @@
 package com.example.jetpacklearn.constraint
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.annotation.BindCompile
 import com.example.jetpacklearn.R
+import com.example.jetpacklearn.annotation.Binding
 
 /**
  * @author fqxyi
@@ -10,9 +13,19 @@ import com.example.jetpacklearn.R
  */
 class ConstraintActivity : AppCompatActivity() {
 
+    //编译时注解 在另外一个类中测试
+    @BindCompile(R.id.myTextView) var myTextView: TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_constraint)
+        testAnnotation()
+    }
+
+    private fun testAnnotation() {
+        //编译时注解
+        Binding.bindCompile(this)
+        myTextView?.text = "Binding Compile Success"
     }
 
 }

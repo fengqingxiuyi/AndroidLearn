@@ -30,4 +30,7 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
     //https://developer.android.com/topic/libraries/architecture/viewmodel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    //编译时注解
+    implementation project(":annotation")
+    kapt project(":compiler")
 }
