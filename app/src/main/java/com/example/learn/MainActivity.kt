@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
      * Attempt to invoke virtual method 'void java.lang.ThreadGroup.addUnstarted()' on a null object reference
      *
      * 其他：ROOM需要借助kapt，在编译时根据注解(如@Dao、@Database)生成实现类，实现类路径如下：
-     * build/generated/source/kapt/debug/com/example/jetpacklearn/room/
+     * build/generated/source/kapt/debug/com/example/learn/room/
      */
     private fun testRoom() {
         Thread({

@@ -2,4 +2,4 @@ include ':annotation'
 include ':compiler'
 include ':plugin'
 include ':app'
-rootProject.name = "JetpackLearn"
+rootProject.name = "learn"
