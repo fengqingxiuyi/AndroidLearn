@@ -1,4 +1,4 @@
-package com.example.jetpacklearn.annotation
+package com.example.learn.annotation
 
 /**
  * @author fqxyi

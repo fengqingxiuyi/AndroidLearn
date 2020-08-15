@@ -1,7 +1,7 @@
-package com.example.jetpacklearn
+package com.example.learn
 
 import android.app.Application
-import com.example.jetpacklearn.koin.appModule
+import com.example.learn.koin.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

@@ -1,4 +1,4 @@
-package com.example.jetpacklearn.koin
+package com.example.learn.koin
 
 import androidx.lifecycle.ViewModel
 

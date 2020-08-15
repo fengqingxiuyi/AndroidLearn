@@ -1,2 +1,3 @@
-# JetpackLearn
-Jetpack学习
+# Learn
+
+学习 Android or Java or Kotlin or Other

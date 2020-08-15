@@ -1,4 +1,4 @@
-package com.example.jetpacklearn
+package com.example.learn
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,12 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.annotation.BindCompile
-import com.example.jetpacklearn.annotation.BindRuntime
-import com.example.jetpacklearn.annotation.Binding
-import com.example.jetpacklearn.constraint.ConstraintActivity
-import com.example.jetpacklearn.koin.MyViewModel
-import com.example.jetpacklearn.room.AppDatabase
-import com.example.jetpacklearn.room.User
+import com.example.learn.annotation.BindRuntime
+import com.example.learn.annotation.Binding
+import com.example.learn.constraint.ConstraintActivity
+import com.example.learn.koin.MyViewModel
+import com.example.learn.room.AppDatabase
+import com.example.learn.room.User
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 

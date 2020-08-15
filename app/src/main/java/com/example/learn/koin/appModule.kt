@@ -1,4 +1,4 @@
-package com.example.jetpacklearn.koin
+package com.example.learn.koin
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.parameter.parametersOf

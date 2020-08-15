@@ -1,11 +1,11 @@
-package com.example.jetpacklearn.constraint
+package com.example.learn.constraint
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.annotation.BindCompile
-import com.example.jetpacklearn.R
-import com.example.jetpacklearn.annotation.Binding
+import com.example.annotation.Binding
+import com.example.learn.R
 
 /**
  * @author fqxyi

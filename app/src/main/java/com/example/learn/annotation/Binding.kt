@@ -1,4 +1,4 @@
-package com.example.jetpacklearn.annotation
+package com.example.learn.annotation
 
 import android.app.Activity
 import android.util.Log
