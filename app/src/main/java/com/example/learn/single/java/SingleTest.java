@@ -25,7 +25,7 @@ public class SingleTest {
         //
         SingleHungry.getInstance().single();
         //
-        SingleInner.SingleInnerHolder.getInstance().single();
+        SingleInner.getInstance().single();
         //
         SingleDoubleCheck.getInstance().single();
     }

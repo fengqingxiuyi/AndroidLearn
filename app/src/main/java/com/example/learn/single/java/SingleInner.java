@@ -13,9 +13,10 @@ public class SingleInner {
 
     public static class SingleInnerHolder {
         private static SingleInner instance = new SingleInner();
-        public static SingleInner getInstance() {
-            return instance;
-        }
+    }
+
+    public static SingleInner getInstance() {
+        return SingleInnerHolder.instance;
     }
 
     public void single() {

@@ -67,7 +67,7 @@ class SingleBWithParam private constructor(private val str: String) {
 
         fun getInstance(str: String): SingleBWithParam {
             if (instance == null) {
-                synchronized(this) {
+                synchronized(SingleBWithParam::class.java) {
                     if (instance == null) {
                         instance =
                             SingleBWithParam(str)
