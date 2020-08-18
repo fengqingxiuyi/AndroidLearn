@@ -1,19 +1,19 @@
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion project.COMPILE_SDK_VERSION as int
+    buildToolsVersion project.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion project.MIN_SDK_VERSION as int
+        targetSdkVersion project.TARGET_SDK_VERSION as int
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    //kotlinOptions 需要 apply plugin: 'kotlin-android'
     //FIX Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
@@ -22,13 +22,4 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    //https://developer.android.com/training/constraint-layout
-    //https://developer.android.com/jetpack/androidx/releases/constraintlayout
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    //https://developer.android.com/guide/topics/ui/layout/recyclerview
-    //https://developer.android.com/jetpack/androidx/releases/recyclerview
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
 }

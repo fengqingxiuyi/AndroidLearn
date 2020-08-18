@@ -17,6 +17,7 @@ learn
                 |--workmanager
                      |--README.md //WorkManager源码浅析
            |--koin //koin
+           |--lint //lint功能验证示例
            |--single //单例汇总
            |--ui //UI，暂不拆分为组件的类会放在这里，否则会放在UI组件库中
               |--imagescaletype //ImageScaleType各类型区别
@@ -29,6 +30,9 @@ learn
            |--webview //WebViewActivity相关资源
   |--compiler //编译时注解-类动态生成模块
        |--README.md //编译时注解使用教程
+  |--lintaar //别的模块依赖该模块，就能使用自定义的lint功能
+  |--lintjar //实现自定义lint功能的模块
+       |--README.md //lint教程
   |--plugin //Gradle插件模块，内部示例：APK文件名替换插件
        |--README.md //Gradle插件使用教程
   |--ui //UI组件库

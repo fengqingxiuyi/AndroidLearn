@@ -1,3 +1,5 @@
+include ':lintaar'
+include ':lintjar'
 include ':ui'
 include ':annotation'
 include ':compiler'

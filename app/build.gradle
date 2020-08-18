@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 apply from: '../base.gradle'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'apk-change-name'
 
 android {
     defaultConfig {
-        applicationId "com.example.learn"
+        applicationId project.APPLICATION_ID
         versionCode 1
         versionName "1.0"
     }
@@ -24,6 +25,15 @@ android {
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    //https://developer.android.com/training/constraint-layout
+    //https://developer.android.com/jetpack/androidx/releases/constraintlayout
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //https://developer.android.com/guide/topics/ui/layout/recyclerview
+    //https://developer.android.com/jetpack/androidx/releases/recyclerview
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
     //https://developer.android.com/topic/libraries/architecture/room
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
@@ -36,4 +46,6 @@ dependencies {
     //编译时注解
     implementation project(":annotation")
     kapt project(":compiler")
+    //依赖LintAAR，引入自定义Lint规则
+    implementation project(":lintaar")
 }
