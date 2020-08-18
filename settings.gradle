@@ -1,3 +1,4 @@
+include ':ui'
 include ':annotation'
 include ':compiler'
 include ':plugin'
