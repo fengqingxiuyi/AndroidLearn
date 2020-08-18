@@ -12,8 +12,10 @@ learn
            |--algorithm //算法
            |--annotation //运行时注解
            |--constraint //ConstraintLayout与RelativeLayout性能分析
-           |--jetpack
-                |--room //room
+           |--jetpack //https://developer.android.com/jetpack
+                |--room
+                |--workmanager
+                     |--README.md //WorkManager源码浅析
            |--koin //koin
            |--single //单例汇总
   |--compiler //编译时注解-类动态生成模块
@@ -23,6 +25,20 @@ learn
 ```
 
 ## FAQ
+
+### Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6
+
+使用`OneTimeWorkRequestBuilder`类时报以上错误
+
+```groovy
+android {
+    //省略一些内容
+    //FIX Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+}
+```
 
 ### 运行Java文件的main函数报错
 

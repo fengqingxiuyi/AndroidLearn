@@ -15,6 +15,15 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //FIX Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -30,6 +39,8 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
     //https://developer.android.com/topic/libraries/architecture/viewmodel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    //https://developer.android.com/topic/libraries/architecture/workmanager
+    implementation "androidx.work:work-runtime-ktx:$work_version"
     //编译时注解
     implementation project(":annotation")
     kapt project(":compiler")
