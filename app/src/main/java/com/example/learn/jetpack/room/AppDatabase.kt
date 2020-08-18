@@ -1,4 +1,4 @@
-package com.example.learn.room
+package com.example.learn.jetpack.room
 
 import android.content.Context
 import androidx.room.Database

@@ -12,8 +12,9 @@ learn
            |--algorithm //算法
            |--annotation //运行时注解
            |--constraint //ConstraintLayout与RelativeLayout性能分析
+           |--jetpack
+                |--room //room
            |--koin //koin
-           |--room //jetpack - room
            |--single //单例汇总
   |--compiler //编译时注解-类动态生成模块
        |--README.md //编译时注解使用教程

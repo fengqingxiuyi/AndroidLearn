@@ -10,9 +10,9 @@ import com.example.annotation.BindCompile
 import com.example.learn.annotation.BindRuntime
 import com.example.learn.annotation.Binding
 import com.example.learn.constraint.ConstraintActivity
+import com.example.learn.jetpack.room.AppDatabase
+import com.example.learn.jetpack.room.User
 import com.example.learn.koin.MyViewModel
-import com.example.learn.room.AppDatabase
-import com.example.learn.room.User
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 

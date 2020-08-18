@@ -1,4 +1,4 @@
-package com.example.learn.room
+package com.example.learn.jetpack.room
 
 import androidx.room.*
 
