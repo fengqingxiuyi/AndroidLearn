@@ -21,7 +21,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/black"
-        android:text="@string/edit_text"
+        android:text="Edit Text"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@id/myImageView"
         app:layout_constraintHorizontal_weight="2"

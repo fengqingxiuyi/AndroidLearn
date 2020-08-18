@@ -17,7 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.learn.constraint.ConstraintActivity"/>
+        <activity android:name=".constraint.ConstraintActivity" />
+        <activity android:name=".ui.viewswitcher.ViewSwitcherActivity" />
     </application>
 
 </manifest>

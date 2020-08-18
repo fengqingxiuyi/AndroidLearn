@@ -18,6 +18,11 @@ learn
                      |--README.md //WorkManager源码浅析
            |--koin //koin
            |--single //单例汇总
+           |--ui //UI，暂不拆分为组件的类会放在这里，否则会放在UI组件库中
+              |--viewswitcher //ViewSwitcher使用示例
+      |--res
+           |--main //MainActivity相关资源
+           |--viewswitcher //ViewSwitcherActivity相关资源
   |--compiler //编译时注解-类动态生成模块
        |--README.md //编译时注解使用教程
   |--plugin //Gradle插件模块，内部示例：APK文件名替换插件

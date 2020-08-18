@@ -34,13 +34,22 @@
         tools:text="bindCompileText2" />
 
     <Button
+        android:id="@+id/openConstraint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openConstraint"
-        android:text="@string/open_constraint"
+        android:text="Open ConstraintActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openViewSwitcher"
+        android:text="Open ViewSwitcherActivity"
+        app:layout_constraintBottom_toTopOf="@id/openConstraint"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

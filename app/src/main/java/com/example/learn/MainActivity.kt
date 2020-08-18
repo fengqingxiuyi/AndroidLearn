@@ -13,6 +13,7 @@ import com.example.learn.constraint.ConstraintActivity
 import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
+import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -52,5 +53,9 @@ class MainActivity : AppCompatActivity() {
 
     fun openConstraint(view: View) {
         startActivity(Intent(this, ConstraintActivity::class.java))
+    }
+
+    fun openViewSwitcher(view: View) {
+        startActivity(Intent(this, ViewSwitcherActivity::class.java))
     }
 }
