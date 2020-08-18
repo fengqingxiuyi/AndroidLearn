@@ -54,11 +54,22 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
+        android:id="@+id/openImageScaleType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openImageScaleType"
         android:text="Open ImageScaleTypeActivity"
         app:layout_constraintBottom_toTopOf="@id/openViewSwitcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/openWebView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openWebView"
+        android:text="Open WebViewActivity"
+        app:layout_constraintBottom_toTopOf="@id/openImageScaleType"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 

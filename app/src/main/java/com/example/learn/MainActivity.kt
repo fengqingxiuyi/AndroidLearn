@@ -15,6 +15,7 @@ import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
+import com.example.learn.webview.WebViewActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     //编译时注解
     @BindCompile(R.id.bindCompileText)
     var bindCompileText: TextView? = null
+
     @BindCompile(R.id.bindCompileText2)
     var bindCompileText2: TextView? = null
 
@@ -67,5 +69,9 @@ class MainActivity : AppCompatActivity() {
 
     fun openImageScaleType(view: View) {
         startActivity(Intent(this, ImageScaleTypeActivity::class.java))
+    }
+
+    fun openWebView(view: View) {
+        startActivity(Intent(this, WebViewActivity::class.java))
     }
 }
