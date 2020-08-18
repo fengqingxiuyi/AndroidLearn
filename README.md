@@ -19,8 +19,10 @@ learn
            |--koin //koin
            |--single //单例汇总
            |--ui //UI，暂不拆分为组件的类会放在这里，否则会放在UI组件库中
+              |--imagescaletype //ImageScaleType各类型区别
               |--viewswitcher //ViewSwitcher使用示例
       |--res
+           |--imagescaletype //ImageScaleTypeActivity相关资源
            |--main //MainActivity相关资源
            |--viewswitcher //ViewSwitcherActivity相关资源
   |--compiler //编译时注解-类动态生成模块

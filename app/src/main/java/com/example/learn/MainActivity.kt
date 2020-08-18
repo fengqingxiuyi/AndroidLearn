@@ -13,6 +13,7 @@ import com.example.learn.constraint.ConstraintActivity
 import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
+import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -22,11 +23,16 @@ class MainActivity : AppCompatActivity() {
     // Lazy Inject ViewModel
 //    val myViewModel: MyViewModel by viewModel()
     val myViewModel: MyViewModel by viewModel { parametersOf("koin from activity") }
+
     //运行时注解
-    @BindRuntime(R.id.bindRuntimeText) var bindRuntimeText: TextView? = null
+    @BindRuntime(R.id.bindRuntimeText)
+    var bindRuntimeText: TextView? = null
+
     //编译时注解
-    @BindCompile(R.id.bindCompileText) var bindCompileText: TextView? = null
-    @BindCompile(R.id.bindCompileText2) var bindCompileText2: TextView? = null
+    @BindCompile(R.id.bindCompileText)
+    var bindCompileText: TextView? = null
+    @BindCompile(R.id.bindCompileText2)
+    var bindCompileText2: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,5 +63,9 @@ class MainActivity : AppCompatActivity() {
 
     fun openViewSwitcher(view: View) {
         startActivity(Intent(this, ViewSwitcherActivity::class.java))
+    }
+
+    fun openImageScaleType(view: View) {
+        startActivity(Intent(this, ImageScaleTypeActivity::class.java))
     }
 }

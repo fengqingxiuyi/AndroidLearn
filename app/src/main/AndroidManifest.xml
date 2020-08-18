@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".constraint.ConstraintActivity" />
         <activity android:name=".ui.viewswitcher.ViewSwitcherActivity" />
+        <activity android:name=".ui.imagescaletype.ImageScaleTypeActivity" />
     </application>
 
 </manifest>

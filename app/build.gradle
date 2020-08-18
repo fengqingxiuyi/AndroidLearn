@@ -13,6 +13,7 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/imagescaletype',
                     'src/main/res/viewswitcher',
                     'src/main/res/main',
                     'src/main/res'
