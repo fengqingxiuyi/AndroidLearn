@@ -10,7 +10,7 @@ import com.example.utils.LogUtil
         public static final void single() {
             String var0 = "SingleC single";
             boolean var1 = false;
-            System.out.println(var0);
+            LogUtil.i(var0);
         }
     }
  */

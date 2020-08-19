@@ -1,5 +1,7 @@
 package com.example.learn.algorithm
 
+import com.example.utils.LogUtil
+
 /**
  * @author fqxyi
  * @date 2020/8/15
@@ -13,20 +15,20 @@ object AlgorithmUtil {
     }
 
     fun printOrigin(array: IntArray) {
-        print("\t原始数据 ")
-        print(array)
+        LogUtil.i("\t原始数据 ", false)
+        printArr(array)
     }
 
     fun printSort(array: IntArray) {
-        print("\t排序数据 ")
-        print(array)
+        LogUtil.i("\t排序数据 ", false)
+        printArr(array)
     }
 
-    private fun print(array: IntArray) {
+    private fun printArr(array: IntArray) {
         for (i in array) {
-            print("$i ")
+            LogUtil.i("$i ", false)
         }
-        println()
+        LogUtil.i("")
     }
 
 }

@@ -42,10 +42,12 @@ public class LogUtil {
     }
 
     public static void i(String msg) {
+        i(msg, true);
+    }
+
+    public static void i(String msg, boolean lineBreak) {
         if (LOG_DEBUG) {
-            if (TextUtils.isEmpty(msg)) {
-                return;
-            }
+            if (isEmpty(msg, lineBreak)) return;
             String header = getHeaderInfo();
             int index = 0;
             int countOfSub = msg.length() / maxLength;
@@ -66,6 +68,22 @@ public class LogUtil {
         }
     }
 
+    private static boolean isEmpty(String msg, boolean lineBreak) {
+        try {
+            if (TextUtils.isEmpty(msg)) {
+                return true;
+            }
+        } catch (Exception e) { //在非Android环境中运行会报错
+            if (lineBreak) {
+                System.out.println(msg);
+            } else {
+                System.out.print(msg);
+            }
+            return true;
+        }
+        return false;
+    }
+
     public static void i(Object... messages) {
         if (LOG_DEBUG) {
             StringBuilder stringBuilder = new StringBuilder();
@@ -83,10 +101,12 @@ public class LogUtil {
     }
 
     public static void d(String msg) {
+        d(msg, true);
+    }
+
+    public static void d(String msg, boolean lineBreak) {
         if (LOG_DEBUG) {
-            if (TextUtils.isEmpty(msg)) {
-                return;
-            }
+            if (isEmpty(msg, lineBreak)) return;
             String header = getHeaderInfo();
             int index = 0;
             int countOfSub = msg.length() / maxLength;
@@ -124,10 +144,12 @@ public class LogUtil {
     }
 
     public static void e(String msg) {
+        e(msg, true);
+    }
+
+    public static void e(String msg, boolean lineBreak) {
         if (LOG_DEBUG) {
-            if (TextUtils.isEmpty(msg)) {
-                return;
-            }
+            if (isEmpty(msg, lineBreak)) return;
             int index = 0;
             int countOfSub = msg.length() / maxLength;
             if (countOfSub > 0) {

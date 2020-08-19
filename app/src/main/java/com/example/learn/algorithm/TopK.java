@@ -1,5 +1,7 @@
 package com.example.learn.algorithm;
 
+import com.example.utils.LogUtil;
+
 /**
  * @author fqxyi
  * @date 2020/8/15
@@ -12,11 +14,11 @@ public class TopK {
         int max = findMaxTopK(array, k);
         AlgorithmUtil.INSTANCE.printSort(array);
         //
-        System.out.print("\t找到数据 ");
+        LogUtil.i("\t找到数据 ", false);
         for (int i = max; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+            LogUtil.i(array[i] + " ", false);
         }
-        System.out.println();
+        LogUtil.i("");
     }
 
     /**
@@ -43,11 +45,11 @@ public class TopK {
         int min = findMinTopK(array, k);
         AlgorithmUtil.INSTANCE.printSort(array);
         //
-        System.out.print("\t找到数据 ");
+        LogUtil.i("\t找到数据 ", false);
         for (int i = 0; i < min; i++) {
-            System.out.print(array[i] + " ");
+            LogUtil.i(array[i] + " ", false);
         }
-        System.out.println();
+        LogUtil.i("");
     }
 
     /**

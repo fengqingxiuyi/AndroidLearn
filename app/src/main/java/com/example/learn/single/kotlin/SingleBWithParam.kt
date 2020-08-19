@@ -14,7 +14,7 @@ public final class SingleBWithParam {
     public final void single() {
         String var1 = "class SingleBWithParam " + this.str + " companion object single";
         boolean var2 = false;
-        System.out.println(var1);
+        LogUtil.i(var1);
     }
 
     private SingleBWithParam(String str) {

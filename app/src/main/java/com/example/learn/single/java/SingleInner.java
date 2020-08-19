@@ -1,5 +1,7 @@
 package com.example.learn.single.java;
 
+import com.example.utils.LogUtil;
+
 /**
  * @author fqxyi
  * @date 2020/8/17
@@ -20,7 +22,7 @@ public class SingleInner {
     }
 
     public void single() {
-        System.out.println("java class SingleInner single");
+        LogUtil.i("java class SingleInner single");
     }
 
 }

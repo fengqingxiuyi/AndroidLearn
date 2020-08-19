@@ -135,7 +135,3 @@ dependencies {
 3. 打开LintTest类验证效果
 
 默认lint输出位置：file://`省略路径，每台设备都不一样`/learn/app/build/reports/lint-results-debug.html
-
-## 未解决问题
-
-有些函数是在main函数中执行的，非Android环境中执行，这样就不能使用LogUtil了，但是还没有办法检测到这些函数，因为这些函数可能在另外一个文件中，如AlgorithmUtil类中的print函数

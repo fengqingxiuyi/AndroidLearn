@@ -12,7 +12,7 @@ import com.example.utils.LogUtil
         public final void single() {
             String var1 = "object SingleA single";
             boolean var2 = false;
-            System.out.println(var1);
+            LogUtil.i(var1);
         }
 
         private SingleA() {

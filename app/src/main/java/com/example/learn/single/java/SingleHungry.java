@@ -1,5 +1,7 @@
 package com.example.learn.single.java;
 
+import com.example.utils.LogUtil;
+
 /**
  * @author fqxyi
  * @date 2020/8/17
@@ -18,7 +20,7 @@ public class SingleHungry {
     }
 
     public void single() {
-        System.out.println("java class SingleHungry single");
+        LogUtil.i("java class SingleHungry single");
     }
 
 }

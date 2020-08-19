@@ -32,11 +32,6 @@ class LogDetector : Detector(), Detector.UastScanner {
             }
 
             override fun visitCallExpression(node: UCallExpression) {
-                //过滤文件
-                if (fileString?.contains("static final fun main() : void") == true) {
-                    return
-                }
-                //
                 val sourceString = node.asSourceString()
                 val sourceParentString = node.uastParent?.asSourceString() ?: ""
                 val methodName = node.methodName ?: ""
@@ -45,7 +40,11 @@ class LogDetector : Detector(), Detector.UastScanner {
                 when (node) {
                     is KotlinUFunctionCallExpression -> { //kotlin
                         //判断System.out.print
-                        if (sourceString.startsWith("System.out.print") || sourceString.startsWith("print")) {
+                        if (sourceString.startsWith("System.out.print(") ||
+                            sourceString.startsWith("System.out.println(") ||
+                            sourceString.startsWith("print(") ||
+                            sourceString.startsWith("println(")
+                        ) {
                             //message会在鼠标悬浮时显示
                             context.report(ISSUE, node, context.getLocation(node),
                                 "使用LogUtil类替换System.out.print")

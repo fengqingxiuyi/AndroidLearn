@@ -1,5 +1,7 @@
 package com.example.learn.single.java;
 
+import com.example.utils.LogUtil;
+
 /**
  * @author fqxyi
  * @date 2020/8/17
@@ -37,7 +39,7 @@ public class SingleDoubleCheck {
     }
 
     public void single() {
-        System.out.println("java class SingleDoubleCheck single");
+        LogUtil.i("java class SingleDoubleCheck single");
     }
 
 }

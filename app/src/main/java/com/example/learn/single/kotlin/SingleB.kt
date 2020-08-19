@@ -13,7 +13,7 @@ import com.example.utils.LogUtil
             public final void single() {
                 String var1 = "class SingleB companion object single";
                 boolean var2 = false;
-                System.out.println(var1);
+                LogUtil.i(var1);
             }
 
             private Companion() {
