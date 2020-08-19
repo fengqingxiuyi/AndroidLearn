@@ -73,4 +73,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <Button
+        android:id="@+id/openDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openDownload"
+        android:text="Open DownloadActivity"
+        app:layout_constraintBottom_toTopOf="@id/openWebView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

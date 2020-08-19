@@ -12,6 +12,7 @@ learn
            |--algorithm //算法
            |--annotation //运行时注解
            |--constraint //ConstraintLayout与RelativeLayout性能分析
+           |--download //测试download模块
            |--jetpack //https://developer.android.com/jetpack
                 |--room
                 |--workmanager
@@ -30,6 +31,7 @@ learn
            |--webview //WebViewActivity相关资源
   |--compiler //编译时注解-类动态生成模块
        |--README.md //编译时注解使用教程
+  |--download //断点下载模块
   |--lintaar //别的模块依赖该模块，就能使用自定义的lint功能
   |--lintjar //实现自定义lint功能的模块
        |--README.md //lint教程

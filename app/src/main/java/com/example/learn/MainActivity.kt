@@ -9,6 +9,7 @@ import com.example.annotation.BindCompile
 import com.example.learn.annotation.BindRuntime
 import com.example.learn.annotation.Binding
 import com.example.learn.constraint.ConstraintActivity
+import com.example.learn.download.DownloadActivity
 import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
@@ -73,5 +74,9 @@ class MainActivity : AppCompatActivity() {
 
     fun openWebView(view: View) {
         startActivity(Intent(this, WebViewActivity::class.java))
+    }
+
+    fun openDownload(view: View) {
+        startActivity(Intent(this, DownloadActivity::class.java))
     }
 }

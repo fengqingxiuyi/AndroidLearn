@@ -13,6 +13,7 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/download',
                     'src/main/res/webview',
                     'src/main/res/imagescaletype',
                     'src/main/res/viewswitcher',
@@ -61,4 +62,6 @@ dependencies {
     implementation project(":ui")
     //基础工具库
     implementation project(":utils")
+    //断点下载
+    implementation project(":download")
 }
