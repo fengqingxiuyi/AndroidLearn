@@ -165,6 +165,8 @@ package com.example.compiler
 ### 在要应用的模块的build.gradle中添加依赖：
 
 ```groovy
+apply plugin: 'kotlin-kapt'
+//省略一些内容
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //省略一些内容

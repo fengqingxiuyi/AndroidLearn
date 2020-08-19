@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+apply from: '../base.gradle'
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    //断点下载
+    api project(":download")
+    //依赖LintAAR，引入自定义Lint规则
+    api project(":lintaar")
+    //业务无关UI组件库
+    api project(":ui")
+    //业务无关工具库
+    api project(":utils")
+}

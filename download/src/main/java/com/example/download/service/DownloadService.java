@@ -41,12 +41,16 @@ public class DownloadService extends Service {
         if (intent != null) { //获得Activity传来的参数
             if (ACTION_START.equals(intent.getAction())) {
                 FileInfo fileInfo = (FileInfo) intent.getSerializableExtra(FileInfo.KEY);
-                LogUtil.d("DownloadService start: " + fileInfo.toString());
+                if (fileInfo != null) {
+                    LogUtil.d("DownloadService start: " + fileInfo.toString());
+                }
                 //启动初始化线程
                 new InitThread(fileInfo).start();
             } else if (ACTION_STOP.equals(intent.getAction())) {
                 FileInfo fileInfo = (FileInfo) intent.getSerializableExtra(FileInfo.KEY);
-                LogUtil.d("DownloadService stop: " + fileInfo.toString());
+                if (fileInfo != null) {
+                    LogUtil.d("DownloadService stop: " + fileInfo.toString());
+                }
                 if (task != null) {
                     task.isPause = true;
                 }
@@ -63,18 +67,16 @@ public class DownloadService extends Service {
     class DownloadHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case MSG_INIT:
-                    FileInfo fileInfo = (FileInfo) msg.obj;
-                    if (fileInfo == null) {
-                        LogUtil.d("DownloadHandler fileInfo == null");
-                        return;
-                    }
-                    LogUtil.d("DownloadHandler init: " + fileInfo.toString());
-                    //启动下载任务
-                    task = new DownloadTask(DownloadService.this, fileInfo);
-                    task.download();
-                    break;
+            if (msg.what == MSG_INIT) {
+                FileInfo fileInfo = (FileInfo) msg.obj;
+                if (fileInfo == null) {
+                    LogUtil.d("DownloadHandler fileInfo == null");
+                    return;
+                }
+                LogUtil.d("DownloadHandler init: " + fileInfo.toString());
+                //启动下载任务
+                task = new DownloadTask(DownloadService.this, fileInfo);
+                task.download();
             }
         }
     }

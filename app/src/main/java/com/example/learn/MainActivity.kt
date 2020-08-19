@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import com.example.annotation.BindCompile
+import com.example.common.BaseActivity
 import com.example.learn.annotation.BindRuntime
 import com.example.learn.annotation.Binding
 import com.example.learn.constraint.ConstraintActivity
@@ -20,7 +20,7 @@ import com.example.utils.LogUtil
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     // Lazy Inject ViewModel
 //    val myViewModel: MyViewModel by viewModel()

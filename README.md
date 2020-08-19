@@ -29,6 +29,7 @@ learn
            |--main //MainActivity相关资源
            |--viewswitcher //ViewSwitcherActivity相关资源
            |--webview //WebViewActivity相关资源
+  |--common //公共业务模块
   |--compiler //编译时注解-类动态生成模块
        |--README.md //编译时注解使用教程
   |--download //断点下载模块
@@ -37,7 +38,8 @@ learn
        |--README.md //lint教程
   |--plugin //Gradle插件模块，内部示例：APK文件名替换插件
        |--README.md //Gradle插件使用教程
-  |--ui //UI组件库
+  |--ui //业务无关UI组件库
+  |--utils //业务无关工具库
 ```
 
 ## FAQ

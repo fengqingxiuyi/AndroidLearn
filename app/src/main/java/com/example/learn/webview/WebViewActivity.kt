@@ -6,7 +6,7 @@ import android.webkit.JsResult
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import com.example.common.BaseActivity
 import com.example.learn.R
 import kotlinx.android.synthetic.main.activity_webview.*
 
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_webview.*
  * @author fqxyi
  * @date 2020/8/18
  */
-class WebViewActivity : AppCompatActivity() {
+class WebViewActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

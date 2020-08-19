@@ -49,19 +49,11 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     //https://github.com/InsertKoinIO/koin
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-    //https://developer.android.com/topic/libraries/architecture/viewmodel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     //https://developer.android.com/topic/libraries/architecture/workmanager
     implementation "androidx.work:work-runtime-ktx:$work_version"
     //编译时注解
     implementation project(":annotation")
     kapt project(":compiler")
-    //依赖LintAAR，引入自定义Lint规则
-    implementation project(":lintaar")
-    //UI组件库
-    implementation project(":ui")
-    //基础工具库
-    implementation project(":utils")
-    //断点下载
-    implementation project(":download")
+    //业务通用模块
+    implementation project(":common")
 }

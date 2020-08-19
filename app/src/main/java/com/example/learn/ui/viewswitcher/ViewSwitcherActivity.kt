@@ -2,7 +2,7 @@ package com.example.learn.ui.viewswitcher
 
 import android.os.Bundle
 import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
+import com.example.common.BaseActivity
 import com.example.learn.R
 import kotlinx.android.synthetic.main.activity_view_switcher.*
 import java.util.*
@@ -12,7 +12,7 @@ import java.util.*
  * @date 2020/8/18
  * ViewSwitcher使用示例
  */
-class ViewSwitcherActivity : AppCompatActivity() {
+class ViewSwitcherActivity : BaseActivity() {
 
     private var index = 0
 
