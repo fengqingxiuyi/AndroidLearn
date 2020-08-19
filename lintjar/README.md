@@ -42,8 +42,96 @@ dependencies {
 一般来说，打包任务和为任务签名应该会加快整体构建速度。如果您发现与这些任务相关的性能退化，请报告错误。
 ```
 
+## 开发步骤
+
+### 创建Lint编码模块
+
+new Module，选择Java or Kotlin Library。命名为lintjar，用于编写自定义的Lint规则。
+
+build.gradle内容如下：
+
+```groovy
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+dependencies {
+    compileOnly "com.android.tools.lint:lint-api:$lint_version"
+    compileOnly "com.android.tools.lint:lint-checks:$lint_version"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+```
+
+### 编写自定义的Lint规则
+
+先编写Detector类，大概代码如下：
+```kotlin
+package com.example.lintjar
+@Suppress("UnstableApiUsage")
+class SampleCodeDetector : Detector(), UastScanner {
+    //省略一些内容
+}
+```
+
+再编写IssueRegistry类，代码如下：
+```kotlin
+package com.example.lintjar
+
+import com.android.tools.lint.client.api.IssueRegistry
+import com.android.tools.lint.detector.api.CURRENT_API
+
+@Suppress("UnstableApiUsage")
+class SampleIssueRegistry : IssueRegistry() {
+    override val issues = listOf(SampleCodeDetector.ISSUE)
+
+    override val api: Int
+        get() = CURRENT_API
+}
+```
+
+### 注册IssueRegistry类
+
+创建名为`com.android.tools.lint.client.api.IssueRegistry`的文件，内部填写内容形式为`包名.之前编写的IssueRegistry类名`，如：`com.example.lintjar.SampleIssueRegistry`，并根据下面的目录结构将该文件放在`services`文件夹中：
+```
+lintjar
+  |--src
+       |--main
+            |--java //存放自定义的Lint代码
+            |--resources //注册IssueRegistry类
+                 |--META-INF
+                      |--services
+```
+
+### 创建Lint引用模块
+
+new Module，选择Android Library。命名为lintaar。目的是让别的模块依赖该模块的时候就能使用自定义的Lint功能。
+
+build.gradle内容如下：
+
+```groovy
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.COMPILE_SDK_VERSION as int
+    buildToolsVersion project.BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion project.MIN_SDK_VERSION as int
+        targetSdkVersion project.TARGET_SDK_VERSION as int
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+/** Package the given lint checks library into this AAR  */
+dependencies {
+    lintPublish project(':lintjar')
+}
+```
+
 ## 使用
 
 1. Clean Project
 2. Rebuild Project
 3. 打开LintTest类验证效果
+
+默认lint输出位置：file://`省略路径，每台设备都不一样`/learn/app/build/reports/lint-results-debug.html
