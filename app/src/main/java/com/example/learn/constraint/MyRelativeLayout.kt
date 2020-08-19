@@ -3,8 +3,8 @@ package com.example.learn.constraint
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
-import android.util.Log
 import android.widget.RelativeLayout
+import com.example.utils.LogUtil
 
 /**
  * @author fqxyi
@@ -41,17 +41,17 @@ class MyRelativeLayout @JvmOverloads constructor(
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        Log.i("CONSTRAINT_TEST", "MyRelativeLayout onMeasure")
+        LogUtil.i("CONSTRAINT_TEST", "MyRelativeLayout onMeasure")
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
-        Log.i("CONSTRAINT_TEST", "MyRelativeLayout onLayout")
+        LogUtil.i("CONSTRAINT_TEST", "MyRelativeLayout onLayout")
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        Log.i("CONSTRAINT_TEST", "MyRelativeLayout onDraw")
+        LogUtil.i("CONSTRAINT_TEST", "MyRelativeLayout onDraw")
     }
 
 }

@@ -8,7 +8,10 @@ import com.android.tools.lint.detector.api.CURRENT_API
  */
 @Suppress("UnstableApiUsage")
 class SampleIssueRegistry : IssueRegistry() {
-    override val issues = listOf(SampleCodeDetector.ISSUE)
+    override val issues = listOf(
+        SampleCodeDetector.ISSUE,
+        LogDetector.ISSUE
+    )
 
     override val api: Int
         get() = CURRENT_API

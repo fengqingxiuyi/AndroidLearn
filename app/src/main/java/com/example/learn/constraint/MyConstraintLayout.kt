@@ -3,8 +3,8 @@ package com.example.learn.constraint
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
-import android.util.Log
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.utils.LogUtil
 
 /**
  * @author fqxyi
@@ -58,17 +58,17 @@ class MyConstraintLayout @JvmOverloads constructor(
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        Log.i("CONSTRAINT_TEST", "MyConstraintLayout onMeasure")
+        LogUtil.i("CONSTRAINT_TEST", "MyConstraintLayout onMeasure")
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
-        Log.i("CONSTRAINT_TEST", "MyConstraintLayout onLayout")
+        LogUtil.i("CONSTRAINT_TEST", "MyConstraintLayout onLayout")
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        Log.i("CONSTRAINT_TEST", "MyConstraintLayout onDraw")
+        LogUtil.i("CONSTRAINT_TEST", "MyConstraintLayout onDraw")
     }
 
 }

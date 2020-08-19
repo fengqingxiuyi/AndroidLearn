@@ -1,8 +1,8 @@
 package com.example.learn.jetpack.workmanager
 
 import android.content.Context
-import android.util.Log
 import androidx.work.*
+import com.example.utils.LogUtil
 import java.util.concurrent.TimeUnit
 
 /**
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 object WorkManagerTest {
 
     fun testWorkManager(context: Context) {
-        Log.i("Worker", "testWorkManager start")
+        LogUtil.i("Worker", "testWorkManager start")
         //构建一次性请求
         //构建约束
         val constraints = Constraints.Builder()
@@ -62,7 +62,7 @@ object WorkManagerTest {
         //取消请求
         //WorkManager.getInstance(this).cancelWorkById(request.id)
         //WorkManager.getInstance(this).cancelAllWorkByTag("tag") //根据请求标记清除所有关联请求
-        Log.i("Worker", "testWorkManager end")
+        LogUtil.i("Worker", "testWorkManager end")
     }
 
 }

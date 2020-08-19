@@ -1,5 +1,7 @@
 package com.example.learn.single.kotlin
 
+import com.example.utils.LogUtil
+
 /**
  * @author fqxyi
  * @date 2020/8/17
@@ -79,7 +81,7 @@ class SingleBWithParam private constructor(private val str: String) {
     }
 
     fun single() {
-        println("kotlin class SingleBWithParam $str companion object single")
+        LogUtil.i("kotlin class SingleBWithParam $str companion object single")
     }
 
 }

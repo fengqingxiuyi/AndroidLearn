@@ -199,7 +199,7 @@ object Binding {
             val ob = clazz.newInstance()
             bindMethod.invoke(ob, target)
         } catch (e : Exception) {
-            Log.e("Binding Compile", e.message ?: "未知错误")
+            println("Binding Compile => " +  e.message)
         }
     }
 }

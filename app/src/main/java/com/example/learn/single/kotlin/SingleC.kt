@@ -1,5 +1,7 @@
 package com.example.learn.single.kotlin
 
+import com.example.utils.LogUtil
+
 /**
  * @author fqxyi
  * @date 2020/8/17
@@ -13,5 +15,5 @@ package com.example.learn.single.kotlin
     }
  */
 fun single() {
-    println("kotlin SingleC single")
+    LogUtil.i("kotlin SingleC single")
 }

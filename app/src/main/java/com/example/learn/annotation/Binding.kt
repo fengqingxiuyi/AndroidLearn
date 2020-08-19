@@ -1,7 +1,7 @@
 package com.example.learn.annotation
 
 import android.app.Activity
-import android.util.Log
+import com.example.utils.LogUtil
 
 /**
  * @author fqxyi
@@ -22,7 +22,7 @@ object Binding {
                 }
             }
         } catch (e : Exception) {
-            Log.e("Binding Runtime", e.message ?: "未知错误")
+            LogUtil.e("Binding Runtime", e.message ?: "未知错误")
         }
     }
 

@@ -1,5 +1,7 @@
 package com.example.learn.single.kotlin
 
+import com.example.utils.LogUtil
+
 /**
  * @author fqxyi
  * @date 2020/8/17
@@ -29,7 +31,7 @@ class SingleB {
     companion object {
 
         fun single() {
-            println("kotlin class SingleB companion object single")
+            LogUtil.i("kotlin class SingleB companion object single")
         }
 
     }

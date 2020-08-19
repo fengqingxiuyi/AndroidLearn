@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply from: '../base.gradle'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'apk-change-name'
 
@@ -38,10 +37,6 @@ android.applicationVariants.all { variant ->
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.core:core-ktx:$ktx_version"
-    //https://developer.android.com/jetpack/androidx/releases/appcompat
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
     //https://developer.android.com/training/constraint-layout
     //https://developer.android.com/jetpack/androidx/releases/constraintlayout
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
@@ -62,4 +57,8 @@ dependencies {
     kapt project(":compiler")
     //依赖LintAAR，引入自定义Lint规则
     implementation project(":lintaar")
+    //UI组件库
+    implementation project(":ui")
+    //基础工具库
+    implementation project(":utils")
 }

@@ -2,7 +2,6 @@ package com.example.learn
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +15,7 @@ import com.example.learn.koin.MyViewModel
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.webview.WebViewActivity
+import com.example.utils.LogUtil
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun testKoin() {
-        Log.i("KOIN_TEST", myViewModel.sayHello())
+        LogUtil.i("KOIN_TEST", myViewModel.sayHello())
     }
 
     fun openConstraint(view: View) {

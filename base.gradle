@@ -1,4 +1,5 @@
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion project.COMPILE_SDK_VERSION as int
@@ -22,4 +23,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$ktx_version"
+    //https://developer.android.com/jetpack/androidx/releases/appcompat
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
 }

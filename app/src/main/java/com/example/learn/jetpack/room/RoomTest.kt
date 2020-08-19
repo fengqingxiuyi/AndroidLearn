@@ -1,7 +1,7 @@
 package com.example.learn.jetpack.room
 
 import android.content.Context
-import android.util.Log
+import com.example.utils.LogUtil
 
 /**
  * @author fqxyi
@@ -24,11 +24,11 @@ object RoomTest {
                 User(1, "zhang", "san"),
                 User(2, "li", "si")
             )
-            Log.i("ROOM_TEST", dao.findByName("li", "si").toString())
-            Log.i("ROOM_TEST", dao.getAll().toString())
+            LogUtil.i("ROOM_TEST", dao.findByName("li", "si").toString())
+            LogUtil.i("ROOM_TEST", dao.getAll().toString())
             dao.delete(User(1, "zhang", "san"))
-            Log.i("ROOM_TEST", dao.getAll().toString())
-            Log.i("ROOM_TEST", dao.loadAllByIds(intArrayOf(2)).toString())
+            LogUtil.i("ROOM_TEST", dao.getAll().toString())
+            LogUtil.i("ROOM_TEST", dao.loadAllByIds(intArrayOf(2)).toString())
         }, "ROOM_TEST").start()
     }
 

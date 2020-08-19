@@ -1,9 +1,9 @@
 package com.example.learn.jetpack.workmanager
 
 import android.content.Context
-import android.util.Log
 import androidx.work.Worker
 import androidx.work.WorkerParameters
+import com.example.utils.LogUtil
 
 /**
  * @author fqxyi
@@ -35,12 +35,12 @@ class MyWorker : Worker {
     override fun doWork(): Result {
         //获取传入的参数
         val requestType = inputData.getString("RequestType")
-        Log.i("Worker", "doWork requestType = $requestType")
+        LogUtil.i("Worker", "doWork requestType = $requestType")
         //
-        Log.i("Worker", "doWork start")
+        LogUtil.i("Worker", "doWork start")
         //延时5秒，模拟耗时任务
         Thread.sleep(5000)
-        Log.i("Worker", "doWork end")
+        LogUtil.i("Worker", "doWork end")
         //返回成功
         return Result.success()
         //返回失败
