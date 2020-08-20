@@ -134,4 +134,4 @@ dependencies {
 2. Rebuild Project
 3. 打开LintTest类验证效果
 
-默认lint输出位置：file://`省略路径，每台设备都不一样`/learn/app/build/reports/lint-results-debug.html
+默认lint输出位置：file://`省略路径，每台设备都不一样`/AndroidLearn/app/build/reports/lint-results-debug.html

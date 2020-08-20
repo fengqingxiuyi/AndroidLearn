@@ -1,6 +1,6 @@
-# Learn
+# AndroidLearn
 
-学习 Android or Java or Kotlin or Other
+学习总结Android： Java or Kotlin or Other
 
 ## 目录结构说明
 

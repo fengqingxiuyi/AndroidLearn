@@ -179,7 +179,7 @@ dependencies {
 ### 通过反射方式调用编译时创建的bindView函数
 
 ```kotlin
-package com.example.learn.annotation
+package com.example.annotation
 
 import android.util.Log
 

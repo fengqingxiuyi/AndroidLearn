@@ -8,4 +8,4 @@ include ':annotation'
 include ':compiler'
 include ':plugin'
 include ':app'
-rootProject.name = "learn"
+rootProject.name = "AndroidLearn"
