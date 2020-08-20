@@ -168,7 +168,6 @@ package com.example.compiler
 apply plugin: 'kotlin-kapt'
 //省略一些内容
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
     //省略一些内容
     //编译时注解
     implementation project(":annotation")
@@ -217,3 +216,8 @@ object Binding {
 Binding.bindCompile(this)
 bindCompileText?.text = "Binding Compile Success"
 ```
+
+## 测试类
+
+- MainActivity：测试多个id的情况
+- ConstraintActivity：测试在另外一个类中的情况

@@ -35,6 +35,7 @@ class MainActivity : BaseActivity() {
     @BindCompile(R.id.bindCompileText)
     var bindCompileText: TextView? = null
 
+    //编译时注解-测试多个id的情况
     @BindCompile(R.id.bindCompileText2)
     var bindCompileText2: TextView? = null
 

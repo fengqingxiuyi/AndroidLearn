@@ -13,7 +13,7 @@ import com.example.learn.R
  */
 class ConstraintActivity : BaseActivity() {
 
-    //编译时注解 在另外一个类中测试
+    //编译时注解-测试在另外一个类中的情况
     @BindCompile(R.id.myTextView) var myTextView: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

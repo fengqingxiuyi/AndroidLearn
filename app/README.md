@@ -8,7 +8,7 @@
 app
   |--src/main/java/com/example/learn //多级目录折叠
        |--algorithm //算法
-       |--annotation //运行时注解
+       |--annotation //运行时注解，测试类：MainActivity
        |--constraint //ConstraintLayout与RelativeLayout性能分析
        |--download //测试download模块
        |--jetpack //https://developer.android.com/jetpack
