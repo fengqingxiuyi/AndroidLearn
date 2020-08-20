@@ -8,6 +8,7 @@
 app
   |--src/main/java/com/example/learn //多级目录折叠
        |--algorithm //算法
+       |--anim //实现点赞高光动画
        |--annotation //运行时注解，测试类：MainActivity
        |--constraint //ConstraintLayout与RelativeLayout性能分析
        |--download //测试download模块
@@ -23,6 +24,8 @@ app
            |--viewswitcher //ViewSwitcher使用示例
        |--webview //WebView
   |--res
+       |--anim //点赞高光动画相关资源
+            |--raw //存放了动画的设计和规则
        |--imagescaletype //ImageScaleTypeActivity相关资源
        |--main //MainActivity相关资源
        |--viewswitcher //ViewSwitcherActivity相关资源

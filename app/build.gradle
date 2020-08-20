@@ -13,6 +13,7 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/anim',
                     'src/main/res/download',
                     'src/main/res/webview',
                     'src/main/res/imagescaletype',

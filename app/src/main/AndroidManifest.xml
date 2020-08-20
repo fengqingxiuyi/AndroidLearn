@@ -22,6 +22,11 @@
         <activity android:name=".ui.imagescaletype.ImageScaleTypeActivity" />
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".download.DownloadActivity" />
+        <activity
+            android:name=".anim.star.StarAnimActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
     </application>
 
 </manifest>

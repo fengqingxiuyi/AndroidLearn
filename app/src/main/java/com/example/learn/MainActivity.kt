@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.TextView
 import com.example.annotation.BindCompile
 import com.example.common.BaseActivity
+import com.example.learn.anim.bean.StarIntentParamBean
+import com.example.learn.anim.star.StarAnimActivity
 import com.example.learn.annotation.BindRuntime
 import com.example.learn.annotation.Binding
 import com.example.learn.constraint.ConstraintActivity
@@ -86,5 +88,12 @@ class MainActivity : BaseActivity() {
 
     fun openDownload(view: View) {
         startActivity(Intent(this, DownloadActivity::class.java))
+    }
+
+    fun loadGif(view: View) {
+        val intent = Intent(this, StarAnimActivity::class.java)
+        intent.putExtra(StarIntentParamBean.TITLE, "点个赞")
+        intent.putExtra(StarIntentParamBean.CONTENT, "完成任务了，继续加油！")
+        startActivity(intent)
     }
 }
