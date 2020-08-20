@@ -17,4 +17,6 @@ dependencies {
     api project(":ui")
     //业务无关工具库
     api project(":utils")
+    //摇一摇上传屏幕截图
+    implementation project(":shake")
 }

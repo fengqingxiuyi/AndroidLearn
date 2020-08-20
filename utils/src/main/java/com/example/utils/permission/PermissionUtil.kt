@@ -11,6 +11,7 @@ object PermissionUtil {
     /**
      * REQUEST READ_PHONE_STATE
      */
+    @JvmStatic
     fun requestPhonePermission(
         activity: CheckPermissionActivity,
         permissionCallback: PermissionCallback?
@@ -37,6 +38,7 @@ object PermissionUtil {
             })
     }
 
+    @JvmStatic
     fun hasPhonePermission(context: Context): Boolean {
         return context.checkCallingOrSelfPermission(
             Manifest.permission.READ_PHONE_STATE
@@ -46,6 +48,7 @@ object PermissionUtil {
     /**
      * REQUEST ACCESS_FINE_LOCATION
      */
+    @JvmStatic
     fun requestLocationPermission(
         activity: CheckPermissionActivity,
         permissionCallback: PermissionCallback?
@@ -72,6 +75,7 @@ object PermissionUtil {
             })
     }
 
+    @JvmStatic
     fun hasLocationPermission(context: Context): Boolean {
         return context.checkCallingOrSelfPermission(
             Manifest.permission.ACCESS_FINE_LOCATION
@@ -81,6 +85,7 @@ object PermissionUtil {
     /**
      * REQUEST WRITE_EXTERNAL_STORAGE
      */
+    @JvmStatic
     fun requestStoragePermission(
         activity: CheckPermissionActivity,
         permissionCallback: PermissionCallback?
@@ -107,6 +112,7 @@ object PermissionUtil {
             })
     }
 
+    @JvmStatic
     fun hasStoragePermission(context: Context): Boolean {
         return context.checkCallingOrSelfPermission(
             Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -116,6 +122,7 @@ object PermissionUtil {
     /**
      * REQUEST CAMERA
      */
+    @JvmStatic
     fun requestCameraPermission(
         activity: CheckPermissionActivity,
         permissionCallback: PermissionCallback?
@@ -142,6 +149,7 @@ object PermissionUtil {
             })
     }
 
+    @JvmStatic
     fun hasCameraPermission(context: Context): Boolean {
         return context.checkCallingOrSelfPermission(
             Manifest.permission.CAMERA

@@ -22,6 +22,8 @@ learn
        |--README.md //lint教程
   |--plugin //Gradle插件模块，内部示例：APK文件名替换插件
        |--README.md //Gradle插件使用教程
+  |--shake //摇一摇上传屏幕截图业务模块
+       |--README.md //摇一摇上传屏幕截图业务模块说明
   |--ui //业务无关UI组件库
        |--README.md //ui模块说明
   |--utils //业务无关工具库
