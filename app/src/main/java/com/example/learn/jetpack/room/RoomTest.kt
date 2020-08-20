@@ -10,7 +10,7 @@ import com.example.utils.LogUtil
 object RoomTest {
 
     /**
-     * 问题：1(未解决). 使用小写的thread开启线程，有时候会报java.lang.NullPointerException:
+     * 问题TODO：1(未解决). 使用小写的thread开启线程，有时候会报java.lang.NullPointerException:
      * Attempt to invoke virtual method 'void java.lang.ThreadGroup.addUnstarted()' on a null object reference
      *
      * 其他：ROOM需要借助kapt，在编译时根据注解(如@Dao、@Database)生成实现类，实现类路径如下：
