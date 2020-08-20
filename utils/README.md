@@ -9,4 +9,5 @@ utils
   |--src/main/java/com/example/utils //多级目录折叠
        |--permission //运行时申请权限模块
        |--LogUtil //打印日志工具类
+       |--StatusBarUtil //控制状态栏的工具类
 ```
