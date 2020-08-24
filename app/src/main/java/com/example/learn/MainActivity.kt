@@ -15,6 +15,8 @@ import com.example.learn.download.DownloadActivity
 import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
+import com.example.learn.ui.appbarlayout.AppbarLayoutActivity
+import com.example.learn.ui.appbarlayout.AppbarLayoutActivity2
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.webview.WebViewActivity
@@ -95,5 +97,13 @@ class MainActivity : BaseActivity() {
         intent.putExtra(StarIntentParamBean.TITLE, "点个赞")
         intent.putExtra(StarIntentParamBean.CONTENT, "完成任务了，继续加油！")
         startActivity(intent)
+    }
+
+    fun openAppbarLayout(view: View) {
+        startActivity(Intent(this, AppbarLayoutActivity::class.java))
+    }
+
+    fun openAppbarLayout2(view: View) {
+        startActivity(Intent(this, AppbarLayoutActivity2::class.java))
     }
 }

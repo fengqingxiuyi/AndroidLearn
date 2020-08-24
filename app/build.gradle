@@ -14,6 +14,7 @@ android {
         main {
             res.srcDirs = [
                     'src/main/res/anim',
+                    'src/main/res/appbarlayout',
                     'src/main/res/download',
                     'src/main/res/webview',
                     'src/main/res/imagescaletype',
@@ -39,9 +40,6 @@ android.applicationVariants.all { variant ->
 }
 
 dependencies {
-    //https://developer.android.com/training/constraint-layout
-    //https://developer.android.com/jetpack/androidx/releases/constraintlayout
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
     //https://developer.android.com/guide/topics/ui/layout/recyclerview
     //https://developer.android.com/jetpack/androidx/releases/recyclerview
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"

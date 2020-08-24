@@ -27,6 +27,8 @@
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity android:name=".ui.appbarlayout.AppbarLayoutActivity"/>
+        <activity android:name=".ui.appbarlayout.AppbarLayoutActivity2"/>
     </application>
 
 </manifest>

@@ -20,13 +20,15 @@ app
        |--lint //lint功能验证示例
        |--single //单例汇总
        |--ui //UI，暂不拆分为组件的类会放在这里，否则会放在UI组件库中
-           |--bezier //贝塞尔曲线学习
+           |--appbarlayout //AppBarLayout使用示例
+           |--bezier //贝塞尔曲线使用示例
            |--imagescaletype //ImageScaleType各类型区别
            |--viewswitcher //ViewSwitcher使用示例
        |--webview //WebView
   |--res
        |--anim //点赞高光动画相关资源
             |--raw //存放了动画的设计和规则
+       |--appbarlayout //AppbarLayoutActivity相关资源
        |--imagescaletype //ImageScaleTypeActivity相关资源
        |--main //MainActivity相关资源
        |--viewswitcher //ViewSwitcherActivity相关资源

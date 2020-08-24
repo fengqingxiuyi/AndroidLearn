@@ -81,8 +81,8 @@
         android:layout_height="wrap_content"
         android:onClick="openDownload"
         android:text="Open Download"
-        app:layout_constraintBottom_toTopOf="@id/openImageScaleType"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/loadGif"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/loadGif"
@@ -92,5 +92,23 @@
         android:text="Load Gif"
         app:layout_constraintBottom_toTopOf="@id/openWebView"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/openAppbarLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openAppbarLayout"
+        android:text="Open AppbarLayout"
+        app:layout_constraintBottom_toTopOf="@id/openAppbarLayout2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/openAppbarLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openAppbarLayout2"
+        android:text="Open openAppbarLayout2"
+        app:layout_constraintBottom_toTopOf="@id/openImageScaleType"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
