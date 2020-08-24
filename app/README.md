@@ -20,6 +20,7 @@ app
        |--lint //lint功能验证示例
        |--single //单例汇总
        |--ui //UI，暂不拆分为组件的类会放在这里，否则会放在UI组件库中
+           |--bezier //贝塞尔曲线学习
            |--imagescaletype //ImageScaleType各类型区别
            |--viewswitcher //ViewSwitcher使用示例
        |--webview //WebView

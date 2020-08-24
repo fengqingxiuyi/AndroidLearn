@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <View
+    <com.example.learn.ui.bezier.BezierLearnView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -45,50 +44,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openConstraint"
-        android:text="Open ConstraintActivity"
+        android:text="Open Constraint"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/openViewSwitcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openViewSwitcher"
-        android:text="Open ViewSwitcherActivity"
-        app:layout_constraintBottom_toTopOf="@id/openConstraint"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:text="Open ViewSwitcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/openImageScaleType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openImageScaleType"
-        android:text="Open ImageScaleTypeActivity"
-        app:layout_constraintBottom_toTopOf="@id/openViewSwitcher"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:text="Open ImageScaleType"
+        app:layout_constraintBottom_toTopOf="@id/openConstraint"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/openWebView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openWebView"
-        android:text="Open WebViewActivity"
-        app:layout_constraintBottom_toTopOf="@id/openImageScaleType"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:text="Open WebView"
+        app:layout_constraintBottom_toTopOf="@id/openViewSwitcher"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/openDownload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openDownload"
-        android:text="Open DownloadActivity"
-        app:layout_constraintBottom_toTopOf="@id/openWebView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:text="Open Download"
+        app:layout_constraintBottom_toTopOf="@id/openImageScaleType"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/loadGif"
@@ -96,8 +90,7 @@
         android:layout_height="wrap_content"
         android:onClick="loadGif"
         android:text="Load Gif"
-        app:layout_constraintBottom_toTopOf="@id/openDownload"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/openWebView"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
