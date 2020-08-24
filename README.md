@@ -16,6 +16,7 @@ learn
        |--README.md //编译时注解使用教程
   |--download //断点下载模块
        |--README.md //download模块说明
+  |--git //git操作说明
   |--lintaar //别的模块依赖该模块，就能使用自定义的lint功能
        |--README.md //lintaar模块说明
   |--lintjar //实现自定义lint功能的模块
