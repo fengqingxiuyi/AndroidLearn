@@ -3,6 +3,7 @@ package com.example.common
 import android.content.Context
 import android.os.Bundle
 import com.example.shake.ShakeSensorManager
+import com.example.utils.ActivitiesManager
 import com.example.utils.permission.CheckPermissionActivity
 
 /**
@@ -19,6 +20,7 @@ open class BaseActivity : CheckPermissionActivity() {
         super.onCreate(savedInstanceState)
         activity = this
         context = applicationContext
+        ActivitiesManager.getInstance().addActivity(activity)
     }
 
     override fun onResume() {
@@ -29,6 +31,11 @@ open class BaseActivity : CheckPermissionActivity() {
     override fun onPause() {
         super.onPause()
         ShakeSensorManager.getInstance().onActivityPaused()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivitiesManager.getInstance().remove(activity)
     }
 
 }

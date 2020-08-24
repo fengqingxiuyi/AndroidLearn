@@ -9,4 +9,5 @@ common
   |--src/main/java/com/example/common //多级目录折叠
        |--global //全局业务工具
        |--BaseActivity //业务基础Activity
+       |--UserAgent //业务通用的UserAgent
 ```

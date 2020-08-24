@@ -13,4 +13,9 @@ object AppGlobal {
      * 默认使用该全局上下文
      */
     lateinit var appContext: Context
+
+    /**
+     * true 表示前台 false 表示后台
+     */
+    var appForeground: Boolean = false
 }

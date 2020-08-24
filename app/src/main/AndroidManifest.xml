@@ -20,7 +20,7 @@
         <activity android:name=".constraint.ConstraintActivity" />
         <activity android:name=".ui.viewswitcher.ViewSwitcherActivity" />
         <activity android:name=".ui.imagescaletype.ImageScaleTypeActivity" />
-        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".webview.WebViewSimpleActivity" />
         <activity android:name=".download.DownloadActivity" />
         <activity
             android:name=".anim.star.StarAnimActivity"

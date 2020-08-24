@@ -55,4 +55,6 @@ dependencies {
     kapt project(":compiler")
     //业务通用模块
     implementation project(":common")
+    //Webview
+    implementation project(":webview")
 }

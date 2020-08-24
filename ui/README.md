@@ -7,4 +7,6 @@
 ```
 ui
   |--src/main/java/com/example/ui //多级目录折叠
+       |--dialog //基础Dialog组件
+       |--toast //全局Toast组件
 ```

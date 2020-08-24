@@ -1,4 +1,4 @@
-package com.example.ui;
+package com.example.ui.dialog;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -19,6 +19,8 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
+
+import com.example.ui.R;
 
 import org.jetbrains.annotations.NotNull;
 

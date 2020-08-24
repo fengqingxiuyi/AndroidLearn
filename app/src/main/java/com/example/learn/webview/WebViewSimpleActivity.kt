@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_webview.*
  * @author fqxyi
  * @date 2020/8/18
  */
-class WebViewActivity : BaseActivity() {
+class WebViewSimpleActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,7 @@ class WebViewActivity : BaseActivity() {
                 } else {
                     webView.evaluateJavascript("window.screen.width") { value ->
                         // 此处为js返回的结果
-                        Toast.makeText(this@WebViewActivity, value, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@WebViewSimpleActivity, value, Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -51,7 +51,7 @@ class WebViewActivity : BaseActivity() {
                 message: String,
                 result: JsResult
             ): Boolean {
-                Toast.makeText(this@WebViewActivity, message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@WebViewSimpleActivity, message, Toast.LENGTH_SHORT).show()
                 result.confirm()
                 return true
             }

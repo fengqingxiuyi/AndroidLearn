@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.ui.DialogBaseFragment;
+import com.example.ui.dialog.DialogBaseFragment;
 import com.example.utils.ClipboardUtil;
 import com.example.utils.DeviceUtil;
 import com.example.utils.permission.CheckPermissionActivity;
