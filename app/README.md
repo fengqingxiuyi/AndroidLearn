@@ -12,6 +12,7 @@ app
        |--annotation //运行时注解，测试类：MainActivity
        |--constraint //ConstraintLayout与RelativeLayout性能分析
        |--download //测试download模块
+       |--iconchange //动态切换应用ICON管理类
        |--jetpack //https://developer.android.com/jetpack
            |--room
            |--workmanager

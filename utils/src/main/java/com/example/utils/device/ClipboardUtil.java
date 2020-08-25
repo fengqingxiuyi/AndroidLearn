@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.utils.device;
 
 import android.content.ClipData;
 import android.content.ClipDescription;

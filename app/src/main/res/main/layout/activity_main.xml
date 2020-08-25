@@ -121,4 +121,13 @@
         app:layout_constraintBottom_toTopOf="@id/openConstraint"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/iconChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="iconChange"
+        android:text="Icon Change"
+        app:layout_constraintBottom_toTopOf="@id/openDownload"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

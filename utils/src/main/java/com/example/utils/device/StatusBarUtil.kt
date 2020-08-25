@@ -1,4 +1,4 @@
-package com.example.utils
+package com.example.utils.device
 
 import android.app.Activity
 import android.content.Context
@@ -59,9 +59,14 @@ object StatusBarUtil {
             return
         }
         val layoutParams: ViewGroup.LayoutParams = view.layoutParams
-        layoutParams.height = getStatusBarHeight(activity)
+        layoutParams.height =
+            getStatusBarHeight(activity)
         view.layoutParams = layoutParams
-        view.setBackgroundColor(getStatusBarColor(activity))
+        view.setBackgroundColor(
+            getStatusBarColor(
+                activity
+            )
+        )
     }
 
     /**
@@ -82,7 +87,9 @@ object StatusBarUtil {
         )
         statusView!!.layoutParams = params
         // 设置背景色
-        statusView!!.setBackgroundColor(getStatusBarColor(activity))
+        statusView!!.setBackgroundColor(
+            getStatusBarColor(activity)
+        )
         // 添加 statusView 到布局中
         val decorView: ViewGroup = activity.window.decorView as ViewGroup
         decorView.addView(statusView)
@@ -105,7 +112,10 @@ object StatusBarUtil {
             firstParams.topMargin = 0
             statusView!!.visibility = View.GONE
         } else {
-            firstParams.topMargin = getStatusBarHeight(activity)
+            firstParams.topMargin =
+                getStatusBarHeight(
+                    activity
+                )
             statusView!!.visibility = View.VISIBLE
         }
         firstView.layoutParams = firstParams

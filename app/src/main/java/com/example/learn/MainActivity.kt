@@ -12,6 +12,8 @@ import com.example.learn.annotation.BindRuntime
 import com.example.learn.annotation.Binding
 import com.example.learn.constraint.ConstraintActivity
 import com.example.learn.download.DownloadActivity
+import com.example.learn.iconchange.IconChangeConstant
+import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
@@ -21,7 +23,7 @@ import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.webview.WebViewSimpleActivity
 import com.example.utils.LogUtil
-import com.example.utils.StatusBarUtil
+import com.example.utils.device.StatusBarUtil
 import com.example.webview_module.WebviewActivity
 import com.example.webview_module.constants.WebviewConstant
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -113,5 +115,13 @@ class MainActivity : BaseActivity() {
         val intent = Intent(this, WebviewActivity::class.java)
         intent.putExtra(WebviewConstant.EXTRA_URL, "https://m.mamhao.com/")
         startActivity(intent)
+    }
+
+    /**
+     * 测试在前台切换应用ICON，会杀掉应用，
+     * 并且会出现点两次应用ICON才能启动应用的问题，所以应该在后台切换ICON
+     */
+    fun iconChange(view: View) {
+        IconChangeManager.changeIcon(this, IconChangeConstant.CHANGE)
     }
 }

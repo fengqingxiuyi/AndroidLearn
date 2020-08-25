@@ -3,6 +3,8 @@ package com.example.learn
 import android.app.Activity
 import android.app.Application
 import com.example.common.global.AppGlobal
+import com.example.learn.iconchange.IconChangeConstant
+import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.koin.appModule
 import com.example.learn.webview.JsInterfaceImpl
 import com.example.ui.toast.ToastUtil
@@ -46,9 +48,14 @@ class MyApplication : Application() {
     private fun initAppGlobal() {
         AppGlobal.application = this
         AppGlobal.appContext = applicationContext
-        AppLifecycleMonitor().setForegroundListener {
+        val appLifecycleMonitor = AppLifecycleMonitor()
+        appLifecycleMonitor.setForegroundListener {
             AppGlobal.appForeground = it
+            if (!it) { //处于后台状态
+                IconChangeManager.changeIcon(this, IconChangeConstant.CHANGE)
+            }
         }
+        registerActivityLifecycleCallbacks(appLifecycleMonitor)
     }
 
     private fun initToast() {

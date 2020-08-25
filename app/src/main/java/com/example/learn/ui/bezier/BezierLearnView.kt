@@ -6,8 +6,8 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
-import com.example.utils.DensityUtil
-import com.example.utils.DeviceUtil
+import com.example.utils.device.DensityUtil
+import com.example.utils.device.DeviceUtil
 
 /**
  * @author fqxyi

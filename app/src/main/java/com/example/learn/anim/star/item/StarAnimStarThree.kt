@@ -3,7 +3,7 @@ package com.example.learn.anim.star.item
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.widget.ImageView
-import com.example.utils.DensityUtil
+import com.example.utils.device.DensityUtil
 
 /**
  * @author fqxyi
