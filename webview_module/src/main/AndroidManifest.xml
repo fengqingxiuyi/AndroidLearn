@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.webview_module">
+
+    <application>
+
+        <!--                  activity                  -->
+
+        <activity
+            android:name=".WebviewActivity"
+            android:process=":webview"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--                  service                  -->
+
+        <service
+            android:name=".service.PreWebService"
+            android:process=":webview" />
+
+        <service android:name=".service.MainRemoteService" />
+
+    </application>
+
+</manifest>

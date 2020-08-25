@@ -12,6 +12,7 @@ import com.example.utils.DeviceUtil
  */
 object UserAgent {
 
+    @JvmStatic
     fun getUserAgent(context: Context): String {
         return StringBuilder().append(Build.MODEL).append(",")
             .append(DeviceUtil.getScreenWidth(context)).append("x")

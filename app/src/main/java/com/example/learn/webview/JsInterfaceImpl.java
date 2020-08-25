@@ -7,8 +7,8 @@ import android.text.TextUtils;
 import com.example.learn.BuildConfig;
 import com.example.ui.toast.ToastUtil;
 import com.example.utils.ActivitiesManager;
-import com.example.webview.IWebviewBinderCallback;
-import com.example.webview.js.JsBridge;
+import com.example.webview_module.IWebviewBinderCallback;
+import com.example.webview_module.js.JsBridge;
 
 /**
  * JS交互实现类，在{@link JsBridge}类中注册

@@ -22,8 +22,8 @@ import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.webview.WebViewSimpleActivity
 import com.example.utils.LogUtil
 import com.example.utils.StatusBarUtil
-import com.example.webview.constants.WebviewConstant
-import com.example.webview.view.WebviewActivity
+import com.example.webview_module.WebviewActivity
+import com.example.webview_module.constants.WebviewConstant
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -111,7 +111,7 @@ class MainActivity : BaseActivity() {
 
     fun openWebView(view: View) {
         val intent = Intent(this, WebviewActivity::class.java)
-        intent.putExtra(WebviewConstant.EXTRA_URL, "http://www.baidu.com/")
+        intent.putExtra(WebviewConstant.EXTRA_URL, "https://m.mamhao.com/")
         startActivity(intent)
     }
 }

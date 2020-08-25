@@ -56,5 +56,5 @@ dependencies {
     //业务通用模块
     implementation project(":common")
     //Webview
-    implementation project(":webview")
+    implementation project(":webview_module")
 }
