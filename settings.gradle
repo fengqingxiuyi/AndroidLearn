@@ -1,13 +1,33 @@
-include ':webview_module'
-include ':shake'
-include ':common'
-include ':download'
-include ':utils'
+include ':app'
+
+include ':annotation'
+include ':annotationcompiler'
+include ':gradleplugin'
 include ':lintaar'
 include ':lintjar'
-include ':ui'
-include ':annotation'
-include ':compiler'
-include ':plugin'
-include ':app'
+
 rootProject.name = "AndroidLearn"
+
+def module = [
+        '/module/common',
+        '/module/shake',
+        '/module/webview_module',
+]
+module.forEach { path ->
+    String name = path.substring(path.lastIndexOf("/") + 1)
+    include name
+    project(":${name}").projectDir = new File(rootProject.getProjectDir(), path)
+}
+
+
+def library = [
+        '/library/download',
+        '/library/partition',
+        '/library/ui',
+        '/library/utils',
+]
+library.forEach { path ->
+    String name = path.substring(path.lastIndexOf("/") + 1)
+    include name
+    project(":${name}").projectDir = new File(rootProject.getProjectDir(), path)
+}

@@ -52,7 +52,7 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:$work_version"
     //编译时注解
     implementation project(":annotation")
-    kapt project(":compiler")
+    kapt project(":annotationcompiler")
     //业务通用模块
     implementation project(":common")
     //Webview
