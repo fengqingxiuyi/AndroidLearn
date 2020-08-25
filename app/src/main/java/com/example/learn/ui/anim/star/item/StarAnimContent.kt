@@ -1,4 +1,4 @@
-package com.example.learn.anim.star.item
+package com.example.learn.ui.anim.star.item
 
 import android.animation.Animator
 import android.animation.ValueAnimator

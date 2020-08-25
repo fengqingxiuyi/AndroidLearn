@@ -1,4 +1,4 @@
-package com.example.learn.anim.star
+package com.example.learn.ui.anim.star
 
 import android.app.Activity
 import android.content.Context
@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.RelativeLayout
 import com.example.learn.R
-import com.example.learn.anim.star.item.*
+import com.example.learn.ui.anim.star.item.*
 import com.example.utils.anim.AnimGather
 import com.example.utils.anim.AnimGather.HandlerCall
 import com.example.utils.anim.AnimStatusListener

@@ -13,12 +13,12 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
-                    'src/main/res/anim',
-                    'src/main/res/appbarlayout',
                     'src/main/res/download',
+                    'src/main/res/ui/anim',
+                    'src/main/res/ui/appbarlayout',
+                    'src/main/res/ui/imagescaletype',
+                    'src/main/res/ui/viewswitcher',
                     'src/main/res/webview',
-                    'src/main/res/imagescaletype',
-                    'src/main/res/viewswitcher',
                     'src/main/res/main',
                     'src/main/res'
             ]
@@ -40,9 +40,6 @@ android.applicationVariants.all { variant ->
 }
 
 dependencies {
-    //https://developer.android.com/guide/topics/ui/layout/recyclerview
-    //https://developer.android.com/jetpack/androidx/releases/recyclerview
-    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
     //https://developer.android.com/topic/libraries/architecture/room
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"

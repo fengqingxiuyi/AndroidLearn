@@ -1,4 +1,4 @@
-package com.example.learn.anim.star.item
+package com.example.learn.ui.anim.star.item
 
 import android.animation.Animator
 import android.animation.ValueAnimator
@@ -8,12 +8,12 @@ import com.example.utils.device.DensityUtil
 /**
  * @author fqxyi
  * @date 2018/3/17
- * 星星3
+ * 星星1
  */
-class StarAnimStarTwo(var imageView: ImageView) {
+class StarAnimStarOne(var imageView: ImageView) {
 
-    var halfParentWidth = DensityUtil.dp2px(imageView.context, 135f)
-    var halfParentHeight = DensityUtil.dp2px(imageView.context, 130f)
+    private var halfParentWidth = DensityUtil.dp2px(imageView.context, 135f)
+    private var halfParentHeight = DensityUtil.dp2px(imageView.context, 130f)
 
     fun createAnim(): Animator {
         onRest()
@@ -22,8 +22,8 @@ class StarAnimStarTwo(var imageView: ImageView) {
         valueAnimator.addUpdateListener { animator ->
             val currentValue = animator.animatedValue as Int
             // 平移
-            imageView.x = halfParentWidth + currentValue / 18.toFloat()
-            imageView.y = halfParentHeight - currentValue / 72.toFloat()
+            imageView.x = halfParentWidth - currentValue / 11.toFloat()
+            imageView.y = halfParentHeight + currentValue / 36.toFloat()
             // 缩放
             when {
                 currentValue < 1600 -> {
@@ -35,24 +35,20 @@ class StarAnimStarTwo(var imageView: ImageView) {
                     imageView.scaleY = 1f - (currentValue - 1600) / 800f
                 }
                 currentValue < 3200 -> {
-                    imageView.scaleX = (currentValue - 2400) / 800f
-                    imageView.scaleY = (currentValue - 2400) / 800f
-                }
-                currentValue < 3600 -> {
-                    imageView.scaleX = 1f - (currentValue - 3200) / 400f * 0.61f
-                    imageView.scaleY = 1f - (currentValue - 3200) / 400f * 0.61f
+                    imageView.scaleX = (currentValue - 2400) / 800f * 1.32f
+                    imageView.scaleY = (currentValue - 2400) / 800f * 1.32f
                 }
                 currentValue < 4000 -> {
-                    imageView.scaleX = 0.39f + (currentValue - 3600) / 400f * 0.35f
-                    imageView.scaleY = 0.39f + (currentValue - 3600) / 400f * 0.35f
+                    imageView.scaleX = 1.32f - (currentValue - 3200) / 800f * 0.82f
+                    imageView.scaleY = 1.32f - (currentValue - 3200) / 800f * 0.82f
                 }
                 currentValue < 4400 -> {
-                    imageView.scaleX = 0.74f + (currentValue - 4000) / 400f * 0.34f
-                    imageView.scaleY = 0.74f + (currentValue - 4000) / 400f * 0.34f
+                    imageView.scaleX = 0.5f + (currentValue - 4000) / 400f * 0.26f
+                    imageView.scaleY = 0.5f + (currentValue - 4000) / 400f * 0.26f
                 }
                 currentValue == 4400 -> {
-                    imageView.scaleX = 1.08f
-                    imageView.scaleY = 1.08f
+                    imageView.scaleX = 1.09f
+                    imageView.scaleY = 1.09f
                 }
             }
         }

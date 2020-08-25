@@ -1,8 +1,8 @@
-package com.example.learn.anim.star
+package com.example.learn.ui.anim.star
 
 import android.app.Activity
 import android.os.Bundle
-import com.example.learn.anim.bean.StarIntentParamBean
+import com.example.learn.ui.anim.bean.StarIntentParamBean
 import com.example.utils.anim.AnimFinishCallback
 
 /**

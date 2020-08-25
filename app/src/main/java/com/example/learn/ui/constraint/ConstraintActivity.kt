@@ -1,4 +1,4 @@
-package com.example.learn.constraint
+package com.example.learn.ui.constraint
 
 import android.os.Bundle
 import android.widget.TextView

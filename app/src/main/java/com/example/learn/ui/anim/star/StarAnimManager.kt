@@ -1,4 +1,4 @@
-package com.example.learn.anim.star
+package com.example.learn.ui.anim.star
 
 import android.app.Activity
 import android.view.View

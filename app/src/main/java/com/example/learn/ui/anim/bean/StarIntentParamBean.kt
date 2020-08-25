@@ -1,4 +1,4 @@
-package com.example.learn.anim.bean
+package com.example.learn.ui.anim.bean
 
 /**
  * @author fqxyi

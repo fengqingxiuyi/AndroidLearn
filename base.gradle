@@ -39,5 +39,9 @@ dependencies {
     //https://developer.android.com/training/constraint-layout
     //https://developer.android.com/jetpack/androidx/releases/constraintlayout
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    //https://developer.android.com/guide/topics/ui/layout/recyclerview
+    //https://developer.android.com/jetpack/androidx/releases/recyclerview
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    //
     implementation "com.google.android.material:material:$material_version"
 }
