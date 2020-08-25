@@ -49,19 +49,21 @@ class MyApplication : Application() {
         AppGlobal.application = this
         AppGlobal.appContext = applicationContext
         val appLifecycleMonitor = AppLifecycleMonitor()
-        appLifecycleMonitor.setForegroundListener {
-            AppGlobal.appForeground = it
-            if (!it) { //处于后台状态
-                IconChangeManager.changeIcon(this, IconChangeConstant.CHANGE)
+        appLifecycleMonitor.setForegroundListener(object : AppLifecycleMonitor.ForegroundListener {
+            override fun getForegroundStatus(foreground: Boolean) {
+                AppGlobal.appForeground = foreground
+                if (!foreground) { //处于后台状态
+                    IconChangeManager.changeIcon(this@MyApplication, IconChangeConstant.CHANGE)
+                }
             }
-        }
+        })
         registerActivityLifecycleCallbacks(appLifecycleMonitor)
     }
 
     private fun initToast() {
         ToastUtil.init(object : ToastUtil.ToastListener {
-            override fun getLastAliveActivity(): Activity {
-                return ActivitiesManager.getInstance().lastAliveActivity
+            override fun getLastAliveActivity(): Activity? {
+                return ActivitiesManager.getInstance().getLastAliveActivity()
             }
 
             override fun isForeground(): Boolean {

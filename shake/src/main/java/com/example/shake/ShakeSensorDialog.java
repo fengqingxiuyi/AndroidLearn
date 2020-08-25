@@ -57,7 +57,7 @@ public class ShakeSensorDialog extends DialogBaseFragment {
             if (msg.what == WEBHOOK_TOKEN) {
                 String responseUrl = (String) msg.obj;
 
-                ClipboardUtil.copy(context, responseUrl);
+                ClipboardUtil.INSTANCE.copy(context, responseUrl);
                 toast("文件上传成功, 文件链接已复制到剪切板，可直接访问");
 
                 ShakeSensorUtil.getInstance().postUploadJson(

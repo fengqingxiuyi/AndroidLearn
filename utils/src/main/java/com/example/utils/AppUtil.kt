@@ -1,5 +1,6 @@
 package com.example.utils
 
+import android.app.ActivityManager
 import android.content.Context
 import android.os.Process
 import android.text.TextUtils
@@ -81,14 +82,29 @@ object AppUtil {
             }
             return processName
         } catch (throwable: Throwable) {
-            LogUtil.e(throwable)
+            throwable.printStackTrace()
         } finally {
             try {
                 reader?.close()
             } catch (exception: IOException) {
-                LogUtil.e(exception)
+                exception.printStackTrace()
             }
         }
         return ""
+    }
+
+    /**
+     * 彻底退出应用程序
+     */
+    fun exitApp(context: Context) {
+        try {
+            ActivitiesManager.getInstance().finishAllActivity()
+            val activityMgr = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            activityMgr.restartPackage(context.packageName)
+            System.exit(0)
+            Process.killProcess(Process.myPid())
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 }
