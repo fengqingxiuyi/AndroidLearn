@@ -62,7 +62,7 @@ public class ShakeSensorUtil {
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", filePath.substring(filePath.lastIndexOf("/")+1),
-                        RequestBody.create(ShakeSensorConstant.MEDIA_TYPE_PNG, new File(filePath)))
+                        RequestBody.create(ShakeSensorConstant.Companion.getMEDIA_TYPE_PNG(), new File(filePath)))
                 .build();
         Request request = new Request.Builder()
                 .url(url)
@@ -99,7 +99,7 @@ public class ShakeSensorUtil {
         }
         Request request = new Request.Builder()
                 .url(url)
-                .post(RequestBody.create(ShakeSensorConstant.MEDIA_TYPE_JSON, json))
+                .post(RequestBody.create(ShakeSensorConstant.Companion.getMEDIA_TYPE_JSON(), json))
                 .build();
         WHTOkHttpClient.newCall(request).enqueue(new Callback() {
             @Override

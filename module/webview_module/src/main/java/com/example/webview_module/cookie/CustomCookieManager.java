@@ -59,7 +59,7 @@ public class CustomCookieManager implements ICookieConfig {
         JSONObject infoObject = new JSONObject();
         //此处往infoObject中添加自定义的用户信息
         try {
-            userInfo = AesUtils.Encrypt(infoObject.toString(), ICookieConfig.h5key);
+            userInfo = AesUtils.INSTANCE.Encrypt(infoObject.toString(), ICookieConfig.h5key);
         } catch (Exception e) {
             LogUtil.e(e);
         }

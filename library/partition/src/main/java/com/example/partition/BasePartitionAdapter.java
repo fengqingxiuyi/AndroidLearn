@@ -68,14 +68,14 @@ public abstract class BasePartitionAdapter extends RecyclerView.Adapter<Recycler
         if (bean == null) {
             throw new RuntimeException("BasePartitionAdapter getItemViewType ItemViewTypeBean == null");
         }
-        if (bean.itemViewType < 0) {
+        if (bean.getItemViewType() < 0) {
             throw new RuntimeException("BasePartitionAdapter getItemViewType ItemViewTypeBean.itemViewType < 0");
         }
         int key;
-        if (bean.repeat) {
-            key = bean.itemViewType;
+        if (bean.getRepeat()) {
+            key = bean.getItemViewType();
         } else {
-            key = bean.itemViewType + partitionPosition * 1000;
+            key = bean.getItemViewType() + partitionPosition * 1000;
         }
         viewTypePositionArr.put(key, partitionPosition);
         return key;

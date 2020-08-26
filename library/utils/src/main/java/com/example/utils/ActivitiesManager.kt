@@ -36,7 +36,11 @@ class ActivitiesManager private constructor() {
     }
 
     fun remove(activity: Activity) {
-        activityStack?.remove(activity)
+        try {
+            activityStack?.remove(activity)
+        } catch (e : Exception) {
+            e.printStackTrace()
+        }
     }
 
     /**

@@ -44,6 +44,43 @@ learn
 
 ## FAQ
 
+### Fragment中findViewById使用注意点
+
+```kotlin
+package com.example.learn.ui.appbarlayout
+
+class AppbarLayoutFragment : Fragment() {
+
+//    private lateinit var recycler: RecyclerView
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.appbar_layout_fragment, container, false)
+        /**
+         * 如果init函数在return之前执行，那么下面这句findViewById不能省略，否则会抛出java.lang.IllegalStateException: Fragment already added异常
+         */
+//        recycler = view.findViewById<View>(R.id.recycler) as RecyclerView
+//        init()
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        /**
+         * init函数正确使用位置应该在这里
+         */
+        init()
+    }
+
+    private fun init() {
+        recycler.adapter
+    }
+}
+```
+
 ### Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6
 
 使用`OneTimeWorkRequestBuilder`类时报以上错误

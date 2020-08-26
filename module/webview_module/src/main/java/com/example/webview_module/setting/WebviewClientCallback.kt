@@ -1,9 +1,7 @@
-package com.example.webview_module.setting;
+package com.example.webview_module.setting
 
-import android.webkit.WebView;
+import android.webkit.WebView
 
-public interface WebviewClientCallback {
-
-    boolean shouldOverrideUrlLoading(WebView view, String url);
-
+interface WebviewClientCallback {
+    fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean
 }

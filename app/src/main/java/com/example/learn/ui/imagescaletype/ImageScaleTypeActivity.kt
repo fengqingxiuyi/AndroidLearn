@@ -2,8 +2,8 @@ package com.example.learn.ui.imagescaletype
 
 import android.app.AlertDialog
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.common.BaseActivity
 import com.example.learn.R
 import kotlinx.android.synthetic.main.activity_image_scale_type.*
 
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_image_scale_type.*
  * @author fqxyi
  * @date 2020/8/18
  */
-class ImageScaleTypeActivity : AppCompatActivity() {
+class ImageScaleTypeActivity : BaseActivity() {
 
     private val dialogBuilder: AlertDialog.Builder by lazy {
         AlertDialog.Builder(this@ImageScaleTypeActivity)

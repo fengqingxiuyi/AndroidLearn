@@ -23,12 +23,15 @@ import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.partition.PartitionActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.webview.WebViewSimpleActivity
+import com.example.ui.toast.ToastUtil
+import com.example.utils.ActivitiesManager
 import com.example.utils.LogUtil
 import com.example.utils.device.StatusBarUtil
 import com.example.webview_module.WebviewActivity
 import com.example.webview_module.constants.WebviewConstant
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import kotlin.math.abs
 
 class MainActivity : BaseActivity() {
 
@@ -128,5 +131,32 @@ class MainActivity : BaseActivity() {
 
     fun testPartition(view: View) {
         startActivity(Intent(this, PartitionActivity::class.java))
+    }
+
+    /** 点两次退出应用 start  */
+    private var lastClickTime: Long = 0
+
+    private fun exitApp(): Boolean {
+        val time = System.currentTimeMillis()
+        if (abs(time - lastClickTime) < 2000) {
+            return true
+        }
+        lastClickTime = time
+        return false
+    }
+
+    override fun onBackPressed() {
+        if (exitApp()) {
+            ActivitiesManager.getInstance().finishAllActivity()
+            finish()
+        } else {
+            ToastUtil.toast("再按一次退出程序")
+        }
+    }
+    /** 点两次退出应用 end  */
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ToastUtil.onAppExit()
     }
 }

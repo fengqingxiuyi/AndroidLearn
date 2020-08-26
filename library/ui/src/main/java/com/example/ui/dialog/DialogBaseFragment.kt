@@ -1,164 +1,121 @@
-package com.example.ui.dialog;
+package com.example.ui.dialog
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-
-import androidx.annotation.IdRes;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentActivity;
-
-import com.example.ui.R;
-
-import org.jetbrains.annotations.NotNull;
+import android.app.Activity
+import android.content.Context
+import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
+import android.view.*
+import androidx.annotation.LayoutRes
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentActivity
+import com.example.ui.R
 
 /**
  * @author fqxyi
  * @date 2020/8/20
  * 最基本的弹窗组件
  */
-public abstract class DialogBaseFragment extends DialogFragment {
+abstract class DialogBaseFragment : DialogFragment() {
 
-    protected Activity activity;
-    protected Context context;
-    protected View rootView;
+    protected lateinit var mActivity: Activity
+    protected lateinit var mContext: Context
+    private var rootView: View? = null
 
-    private boolean bottom = true;
-    private boolean fromBottom = true;
+    private var bottom = true
+    private var fromBottom = true
 
-    int width = ViewGroup.LayoutParams.MATCH_PARENT;
-    int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+    var width = ViewGroup.LayoutParams.MATCH_PARENT
+    var height = ViewGroup.LayoutParams.WRAP_CONTENT
 
-    private boolean cancelable = true;
-    private boolean canceledOnTouchOutside = true;
+    private var cancelable = true
+    var canceledOnTouchOutside = true
 
-    private boolean isShowing = false;
+    private var isShowing = false
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        this.activity = (Activity) context;
-        this.context = activity.getApplicationContext();
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mActivity = context as Activity
+        mContext = mActivity.applicationContext
     }
 
-    @Override
-    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        Dialog dialog = getDialog();
-        if (dialog == null) {
-            return null;
-        }
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        rootView = View.inflate(context, getContentView(), null);
-
-        dialog.setCanceledOnTouchOutside(canceledOnTouchOutside);
-
-        initView(rootView);
-        return rootView;
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val dialog = dialog ?: return null
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        rootView = View.inflate(context, getContentView(), null)
+        dialog.setCanceledOnTouchOutside(canceledOnTouchOutside)
+        initView(rootView!!)
+        return rootView
     }
 
-    @Override
-    public void setCancelable(boolean cancelable) {
-        super.setCancelable(cancelable);
-        this.cancelable = cancelable;
+    override fun setCancelable(cancelable: Boolean) {
+        super.setCancelable(cancelable)
+        this.cancelable = cancelable
     }
 
-    @Override
-    public boolean isCancelable() {
-        return cancelable;
+    override fun isCancelable(): Boolean {
+        return cancelable
     }
 
-    public void setCanceledOnTouchOutside(boolean canceledOnTouchOutside) {
-        this.canceledOnTouchOutside = canceledOnTouchOutside;
-    }
+    @LayoutRes
+    abstract fun getContentView(): Int
+    abstract fun initView(view: View)
 
-    public boolean isCanceledOnTouchOutside() {
-        return canceledOnTouchOutside;
-    }
-
-    public abstract @LayoutRes
-    int getContentView();
-    public abstract void initView(View view);
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        Dialog dialog = getDialog();
-        if (dialog == null) {
-            return;
-        }
-        Window window = dialog.getWindow();
-
-        if (null == window) {
-            return;
-        }
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        WindowManager.LayoutParams wlp = window.getAttributes();
-
+    override fun onStart() {
+        super.onStart()
+        val dialog = dialog ?: return
+        val window = dialog.window ?: return
+        window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val wlp = window.attributes
         if (bottom) {
-            wlp.gravity = Gravity.BOTTOM;
-            window.setAttributes(wlp);
+            wlp.gravity = Gravity.BOTTOM
+            window.attributes = wlp
         }
         if (fromBottom) {
-            window.setWindowAnimations(R.style.BaseDialog_Anim);
+            window.setWindowAnimations(R.style.BaseDialog_Anim)
         }
-
-        window.setLayout(width, height);
+        window.setLayout(width, height)
     }
 
-    @Override
-    public void onDismiss(@NotNull DialogInterface dialog) {
-        super.onDismiss(dialog);
-        isShowing = false;
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        isShowing = false
     }
 
-    public void setBottom(boolean bottom) {
-        this.bottom = bottom;
+    fun setBottom(bottom: Boolean) {
+        this.bottom = bottom
     }
 
-    public void setFromBottom(boolean fromBottom) {
-        this.fromBottom = fromBottom;
+    fun setFromBottom(fromBottom: Boolean) {
+        this.fromBottom = fromBottom
     }
 
-    public void show(FragmentActivity activity) {
+    fun show(activity: FragmentActivity) {
         if (isShowing) {
-            return;
+            return
         }
-
-        isShowing = true;
+        isShowing = true
         try {
-            if (isAdded()) {
-                return;
+            if (isAdded) {
+                return
             }
-            if (activity.isFinishing()) {
-                return;
+            if (activity.isFinishing) {
+                return
             }
-
-            show(activity.getSupportFragmentManager(), getClass().getSimpleName());
-        } catch (Exception e) {
-            e.printStackTrace();
+            show(activity.supportFragmentManager, javaClass.simpleName)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 
-    public void setSize(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }
-
-    protected View findViewById(@IdRes int id) {
-        return rootView.findViewById(id);
+    fun setSize(width: Int, height: Int) {
+        this.width = width
+        this.height = height
     }
 
 }

@@ -1,9 +1,6 @@
-package com.example.webview_module.binder;
+package com.example.webview_module.binder
 
-public interface WebviewBinderCallback {
-
-    void onServiceConnected();
-
-    void callJs(String params);
-
+interface WebviewBinderCallback {
+    fun onServiceConnected()
+    fun callJs(params: String?)
 }

@@ -1,7 +1,7 @@
 package com.example.utils.anim
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @date 2018/3/18
  * 动画 状态 监听，供动画View使用
  */

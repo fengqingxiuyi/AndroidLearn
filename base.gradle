@@ -27,7 +27,6 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.core:core-ktx:$ktx_version"
     //https://developer.android.com/jetpack/androidx/releases/appcompat
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     /*
@@ -39,9 +38,6 @@ dependencies {
     //https://developer.android.com/training/constraint-layout
     //https://developer.android.com/jetpack/androidx/releases/constraintlayout
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-    //https://developer.android.com/guide/topics/ui/layout/recyclerview
-    //https://developer.android.com/jetpack/androidx/releases/recyclerview
-    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
-    //
+    //https://mvnrepository.com/artifact/com.google.android.material/material
     implementation "com.google.android.material:material:$material_version"
 }

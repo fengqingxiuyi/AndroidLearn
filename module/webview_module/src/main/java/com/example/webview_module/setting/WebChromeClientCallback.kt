@@ -1,11 +1,8 @@
-package com.example.webview_module.setting;
+package com.example.webview_module.setting
 
-import android.webkit.WebView;
+import android.webkit.WebView
 
-public interface WebChromeClientCallback {
-
-    void onProgressChanged(WebView view, int newProgress);
-
-    void onReceivedTitle(WebView view, String title);
-
+interface WebChromeClientCallback {
+    fun onProgressChanged(view: WebView?, newProgress: Int)
+    fun onReceivedTitle(view: WebView?, title: String?)
 }

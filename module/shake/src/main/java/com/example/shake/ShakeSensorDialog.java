@@ -57,7 +57,7 @@ public class ShakeSensorDialog extends DialogBaseFragment {
             if (msg.what == WEBHOOK_TOKEN) {
                 String responseUrl = (String) msg.obj;
 
-                ClipboardUtil.INSTANCE.copy(context, responseUrl);
+                ClipboardUtil.INSTANCE.copy(mContext, responseUrl);
                 toast("文件上传成功, 文件链接已复制到剪切板，可直接访问");
 
                 ShakeSensorUtil.getInstance().postUploadJson(
@@ -113,12 +113,12 @@ public class ShakeSensorDialog extends DialogBaseFragment {
 
         setBottom(false);
 
-        viewShakeTip = (TextView) findViewById(R.id.view_shake_tip);
-        viewShakeEdit = (EditText) findViewById(R.id.view_shake_edit);
-        viewShakeCheckContainer = (LinearLayout) findViewById(R.id.view_shake_check_container);
-        viewShakeCheck = (CheckBox) findViewById(R.id.view_shake_check);
-        viewShakeCancel = (Button) findViewById(R.id.view_shake_cancel);
-        viewShakeConfirm = (Button) findViewById(R.id.view_shake_confirm);
+        viewShakeTip = (TextView) view.findViewById(R.id.view_shake_tip);
+        viewShakeEdit = (EditText) view.findViewById(R.id.view_shake_edit);
+        viewShakeCheckContainer = (LinearLayout) view.findViewById(R.id.view_shake_check_container);
+        viewShakeCheck = (CheckBox) view.findViewById(R.id.view_shake_check);
+        viewShakeCancel = (Button) view.findViewById(R.id.view_shake_cancel);
+        viewShakeConfirm = (Button) view.findViewById(R.id.view_shake_confirm);
 
         viewShakeTip.setText(tip);
         if (editVisible) {
@@ -162,7 +162,7 @@ public class ShakeSensorDialog extends DialogBaseFragment {
         viewShakeConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PermissionUtil.requestStoragePermission((CheckPermissionActivity) activity, new PermissionUtil.PermissionCallback() {
+                PermissionUtil.requestStoragePermission((CheckPermissionActivity) mActivity, new PermissionUtil.PermissionCallback() {
                     @Override
                     public void permissionGranted() {
                         if (View.VISIBLE == viewShakeEdit.getVisibility()) {
@@ -236,10 +236,10 @@ public class ShakeSensorDialog extends DialogBaseFragment {
     }
     
     private void toast(final String msg) {
-        activity.runOnUiThread(new Runnable() {
+        mActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,18 +1,16 @@
-package com.example.shake;
+package com.example.shake
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Response;
+import okhttp3.Call
+import okhttp3.Response
+import java.io.IOException
 
 /**
  * @author fqxyi
  * @date 2017/4/11
  */
-public interface UploadCallback {
+interface UploadCallback {
+    fun onFailure(call: Call, e: IOException)
 
-    void onFailure(Call call, IOException e);
-
-    void onResponse(Call call, Response response) throws IOException;
-
+    @Throws(IOException::class)
+    fun onResponse(call: Call, response: Response)
 }

@@ -3,6 +3,7 @@ package com.example.common
 import android.content.Context
 import android.os.Bundle
 import com.example.shake.ShakeSensorManager
+import com.example.ui.toast.ToastUtil
 import com.example.utils.ActivitiesManager
 import com.example.utils.permission.CheckPermissionActivity
 
@@ -34,8 +35,9 @@ open class BaseActivity : CheckPermissionActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         ActivitiesManager.getInstance().remove(activity)
+        ToastUtil.onDestroy(this)
+        super.onDestroy()
     }
 
 }

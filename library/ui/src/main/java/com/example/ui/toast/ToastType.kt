@@ -1,9 +1,9 @@
-package com.example.ui.toast;
+package com.example.ui.toast
 
-public interface ToastType {
-
-    int TYPE_NORMAL = 0;
-    int TYPE_SUCCESS = 1;
-    int TYPE_ERROR = 2;
-
+interface ToastType {
+    companion object {
+        const val TYPE_NORMAL = 0
+        const val TYPE_SUCCESS = 1
+        const val TYPE_ERROR = 2
+    }
 }

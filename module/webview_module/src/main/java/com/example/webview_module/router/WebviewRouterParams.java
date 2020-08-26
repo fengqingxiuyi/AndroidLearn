@@ -38,7 +38,7 @@ public class WebviewRouterParams {
             String encodeParams = uri.getQueryParameter("params");
             //解密后的参数
             if (!TextUtils.isEmpty(encodeParams)) {
-                params = new String(Base64Util.decode(encodeParams.replace(" ", "+")));
+                params = new String(Base64Util.INSTANCE.decode(encodeParams.replace(" ", "+")));
             }
             //回调方法
             this.callback = uri.getQueryParameter("callback");

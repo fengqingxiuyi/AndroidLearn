@@ -1,18 +1,18 @@
-package com.example.shake;
+package com.example.shake
 
-import okhttp3.MediaType;
+import okhttp3.MediaType
 
 /**
  * @author fqxyi
  * @date 2017/4/11
  */
-public interface ShakeSensorConstant {
+interface ShakeSensorConstant {
+    companion object {
+        const val URL = ""
 
-    String URL = "";
+        const val WEBHOOK_TOKEN_UPLOAD_IMAGE = ""
 
-    String WEBHOOK_TOKEN_UPLOAD_IMAGE = "";
-
-    MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
-    MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
-
+        val MEDIA_TYPE_PNG: MediaType = MediaType.parse("image/png")
+        val MEDIA_TYPE_JSON: MediaType = MediaType.parse("application/json; charset=utf-8")
+    }
 }
