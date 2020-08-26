@@ -17,6 +17,7 @@ android {
                     'src/main/res/ui/anim',
                     'src/main/res/ui/appbarlayout',
                     'src/main/res/ui/imagescaletype',
+                    'src/main/res/ui/partition',
                     'src/main/res/ui/viewswitcher',
                     'src/main/res/webview',
                     'src/main/res/main',

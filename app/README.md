@@ -24,6 +24,7 @@ app
            |--bezier //贝塞尔曲线使用示例
            |--constraint //ConstraintLayout与RelativeLayout性能分析
            |--imagescaletype //ImageScaleType各类型区别
+           |--partition //分区组件使用示例
            |--viewswitcher //ViewSwitcher使用示例
        |--webview //WebView
   |--res

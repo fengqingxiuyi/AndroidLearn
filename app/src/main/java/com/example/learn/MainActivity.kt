@@ -20,6 +20,7 @@ import com.example.learn.ui.appbarlayout.AppbarLayoutActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity2
 import com.example.learn.ui.constraint.ConstraintActivity
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
+import com.example.learn.ui.partition.PartitionActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.webview.WebViewSimpleActivity
 import com.example.utils.LogUtil
@@ -123,5 +124,9 @@ class MainActivity : BaseActivity() {
      */
     fun iconChange(view: View) {
         IconChangeManager.changeIcon(this, IconChangeConstant.CHANGE)
+    }
+
+    fun testPartition(view: View) {
+        startActivity(Intent(this, PartitionActivity::class.java))
     }
 }
