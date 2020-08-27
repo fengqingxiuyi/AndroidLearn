@@ -148,4 +148,13 @@
         app:layout_constraintBottom_toTopOf="@id/loadGif"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/testSocial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testSocial"
+        android:text="Test Social"
+        app:layout_constraintBottom_toTopOf="@id/iconChange"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

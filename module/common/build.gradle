@@ -30,6 +30,8 @@ dependencies {
     api project(":partition")
     //网络组件
     api project(":network")
+    //社会化组件
+    api project(":social")
     //摇一摇上传屏幕截图
     implementation project(":shake")
 }

@@ -8,6 +8,10 @@ android {
         applicationId project.APPLICATION_ID
         versionCode 1
         versionName "1.0"
+        //设置支持的SO库架构
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
     }
     //将res文件夹中的资源以模块的形式分类
     sourceSets {
@@ -16,6 +20,7 @@ android {
                     'src/main/res/download',
                     'src/main/res/main',
                     'src/main/res/network',
+                    'src/main/res/social',
                     'src/main/res/ui/anim',
                     'src/main/res/ui/appbarlayout',
                     'src/main/res/ui/imagescaletype',

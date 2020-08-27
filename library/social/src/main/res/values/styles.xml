@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SocialDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">false</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 全屏 -->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 背景透明度 65%-->
+        <item name="android:backgroundDimAmount">0.35</item>
+    </style>
+
+    <style name="SocialDialogAnim">
+        <item name="android:windowEnterAnimation">@anim/social_dialog_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/social_dialog_anim_out</item>
+    </style>
+
+</resources>

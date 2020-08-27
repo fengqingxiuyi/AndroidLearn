@@ -15,6 +15,7 @@ import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
 import com.example.learn.network.hello.NetworkHelloActivity
+import com.example.learn.social.SocialActivity
 import com.example.learn.ui.anim.bean.StarIntentParamBean
 import com.example.learn.ui.anim.star.StarAnimActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity
@@ -136,6 +137,10 @@ class MainActivity : BaseActivity() {
 
     fun testNetwork(view: View) {
         startActivity(Intent(this, NetworkHelloActivity::class.java))
+    }
+
+    fun testSocial(view: View) {
+        startActivity(Intent(this, SocialActivity::class.java))
     }
 
     /** 点两次退出应用 start  */

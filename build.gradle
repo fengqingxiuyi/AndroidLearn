@@ -37,6 +37,8 @@ allprojects { //项目本身需要的依赖
     repositories {
         google()
         jcenter()
+        //微博SDK需要 https://github.com/sinaweibosdk/weibo_android_sdk
+        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
     }
 }
 

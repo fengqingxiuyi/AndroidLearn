@@ -26,6 +26,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation fileTree(dir: "./src/main/jniLibs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     //https://developer.android.com/jetpack/androidx/releases/appcompat
     implementation "androidx.appcompat:appcompat:$appcompat_version"

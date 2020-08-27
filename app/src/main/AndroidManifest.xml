@@ -70,6 +70,8 @@
                     android:scheme="androidlearn" />
             </intent-filter>
         </activity-alias>
+        <activity android:name=".social.SocialActivity" />
+        <activity android:name=".social.SocialSecondActivity" />
         <activity android:name=".ui.constraint.ConstraintActivity" />
         <activity android:name=".ui.viewswitcher.ViewSwitcherActivity" />
         <activity android:name=".ui.imagescaletype.ImageScaleTypeActivity" />

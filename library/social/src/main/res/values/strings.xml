@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="social_error_wx_uninstall">微信未安装</string>
+    <string name="social_error_wx_version_low">微信4.2以上才支持分享朋友圈，请升级微信</string>
+    <string name="social_error_wx_share_data">分享数据异常</string>
+    <string name="social_error_wx_pay_data">微信支付数据异常</string>
+
+    <string name="social_error_ali_pay_data">支付宝支付数据异常</string>
+
+    <string name="social_error_qq_uninstall">QQ未安装</string>
+    <string name="social_error_image_not_found">分享图片未找到</string>
+    <string name="social_error_qq_share_data">QQ分享数据异常</string>
+
+    <string name="social_error_wb_uninstall">微博未安装</string>
+    <string name="social_error_wb_share_data">微博分享数据异常</string>
+
+    <string name="social_error_sms_share_data">短信分享数据异常</string>
+
+    <string name="social_error_thread_shutdown">线程池已关闭</string>
+
+</resources>
