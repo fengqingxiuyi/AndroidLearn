@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.annotation.BindCompile
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.learn.annotation.BindRuntime
 import com.example.learn.annotation.Binding
 import com.example.learn.download.DownloadActivity
@@ -14,6 +14,7 @@ import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
+import com.example.learn.network.hello.NetworkHelloActivity
 import com.example.learn.ui.anim.bean.StarIntentParamBean
 import com.example.learn.ui.anim.star.StarAnimActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity
@@ -131,6 +132,10 @@ class MainActivity : BaseActivity() {
 
     fun testPartition(view: View) {
         startActivity(Intent(this, PartitionActivity::class.java))
+    }
+
+    fun testNetwork(view: View) {
+        startActivity(Intent(this, NetworkHelloActivity::class.java))
     }
 
     /** 点两次退出应用 start  */

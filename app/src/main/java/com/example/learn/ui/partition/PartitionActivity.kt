@@ -3,7 +3,7 @@ package com.example.learn.ui.partition
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.learn.R
 import com.example.learn.ui.partition.partition.one.OneBean
 import com.example.learn.ui.partition.partition.two.TwoBean

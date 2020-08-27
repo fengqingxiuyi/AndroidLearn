@@ -10,8 +10,9 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
-                    'src/main/res/toast',
                     'src/main/res/dialog',
+                    'src/main/res/progress',
+                    'src/main/res/toast',
                     'src/main/res'
             ]
         }

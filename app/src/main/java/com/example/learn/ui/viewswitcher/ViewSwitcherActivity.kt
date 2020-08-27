@@ -2,7 +2,7 @@ package com.example.learn.ui.viewswitcher
 
 import android.os.Bundle
 import android.os.Handler
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.learn.R
 import kotlinx.android.synthetic.main.activity_view_switcher.*
 import java.util.*

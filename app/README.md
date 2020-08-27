@@ -17,6 +17,7 @@ app
                 |--README.md //WorkManager源码浅析
        |--koin //koin
        |--lint //lint功能验证示例
+       |--network //网络请求库测试
        |--single //单例汇总
        |--ui
            |--anim //实现点赞高光动画

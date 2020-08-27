@@ -77,6 +77,8 @@ object ToastUtil {
         handler = MyHandler()
     }
 
+    @JvmStatic
+    @JvmOverloads
     fun toast(msg: String?, type: Int = ToastType.TYPE_NORMAL) {
         if (BuildConfig.DEBUG) {
             toast(msg, DEFAULT_DELAY_MILLIS * 2, type)
@@ -85,6 +87,8 @@ object ToastUtil {
         }
     }
 
+    @JvmStatic
+    @JvmOverloads
     fun toast(msg: String?, delayMillis: Long, type: Int = ToastType.TYPE_NORMAL) {
         if (TextUtils.isEmpty(msg) || !sToastListener.isForeground()) {
             return

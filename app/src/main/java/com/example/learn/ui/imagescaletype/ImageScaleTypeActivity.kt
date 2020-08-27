@@ -3,7 +3,7 @@ package com.example.learn.ui.imagescaletype
 import android.app.AlertDialog
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.learn.R
 import kotlinx.android.synthetic.main.activity_image_scale_type.*
 

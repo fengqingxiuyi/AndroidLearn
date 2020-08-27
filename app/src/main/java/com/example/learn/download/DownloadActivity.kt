@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.download.bean.FileInfo
 import com.example.download.bean.ThreadInfo
 import com.example.download.service.DownloadService

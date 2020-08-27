@@ -41,6 +41,7 @@ object DeviceUtil {
     /**
      * 获取设备屏幕高度
      */
+    @JvmStatic
     fun getScreenHeight(context: Context): Int {
         if (screenHeight > 0) {
             return screenHeight

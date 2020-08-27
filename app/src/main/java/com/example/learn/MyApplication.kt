@@ -3,7 +3,9 @@ package com.example.learn
 import android.app.Activity
 import android.app.Application
 import com.example.common.global.AppGlobal
+import com.example.common.network.API
 import com.example.common.network.BusinessObserver
+import com.example.common.network.interceptor.HeaderInterceptor
 import com.example.learn.iconchange.IconChangeConstant
 import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.koin.appModule
@@ -25,6 +27,7 @@ import okhttp3.Interceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 import java.util.*
 
 /**
@@ -90,14 +93,21 @@ class MyApplication : Application() {
 
     private fun initKoin() {
         startKoin {
-            androidLogger()
+            /**
+             * version: kotlin: 1.4.0 , koin: 2.1.6
+             * add Level.ERROR for fix error:
+             * java.lang.NoSuchMethodError: No virtual method elapsedNow()D in class Lkotlin/time/TimeMark;
+             * or its super classes (declaration of 'kotlin.time.TimeMark' appears in /data/app/com.example.learn-2/base.apk)
+             * link: https://github.com/InsertKoinIO/koin/issues/847
+             */
+            androidLogger(Level.ERROR)
             androidContext(this@MyApplication)
             modules(appModule)
         }
     }
 
     private fun initNet() {
-        RequestManager.get().init(AppGlobal.application, "http://192.168.10.134:9900/",
+        RequestManager.get().init(AppGlobal.application, API.API_BASE,
             object : IObserverCallback {
                 override fun <T : Any?> getObserver(
                     reqTag: ReqTag,
@@ -112,6 +122,7 @@ class MyApplication : Application() {
             object : IInterceptorCallback {
                 override fun getInterceptorList(): MutableList<Interceptor> {
                     val interceptorList: MutableList<Interceptor> = ArrayList()
+                    interceptorList.add(HeaderInterceptor(this@MyApplication))
                     interceptorList.add(FormToJsonInterceptor())
                     return interceptorList
                 }

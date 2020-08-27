@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.example.annotation.BindCompile
 import com.example.annotation.Binding
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.learn.R
 
 /**

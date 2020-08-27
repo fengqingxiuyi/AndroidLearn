@@ -6,7 +6,7 @@ import android.webkit.JsResult
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.widget.Toast
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.learn.R
 import kotlinx.android.synthetic.main.activity_webview.*
 

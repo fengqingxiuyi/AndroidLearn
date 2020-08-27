@@ -6,6 +6,15 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    //将res文件夹中的资源以模块的形式分类
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/loading',
+                    'src/main/res'
+            ]
+        }
+    }
 }
 
 dependencies {

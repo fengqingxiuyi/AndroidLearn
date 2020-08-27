@@ -83,6 +83,8 @@
         <activity android:name=".ui.appbarlayout.AppbarLayoutActivity"/>
         <activity android:name=".ui.appbarlayout.AppbarLayoutActivity2"/>
         <activity android:name=".ui.partition.PartitionActivity" />
+        <activity android:name=".network.hello.NetworkHelloActivity" />
+        <activity android:name=".network.mvp.view.MvpActivity" />
     </application>
 
 </manifest>

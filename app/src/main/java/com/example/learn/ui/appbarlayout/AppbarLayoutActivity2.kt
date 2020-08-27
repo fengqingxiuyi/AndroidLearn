@@ -1,7 +1,7 @@
 package com.example.learn.ui.appbarlayout
 
 import android.os.Bundle
-import com.example.common.BaseActivity
+import com.example.common.base.BaseActivity
 import com.example.learn.R
 import kotlinx.android.synthetic.main.appbar_layout_activity2.*
 

@@ -139,4 +139,13 @@
         app:layout_constraintBottom_toTopOf="@id/openDownload"
         app:layout_constraintEnd_toStartOf="@id/iconChange" />
 
+    <Button
+        android:id="@+id/testNetwork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testNetwork"
+        android:text="Test Network"
+        app:layout_constraintBottom_toTopOf="@id/loadGif"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
