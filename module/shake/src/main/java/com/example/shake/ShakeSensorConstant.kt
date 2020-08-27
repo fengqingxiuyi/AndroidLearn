@@ -12,7 +12,7 @@ interface ShakeSensorConstant {
 
         const val WEBHOOK_TOKEN_UPLOAD_IMAGE = ""
 
-        val MEDIA_TYPE_PNG: MediaType = MediaType.parse("image/png")
-        val MEDIA_TYPE_JSON: MediaType = MediaType.parse("application/json; charset=utf-8")
+        val MEDIA_TYPE_PNG: MediaType? = MediaType.parse("image/png")
+        val MEDIA_TYPE_JSON: MediaType? = MediaType.parse("application/json; charset=utf-8")
     }
 }

@@ -1,6 +1,5 @@
 package com.example.utils.encrypt
 
-import com.example.utils.LogUtil.e
 import java.security.MessageDigest
 import java.util.*
 import javax.crypto.Cipher
@@ -93,12 +92,12 @@ object AesUtils {
     @Throws(Exception::class)
     fun Encrypt(sSrc: String, sKey: String?): String? {
         if (sKey == null) {
-            e("Key为空null")
+            println("Key为空null")
             return null
         }
         // 判断Key是否为16位
         if (sKey.length != 16) {
-            e("Key长度不是16位")
+            println("Key长度不是16位")
             return null
         }
         val raw = sKey.toByteArray(charset(DEFAULT_CODING))

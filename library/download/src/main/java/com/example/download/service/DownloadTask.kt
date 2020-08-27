@@ -5,7 +5,6 @@ import android.content.Intent
 import com.example.download.bean.FileInfo
 import com.example.download.bean.ThreadInfo
 import com.example.download.db.ThreadDAOImpl
-import com.example.download.util.LogUtil
 import java.io.File
 import java.io.InputStream
 import java.io.RandomAccessFile
@@ -25,7 +24,7 @@ class DownloadTask(val context: Context, val fileInfo: FileInfo?) {
 
     fun download() {
         if (fileInfo == null) {
-            LogUtil.d("DownloadTask fileInfo == null")
+            println("DownloadTask fileInfo == null")
             return
         }
         //读取数据库的线程信息

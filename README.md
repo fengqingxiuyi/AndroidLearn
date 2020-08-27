@@ -19,6 +19,8 @@ learn
   |--library //存放基础模块的文件夹
        |--download //断点下载模块
             |--README.md //download模块说明
+       |--network //网络请求模块
+            |--README.md //网络请求模块说明
        |--partition //实现分区功能的模块
             |--README.md //分区组件说明
        |--ui //业务无关UI组件库

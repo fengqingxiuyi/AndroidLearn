@@ -19,6 +19,8 @@ dependencies {
     api project(":utils")
     //分区组件
     api project(":partition")
+    //网络组件
+    api project(":network")
     //摇一摇上传屏幕截图
     implementation project(":shake")
 }

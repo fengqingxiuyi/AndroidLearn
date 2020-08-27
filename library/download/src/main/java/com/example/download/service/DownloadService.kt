@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.IBinder
 import android.os.Message
 import com.example.download.bean.FileInfo
-import com.example.download.util.LogUtil
 import java.io.File
 import java.io.IOException
 import java.io.RandomAccessFile
@@ -37,12 +36,12 @@ class DownloadService : Service() {
         if (intent != null) { //获得Activity传来的参数
             if (ACTION_START == intent.action) {
                 val fileInfo = intent.getSerializableExtra(FileInfo.KEY) as FileInfo?
-                LogUtil.d("DownloadService start: $fileInfo")
+                println("DownloadService start: $fileInfo")
                 //启动初始化线程
                 InitThread(fileInfo).start()
             } else if (ACTION_STOP == intent.action) {
                 val fileInfo = intent.getSerializableExtra(FileInfo.KEY) as FileInfo?
-                LogUtil.d("DownloadService stop: $fileInfo")
+                println("DownloadService stop: $fileInfo")
                 task?.isPause = true
             }
         }
@@ -58,10 +57,10 @@ class DownloadService : Service() {
             if (msg.what == MSG_INIT) {
                 val fileInfo = msg.obj as FileInfo?
                 if (fileInfo == null) {
-                    LogUtil.d("DownloadHandler fileInfo == null")
+                    println("DownloadHandler fileInfo == null")
                     return
                 }
-                LogUtil.d("DownloadHandler init: $fileInfo")
+                println("DownloadHandler init: $fileInfo")
                 //启动下载任务
                 task = DownloadTask(this@DownloadService, fileInfo)
                 task!!.download()
@@ -75,7 +74,7 @@ class DownloadService : Service() {
     inner class InitThread(private val fileInfo: FileInfo?) : Thread() {
         override fun run() {
             if (fileInfo == null) {
-                LogUtil.d("InitThread fileInfo == null")
+                println("InitThread fileInfo == null")
                 return
             }
             var conn: HttpURLConnection? = null
@@ -92,7 +91,7 @@ class DownloadService : Service() {
                     length = conn.contentLength
                 }
                 if (length <= 0) {
-                    LogUtil.d("InitThread length <= 0")
+                    println("InitThread length <= 0")
                     return
                 }
                 val dir = File(DOWNLOAD_PATH)
