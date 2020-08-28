@@ -20,6 +20,7 @@ import com.example.learn.ui.anim.bean.StarIntentParamBean
 import com.example.learn.ui.anim.star.StarAnimActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity2
+import com.example.learn.ui.banner.BannerActivity
 import com.example.learn.ui.constraint.ConstraintActivity
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.partition.PartitionActivity
@@ -141,6 +142,10 @@ class MainActivity : BaseActivity() {
 
     fun testSocial(view: View) {
         startActivity(Intent(this, SocialActivity::class.java))
+    }
+
+    fun testBanner(view: View) {
+        startActivity(Intent(this, BannerActivity::class.java))
     }
 
     /** 点两次退出应用 start  */

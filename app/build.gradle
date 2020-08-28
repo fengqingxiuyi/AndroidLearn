@@ -23,6 +23,7 @@ android {
                     'src/main/res/social',
                     'src/main/res/ui/anim',
                     'src/main/res/ui/appbarlayout',
+                    'src/main/res/ui/banner',
                     'src/main/res/ui/imagescaletype',
                     'src/main/res/ui/partition',
                     'src/main/res/ui/viewswitcher',

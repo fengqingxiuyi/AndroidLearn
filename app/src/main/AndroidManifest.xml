@@ -87,6 +87,7 @@
         <activity android:name=".ui.partition.PartitionActivity" />
         <activity android:name=".network.hello.NetworkHelloActivity" />
         <activity android:name=".network.mvp.view.MvpActivity" />
+        <activity android:name=".ui.banner.BannerActivity" />
     </application>
 
 </manifest>
