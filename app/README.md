@@ -25,22 +25,10 @@ app
            |--appbarlayout //AppBarLayout使用示例
            |--bezier //贝塞尔曲线使用示例
            |--constraint //ConstraintLayout与RelativeLayout性能分析
+           |--image //图片组件使用示例
            |--imagescaletype //ImageScaleType各类型区别
            |--partition //分区组件使用示例
            |--refresh //刷新加载组件使用示例
            |--viewswitcher //ViewSwitcher使用示例
        |--webview //WebView
-  |--res
-       |--download //DownloadActivity相关资源
-       |--main //MainActivity相关资源
-       |--network //NetworkHelloActivity和MvpActivity相关资源
-       |--social //SocialActivity和SocialSecondActivity相关资源
-       |--ui
-            |--anim //点赞高光动画相关资源
-                 |--raw //存放了动画的设计和规则
-            |--appbarlayout //AppbarLayoutActivity相关资源
-            |--imagescaletype //ImageScaleTypeActivity相关资源
-            |--partition //PartitionActivity相关资源
-            |--viewswitcher //ViewSwitcherActivity相关资源
-       |--webview //WebViewActivity相关资源
 ```

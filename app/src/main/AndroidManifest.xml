@@ -93,6 +93,7 @@
         <activity android:name=".ui.refresh.RefreshListViewActivity" />
         <activity android:name=".ui.refresh.RefreshScrollViewActivity" />
         <activity android:name=".ui.refresh.RefreshWebViewActivity" />
+        <activity android:name=".ui.image.ImageActivity" />
     </application>
 
 </manifest>

@@ -175,4 +175,13 @@
         app:layout_constraintBottom_toTopOf="@id/testNetwork"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/testImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testImage"
+        android:text="Test Image"
+        app:layout_constraintBottom_toTopOf="@id/testSocial"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

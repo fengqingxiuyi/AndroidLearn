@@ -6,6 +6,7 @@ import com.example.common.global.AppGlobal
 import com.example.common.network.API
 import com.example.common.network.BusinessObserver
 import com.example.common.network.interceptor.HeaderInterceptor
+import com.example.image.FImageView
 import com.example.learn.iconchange.IconChangeConstant
 import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.koin.appModule
@@ -56,6 +57,7 @@ class MyApplication : Application() {
         initKoin()
         initNet()
         initSocial()
+        initImage()
     }
 
     private fun inOtherProcess() {
@@ -144,5 +146,9 @@ class MyApplication : Application() {
             .setWxAppSecret("78f713b76c61a38242e63ccdb3a96d68")
             .setWbAppId("2214687859")
             .setWbRedirectUrl("https://github.com/fengqingxiuyi")
+    }
+
+    private fun initImage() {
+        FImageView.init(this)
     }
 }

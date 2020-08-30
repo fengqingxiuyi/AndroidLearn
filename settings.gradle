@@ -23,6 +23,7 @@ module.forEach { path ->
 def library = [
         '/library/banner',
         '/library/download',
+        '/library/image',
         '/library/network',
         '/library/partition',
         '/library/refresh',

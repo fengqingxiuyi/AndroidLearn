@@ -36,6 +36,8 @@ dependencies {
     api project(":banner")
     //刷新加载组件
     api project(":refresh")
+    //图片组件
+    api project(":image")
     //摇一摇上传屏幕截图
     implementation project(":shake")
 }

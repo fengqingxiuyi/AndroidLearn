@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.example.image.FImageView
+            android:id="@+id/null_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+        <com.example.image.FImageView
+            android:id="@+id/local_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+        <com.example.image.FImageView
+            android:id="@+id/wrap_view"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+        <com.example.image.FImageView
+            android:id="@+id/net_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            fresco:actualImageScaleType="centerInside"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+        <com.example.image.FImageView
+            android:id="@+id/gif_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+        <com.example.image.FImageView
+            android:id="@+id/circle_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+        <com.example.image.FCircleImageView
+            android:id="@+id/circle_border_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+        <com.example.image.FImageView
+            android:id="@+id/round_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            fresco:placeholderImage="@mipmap/ic_launcher" />
+
+    </LinearLayout>
+
+</ScrollView>

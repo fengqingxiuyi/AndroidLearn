@@ -3,9 +3,9 @@ package com.example.common.network.interceptor;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.example.common.UserAgent;
+import androidx.annotation.NonNull;
 
-import org.jetbrains.annotations.NotNull;
+import com.example.common.UserAgent;
 
 import java.io.IOException;
 
@@ -26,7 +26,7 @@ public class HeaderInterceptor implements Interceptor {
         this.context = context;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = setHeaders(chain.request());
