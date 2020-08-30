@@ -184,4 +184,13 @@
         app:layout_constraintBottom_toTopOf="@id/testSocial"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/testLoop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testLoop"
+        android:text="Test Loop"
+        app:layout_constraintBottom_toTopOf="@id/testBanner"
+        app:layout_constraintEnd_toStartOf="@id/testImage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

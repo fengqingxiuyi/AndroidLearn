@@ -26,6 +26,7 @@ android {
                     'src/main/res/ui/banner',
                     'src/main/res/ui/image',
                     'src/main/res/ui/imagescaletype',
+                    'src/main/res/ui/loop',
                     'src/main/res/ui/partition',
                     'src/main/res/ui/refresh',
                     'src/main/res/ui/viewswitcher',

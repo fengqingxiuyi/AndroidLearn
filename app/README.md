@@ -27,6 +27,7 @@ app
            |--constraint //ConstraintLayout与RelativeLayout性能分析
            |--image //图片组件使用示例
            |--imagescaletype //ImageScaleType各类型区别
+           |--loop //单个或两个条目无限上下翻滚的View容器使用示例
            |--partition //分区组件使用示例
            |--refresh //刷新加载组件使用示例
            |--viewswitcher //ViewSwitcher使用示例

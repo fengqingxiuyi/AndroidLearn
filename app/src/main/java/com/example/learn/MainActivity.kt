@@ -24,6 +24,7 @@ import com.example.learn.ui.banner.BannerActivity
 import com.example.learn.ui.constraint.ConstraintActivity
 import com.example.learn.ui.image.ImageActivity
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
+import com.example.learn.ui.loop.LoopActivity
 import com.example.learn.ui.partition.PartitionActivity
 import com.example.learn.ui.refresh.RefreshTestActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
@@ -156,6 +157,10 @@ class MainActivity : BaseActivity() {
 
     fun testImage(view: View) {
         startActivity(Intent(this, ImageActivity::class.java))
+    }
+
+    fun testLoop(view: View) {
+        startActivity(Intent(this, LoopActivity::class.java))
     }
 
     /** 点两次退出应用 start  */
