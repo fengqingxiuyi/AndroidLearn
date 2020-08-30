@@ -25,6 +25,7 @@ def library = [
         '/library/download',
         '/library/network',
         '/library/partition',
+        '/library/refresh',
         '/library/social',
         '/library/ui',
         '/library/utils',

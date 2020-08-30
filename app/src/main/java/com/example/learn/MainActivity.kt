@@ -24,6 +24,7 @@ import com.example.learn.ui.banner.BannerActivity
 import com.example.learn.ui.constraint.ConstraintActivity
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
 import com.example.learn.ui.partition.PartitionActivity
+import com.example.learn.ui.refresh.RefreshTestActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.webview.WebViewSimpleActivity
 import com.example.ui.toast.ToastUtil
@@ -146,6 +147,10 @@ class MainActivity : BaseActivity() {
 
     fun testBanner(view: View) {
         startActivity(Intent(this, BannerActivity::class.java))
+    }
+
+    fun testRefresh(view: View) {
+        startActivity(Intent(this, RefreshTestActivity::class.java))
     }
 
     /** 点两次退出应用 start  */

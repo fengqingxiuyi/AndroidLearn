@@ -88,6 +88,11 @@
         <activity android:name=".network.hello.NetworkHelloActivity" />
         <activity android:name=".network.mvp.view.MvpActivity" />
         <activity android:name=".ui.banner.BannerActivity" />
+        <activity android:name=".ui.refresh.RefreshTestActivity" />
+        <activity android:name=".ui.refresh.RefreshGridViewActivity" />
+        <activity android:name=".ui.refresh.RefreshListViewActivity" />
+        <activity android:name=".ui.refresh.RefreshScrollViewActivity" />
+        <activity android:name=".ui.refresh.RefreshWebViewActivity" />
     </application>
 
 </manifest>

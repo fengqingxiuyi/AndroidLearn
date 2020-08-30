@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/header_arrowpb_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/header_arrowpb"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="7.5dp"
+            android:visibility="visible" >
+
+            <com.example.refresh.RoundProgressBar
+                android:id="@+id/header_arrowpb_pb"
+                android:layout_width="22.5dp"
+                android:layout_height="22.5dp"
+                android:layout_centerInParent="true"
+                android_custom:roundColor="#DDD"
+                android_custom:roundProgressColor="#877AFB"
+                android_custom:roundWidth="1dp"
+                android_custom:textIsDisplayable="false" />
+
+            <ProgressBar
+                android:id="@+id/header_arrowpb_loading"
+                style="@style/myProgressBarStyleHeaderPurple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/header_arrowpb_arrow"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_centerInParent="true"
+                android:paddingLeft="1dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/header_arrow_purple"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/header_arrowpb_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下拉即可刷新"
+                android:textColor="#AAA"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/header_arrowpb_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="更新于：07-28 15:32"
+                android:textColor="#AAA"
+                android:textSize="15sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/header_arrow_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp">
+
+            <ImageView
+                android:id="@+id/header_arrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/header_arrow_grey"/>
+
+            <ProgressBar
+                android:id="@+id/header_arrow_loading"
+                style="@style/myProgressBarStyleHeaderGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/header_arrow_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下拉即可刷新"
+                android:textColor="#AAA"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/header_arrow_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="更新于：07-28 15:32"
+                android:textColor="#AAA"
+                android:textSize="15sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

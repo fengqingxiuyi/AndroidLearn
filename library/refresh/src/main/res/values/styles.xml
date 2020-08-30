@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="myProgressBarStyleHeaderPurple">
+        <item name="android:indeterminateDrawable">@drawable/refresh_header_purple</item>
+        <item name="android:minWidth">22.5dip</item>
+        <item name="android:maxWidth">22.5dip</item>
+        <item name="android:minHeight">22.5dip</item>
+        <item name="android:maxHeight">22.5dip</item>
+    </style>
+
+    <style name="myProgressBarStyleHeaderGrey">
+        <item name="android:indeterminateDrawable">@drawable/refresh_header_grey</item>
+        <item name="android:minWidth">25dip</item>
+        <item name="android:maxWidth">25dip</item>
+        <item name="android:minHeight">25dip</item>
+        <item name="android:maxHeight">25dip</item>
+    </style>
+
+    <style name="myProgressBarStyleFooter">
+        <item name="android:indeterminateDrawable">@drawable/refresh_footer</item>
+        <item name="android:minWidth">22.5dip</item>
+        <item name="android:maxWidth">22.5dip</item>
+        <item name="android:minHeight">22.5dip</item>
+        <item name="android:maxHeight">22.5dip</item>
+    </style>
+</resources>

@@ -34,6 +34,8 @@ dependencies {
     api project(":social")
     //轮播组件
     api project(":banner")
+    //刷新加载组件
+    api project(":refresh")
     //摇一摇上传屏幕截图
     implementation project(":shake")
 }

@@ -25,6 +25,8 @@ learn
             |--README.md //网络请求模块说明
        |--partition //实现分区功能的模块
             |--README.md //分区组件说明
+       |--refresh //刷新加载组件
+            |--README.md //刷新加载组件说明
        |--ui //业务无关UI组件库
             |--README.md //ui模块说明
        |--utils //业务无关工具库
