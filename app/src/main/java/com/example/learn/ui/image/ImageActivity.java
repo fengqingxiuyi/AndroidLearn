@@ -4,14 +4,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.common.base.BaseActivity;
 import com.example.image.FCircleImageView;
 import com.example.image.FImageView;
 import com.example.image.listener.IImageLoadListener;
 import com.example.learn.R;
 
-public class ImageActivity extends AppCompatActivity {
+public class ImageActivity extends BaseActivity {
 
     private FImageView nullView;
     private FImageView localView;

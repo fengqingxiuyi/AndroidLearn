@@ -3,8 +3,7 @@ package com.example.learn.ui.loop;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.common.base.BaseActivity;
 import com.example.learn.R;
 import com.example.ui.loop.IItemView;
 import com.example.ui.loop.RollLoopView;
@@ -13,7 +12,7 @@ import com.example.ui.updown.UpDownTextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoopActivity extends AppCompatActivity {
+public class LoopActivity extends BaseActivity {
 
     private RollLoopView viewRollLoop;
     private RollLoopView viewRollLoopSub;

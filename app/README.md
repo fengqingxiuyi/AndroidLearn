@@ -24,6 +24,7 @@ app
            |--anim //实现点赞高光动画
            |--appbarlayout //AppBarLayout使用示例
            |--bezier //贝塞尔曲线使用示例
+           |--card //卡片形式的View使用示例
            |--constraint //ConstraintLayout与RelativeLayout性能分析
            |--image //图片组件使用示例
            |--imagescaletype //ImageScaleType各类型区别

@@ -21,6 +21,7 @@ import com.example.learn.ui.anim.star.StarAnimActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity2
 import com.example.learn.ui.banner.BannerActivity
+import com.example.learn.ui.card.CardActivity
 import com.example.learn.ui.constraint.ConstraintActivity
 import com.example.learn.ui.image.ImageActivity
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
@@ -161,6 +162,10 @@ class MainActivity : BaseActivity() {
 
     fun testLoop(view: View) {
         startActivity(Intent(this, LoopActivity::class.java))
+    }
+
+    fun testCard(view: View) {
+        startActivity(Intent(this, CardActivity::class.java))
     }
 
     /** 点两次退出应用 start  */

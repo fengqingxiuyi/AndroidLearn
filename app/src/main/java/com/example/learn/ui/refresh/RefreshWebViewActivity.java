@@ -6,12 +6,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.common.base.BaseActivity;
 import com.example.learn.R;
 import com.example.refresh.PullToRefreshView;
 
-public class RefreshWebViewActivity extends AppCompatActivity implements
+public class RefreshWebViewActivity extends BaseActivity implements
         PullToRefreshView.OnHeaderRefreshListener {
 
     WebView webView;

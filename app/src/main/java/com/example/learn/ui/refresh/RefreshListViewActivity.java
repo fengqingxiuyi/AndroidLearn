@@ -4,15 +4,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ListView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.common.base.BaseActivity;
 import com.example.learn.R;
 import com.example.refresh.PullToRefreshView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RefreshListViewActivity extends AppCompatActivity implements
+public class RefreshListViewActivity extends BaseActivity implements
         PullToRefreshView.OnHeaderRefreshListener, PullToRefreshView.OnFooterRefreshListener {
 
     ListView listView;

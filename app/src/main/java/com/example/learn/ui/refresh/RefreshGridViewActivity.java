@@ -4,15 +4,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.GridView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.common.base.BaseActivity;
 import com.example.learn.R;
 import com.example.refresh.PullToRefreshView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RefreshGridViewActivity extends AppCompatActivity implements
+public class RefreshGridViewActivity extends BaseActivity implements
         PullToRefreshView.OnHeaderRefreshListener, PullToRefreshView.OnFooterRefreshListener {
 
     GridView gridView;

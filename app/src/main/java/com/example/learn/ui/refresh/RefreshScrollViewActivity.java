@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ScrollView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.common.base.BaseActivity;
 import com.example.learn.R;
 import com.example.refresh.PullToRefreshView;
 
-public class RefreshScrollViewActivity extends AppCompatActivity implements
+public class RefreshScrollViewActivity extends BaseActivity implements
         PullToRefreshView.OnHeaderRefreshListener, PullToRefreshView.OnFooterRefreshListener {
 
     ScrollView scrollView;
