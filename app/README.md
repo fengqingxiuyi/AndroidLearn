@@ -38,6 +38,7 @@ app
            |--social //社会化组件测试
            |--viewswitcher //ViewSwitcher使用示例
            |--webview //WebView
+                |--README.md //Java与JS的交互总结
        |--wxapi //微信授权和分享需要的文件夹
   |--src/release/java/com/example/learn //多级目录折叠-release包专属功能
        |--Config //配置文件

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java 与 JavaScript 交互总结</title>
+    <!-- function1[Java Call JS]-step1: 在Web页面中定义提供给 Java 访问的 JS 方法 -->
+    <script type="text/javascript">
+        function javaCallJS(message) {
+            alert(message);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- function2[JS Call Java]-step3: JS 按照指定的接口名访问 Java 代码 -->
+    <button type="button" onClick="javascript:jsObj.JSCallJava('Message From JS By javascript')" >JS Call Java By javascript</button>
+    <button type="button" onClick="window.jsObj.JSCallJava('Message From JS By window')" >JS Call Java By window</button>
+</body>
+</html>
