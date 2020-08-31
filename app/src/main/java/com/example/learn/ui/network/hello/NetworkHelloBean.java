@@ -1,4 +1,4 @@
-package com.example.learn.network.hello;
+package com.example.learn.ui.network.hello;
 
 import com.example.common.network.base.NetBaseBean;
 

@@ -1,4 +1,4 @@
-package com.example.learn.social;
+package com.example.learn.ui.social;
 
 import android.app.Activity;
 import android.os.Bundle;

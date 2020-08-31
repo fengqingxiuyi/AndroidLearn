@@ -1,4 +1,4 @@
-package com.example.learn.network.hello;
+package com.example.learn.ui.network.hello;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

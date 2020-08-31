@@ -17,22 +17,22 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
-                    'src/main/res/download',
                     'src/main/res/main',
-                    'src/main/res/network',
-                    'src/main/res/social',
                     'src/main/res/ui/anim',
                     'src/main/res/ui/appbarlayout',
                     'src/main/res/ui/banner',
                     'src/main/res/ui/card',
+                    'src/main/res/ui/constraint',
+                    'src/main/res/ui/download',
                     'src/main/res/ui/image',
                     'src/main/res/ui/imagescaletype',
                     'src/main/res/ui/loop',
+                    'src/main/res/ui/network',
                     'src/main/res/ui/partition',
                     'src/main/res/ui/refresh',
+                    'src/main/res/ui/social',
                     'src/main/res/ui/viewswitcher',
-                    'src/main/res/webview',
-                    'src/main/res'
+                    'src/main/res/ui/webview'
             ]
         }
     }

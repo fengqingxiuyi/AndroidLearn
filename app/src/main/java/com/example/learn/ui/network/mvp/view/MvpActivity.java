@@ -1,14 +1,14 @@
-package com.example.learn.network.mvp.view;
+package com.example.learn.ui.network.mvp.view;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.common.base.BaseActivity;
 import com.example.learn.R;
-import com.example.learn.network.mvp.bean.MvpBean;
-import com.example.learn.network.mvp.bean.MvpSecondBean;
-import com.example.learn.network.mvp.contract.MvpContract;
-import com.example.learn.network.mvp.presenter.MvpPresenter;
+import com.example.learn.ui.network.mvp.bean.MvpBean;
+import com.example.learn.ui.network.mvp.bean.MvpSecondBean;
+import com.example.learn.ui.network.mvp.contract.MvpContract;
+import com.example.learn.ui.network.mvp.presenter.MvpPresenter;
 import com.example.network.bean.ErrorBean;
 import com.example.ui.toast.ToastUtil;
 

@@ -1,4 +1,4 @@
-package com.example.learn.social;
+package com.example.learn.ui.social;
 
 import android.Manifest;
 import android.app.Activity;
@@ -13,7 +13,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.learn.R;
-import com.example.learn.social.ali.OrderInfoUtil2_0;
+import com.example.learn.ui.social.ali.OrderInfoUtil2_0;
 import com.example.social.ISocialType;
 import com.example.social.SocialHelper;
 import com.example.social.auth.IAuthCallback;

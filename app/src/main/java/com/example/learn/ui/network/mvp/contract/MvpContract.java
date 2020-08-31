@@ -1,7 +1,7 @@
-package com.example.learn.network.mvp.contract;
+package com.example.learn.ui.network.mvp.contract;
 
-import com.example.learn.network.mvp.bean.MvpBean;
-import com.example.learn.network.mvp.bean.MvpSecondBean;
+import com.example.learn.ui.network.mvp.bean.MvpBean;
+import com.example.learn.ui.network.mvp.bean.MvpSecondBean;
 import com.example.network.bean.ErrorBean;
 
 /**

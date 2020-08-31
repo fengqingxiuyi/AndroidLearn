@@ -1,4 +1,4 @@
-package com.example.learn.webview
+package com.example.learn.ui.webview
 
 import android.app.Activity
 import android.content.Context

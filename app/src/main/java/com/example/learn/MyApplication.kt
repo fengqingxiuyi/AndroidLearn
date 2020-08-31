@@ -10,7 +10,7 @@ import com.example.image.FImageView
 import com.example.learn.iconchange.IconChangeConstant
 import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.koin.appModule
-import com.example.learn.webview.JsInterfaceImpl
+import com.example.learn.ui.webview.JsInterfaceImpl
 import com.example.network.RequestManager
 import com.example.network.callback.IInterceptorCallback
 import com.example.network.callback.IObserverCallback

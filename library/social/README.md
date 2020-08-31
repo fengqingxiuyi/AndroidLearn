@@ -68,7 +68,7 @@ SocialHelper.get().setQqAppId("1107009250")
 
 # 功能详情
 
-各功能使用详情，请参考`com.example.learn.social.SocialActivity`
+各功能使用详情，请参考`com.example.learn.ui.social.SocialActivity`
 
 例如：
 

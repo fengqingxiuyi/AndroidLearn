@@ -1,4 +1,4 @@
-package com.example.learn.social.ali;
+package com.example.learn.ui.social.ali;
 
 import java.security.KeyFactory;
 import java.security.PrivateKey;

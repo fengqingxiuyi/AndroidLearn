@@ -1,14 +1,14 @@
-package com.example.learn.network.mvp.presenter;
+package com.example.learn.ui.network.mvp.presenter;
 
 import android.app.Activity;
 
 import androidx.annotation.NonNull;
 
 import com.example.common.loading.LoadingUtil;
-import com.example.learn.network.mvp.api.MvpApiService;
-import com.example.learn.network.mvp.bean.MvpBean;
-import com.example.learn.network.mvp.bean.MvpSecondBean;
-import com.example.learn.network.mvp.contract.MvpContract;
+import com.example.learn.ui.network.mvp.api.MvpApiService;
+import com.example.learn.ui.network.mvp.bean.MvpBean;
+import com.example.learn.ui.network.mvp.bean.MvpSecondBean;
+import com.example.learn.ui.network.mvp.contract.MvpContract;
 import com.example.network.RequestManager;
 import com.example.network.bean.ErrorBean;
 import com.example.network.callback.IResponseCallback;

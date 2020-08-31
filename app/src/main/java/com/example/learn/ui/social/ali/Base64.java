@@ -1,4 +1,4 @@
-package com.example.learn.social.ali;
+package com.example.learn.ui.social.ali;
 
 public final class Base64 {
 

@@ -70,13 +70,13 @@
                     android:scheme="androidlearn" />
             </intent-filter>
         </activity-alias>
-        <activity android:name=".social.SocialActivity" />
-        <activity android:name=".social.SocialSecondActivity" />
+        <activity android:name=".ui.social.SocialActivity" />
+        <activity android:name=".ui.social.SocialSecondActivity" />
         <activity android:name=".ui.constraint.ConstraintActivity" />
         <activity android:name=".ui.viewswitcher.ViewSwitcherActivity" />
         <activity android:name=".ui.imagescaletype.ImageScaleTypeActivity" />
-        <activity android:name=".webview.WebViewSimpleActivity" />
-        <activity android:name=".download.DownloadActivity" />
+        <activity android:name="com.example.learn.ui.webview.WebViewSimpleActivity" />
+        <activity android:name="com.example.learn.ui.download.DownloadActivity" />
         <activity
             android:name="com.example.learn.ui.anim.star.StarAnimActivity"
             android:launchMode="singleInstance"
@@ -85,8 +85,8 @@
         <activity android:name=".ui.appbarlayout.AppbarLayoutActivity"/>
         <activity android:name=".ui.appbarlayout.AppbarLayoutActivity2"/>
         <activity android:name=".ui.partition.PartitionActivity" />
-        <activity android:name=".network.hello.NetworkHelloActivity" />
-        <activity android:name=".network.mvp.view.MvpActivity" />
+        <activity android:name=".ui.network.hello.NetworkHelloActivity" />
+        <activity android:name=".ui.network.mvp.view.MvpActivity" />
         <activity android:name=".ui.banner.BannerActivity" />
         <activity android:name=".ui.refresh.RefreshTestActivity" />
         <activity android:name=".ui.refresh.RefreshGridViewActivity" />

@@ -1,4 +1,4 @@
-package com.example.learn.download
+package com.example.learn.ui.download
 
 import android.content.BroadcastReceiver
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.learn.network.hello;
+package com.example.learn.ui.network.hello;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import com.example.common.base.BaseActivity;
 import com.example.common.loading.LoadingUtil;
 import com.example.common.network.API;
 import com.example.learn.R;
-import com.example.learn.network.mvp.view.MvpActivity;
+import com.example.learn.ui.network.mvp.view.MvpActivity;
 import com.example.network.RequestManager;
 import com.example.network.bean.ErrorBean;
 import com.example.network.callback.IResponseCallback;

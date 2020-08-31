@@ -1,4 +1,4 @@
-package com.example.learn.webview
+package com.example.learn.ui.webview
 
 import android.os.Build
 import android.os.Bundle

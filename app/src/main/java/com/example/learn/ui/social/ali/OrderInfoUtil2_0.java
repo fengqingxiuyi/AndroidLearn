@@ -1,4 +1,4 @@
-package com.example.learn.social.ali;
+package com.example.learn.ui.social.ali;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
