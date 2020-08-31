@@ -97,6 +97,7 @@
         <activity android:name=".ui.image.ImageActivity" />
         <activity android:name=".ui.loop.LoopActivity" />
         <activity android:name=".ui.card.CardActivity" />
+        <activity android:name=".ui.youtu.YoutuTestActivity" />
     </application>
 
 </manifest>

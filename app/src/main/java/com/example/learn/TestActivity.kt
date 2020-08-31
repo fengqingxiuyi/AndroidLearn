@@ -31,6 +31,7 @@ import com.example.learn.ui.refresh.RefreshTestActivity
 import com.example.learn.ui.social.SocialActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.ui.webview.WebViewSimpleActivity
+import com.example.learn.ui.youtu.YoutuTestActivity
 import com.example.utils.LogUtil
 import com.example.utils.device.StatusBarUtil
 import com.example.webview_module.WebviewActivity
@@ -181,6 +182,10 @@ class TestActivity : BaseActivity() {
 
     fun testFps(view: View) {
         Takt.play(true)
+    }
+
+    fun testYoutu(view: View) {
+        startActivity(Intent(this, YoutuTestActivity::class.java))
     }
 
 }
