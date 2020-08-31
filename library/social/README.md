@@ -2,6 +2,8 @@
 
 社会化组件
 
+open_sdk_r6008_lite.jar：<http://wiki.open.qq.com/wiki/QQ%E7%99%BB%E5%BD%95%E5%92%8C%E6%B3%A8%E9%94%80>
+
 # 集成步骤
 
 1、依赖library库

@@ -55,9 +55,9 @@ apply plugin: 'java'
 apply plugin: 'kotlin'
 
 dependencies {
-    compileOnly "com.android.tools.lint:lint-api:$lint_version"
-    compileOnly "com.android.tools.lint:lint-checks:$lint_version"
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compileOnly rootProject.ext.libs.compileOnly.lint_api
+    compileOnly rootProject.ext.libs.compileOnly.lint_checks
+    compileOnly rootProject.ext.libs.kotlin
 }
 ```
 
@@ -124,7 +124,7 @@ android {
 
 /** Package the given lint checks library into this AAR  */
 dependencies {
-    lintPublish project(':lintjar')
+    lintPublish rootProject.ext.module.lint.lintjar
 }
 ```
 

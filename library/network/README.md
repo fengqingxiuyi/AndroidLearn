@@ -28,7 +28,7 @@ HelloActivity访问的是自己编写的JavaWeb程序，地址：<https://github
 ## 初始化
 
 ```kotlin
-RequestManager.get().init(AppGlobal.application, "http://192.168.10.134:9900/",
+RequestManager.get().init(AppGlobal.application, API.API_BASE,
     object : IObserverCallback {
         override fun <T : Any?> getObserver(
             reqTag: ReqTag,

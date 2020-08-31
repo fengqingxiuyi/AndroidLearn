@@ -9,17 +9,14 @@ android {
 }
 
 dependencies {
-    api "com.facebook.fresco:fresco:$fresco_version"
-    // 在 API < 14 上的机器支持 WebP 时，需要添加
-    // api "com.facebook.fresco:animated-base-support:$fresco_version"
+    implementation rootProject.ext.libs.fresco
     // 支持 GIF 动图，需要添加
-    implementation "com.facebook.fresco:animated-gif:$fresco_version"
+    implementation rootProject.ext.libs.fresco_gif
     // 支持 WebP （静态图+动图），需要添加
-    implementation "com.facebook.fresco:animated-webp:$fresco_version"
-    implementation "com.facebook.fresco:webpsupport:$fresco_version"
+    implementation rootProject.ext.libs.fresco_webp
     // 仅支持 WebP 静态图，需要添加
-    implementation "com.facebook.fresco:webpsupport:$fresco_version"
+    implementation rootProject.ext.libs.fresco_webpsupport
 
     // your project's other dependencies
-    implementation "com.facebook.fresco:imagepipeline-okhttp3:$fresco_version"
+    implementation rootProject.ext.libs.fresco_imagepipeline
 }

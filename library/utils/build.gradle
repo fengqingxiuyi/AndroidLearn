@@ -7,3 +7,11 @@ android {
         versionName "1.0"
     }
 }
+
+dependencies {
+    /*
+    解决错误警告：
+    Cannot access androidx.lifecycle.HasDefaultViewModelProviderFactory
+     */
+    implementation rootProject.ext.libs.lifecycle_viewmodel
+}

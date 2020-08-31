@@ -2,14 +2,12 @@ apply plugin: 'java'
 apply plugin: 'kotlin'
 
 dependencies {
-    //https://mvnrepository.com/artifact/com.android.tools.lint
-    compileOnly "com.android.tools.lint:lint-api:$lint_version"
-    compileOnly "com.android.tools.lint:lint-checks:$lint_version"
-    //https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compileOnly rootProject.ext.libs.compileOnly.lint_api
+    compileOnly rootProject.ext.libs.compileOnly.lint_checks
+    compileOnly rootProject.ext.libs.kotlin
     //
-    testImplementation "junit:junit:$junit_version"
-    testImplementation "com.android.tools.lint:lint:$lint_version"
-    testImplementation "com.android.tools.lint:lint-tests:$lint_version"
-    testImplementation "com.android.tools:testutils:$lint_version"
+    testImplementation rootProject.ext.libs.test.junit
+    testImplementation rootProject.ext.libs.test.lint
+    testImplementation rootProject.ext.libs.test.lint_tests
+    testImplementation rootProject.ext.libs.test.testutils
 }

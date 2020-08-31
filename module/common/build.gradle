@@ -18,26 +18,16 @@ android {
 }
 
 dependencies {
-    //断点下载
-    api project(":download")
     //依赖LintAAR，引入自定义Lint规则
-    api project(":lintaar")
+    api rootProject.ext.module.lint.lintaar
     //业务无关UI组件库
-    api project(":ui")
+    implementation rootProject.ext.module.ui
     //业务无关工具库
-    api project(":utils")
-    //分区组件
-    api project(":partition")
+    implementation rootProject.ext.module.utils
     //网络组件
-    api project(":network")
-    //社会化组件
-    api project(":social")
-    //轮播组件
-    api project(":banner")
-    //刷新加载组件
-    api project(":refresh")
-    //图片组件
-    api project(":image")
+    implementation rootProject.ext.module.network
+    implementation rootProject.ext.libs.retrofit
+    implementation rootProject.ext.libs.retrofit_rxjava
     //摇一摇上传屏幕截图
-    implementation project(":shake")
+    implementation rootProject.ext.module.shake
 }

@@ -9,13 +9,11 @@ android {
 }
 
 dependencies {
-    //https://github.com/square/retrofit/blob/master/CHANGELOG.md
-    api "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
-    //https://github.com/ReactiveX/RxAndroid/releases
-    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation rootProject.ext.libs.retrofit
+    implementation rootProject.ext.libs.retrofit_gson
+    implementation rootProject.ext.libs.retrofit_rxjava
+    implementation rootProject.ext.libs.retrofit_scalars
+    implementation rootProject.ext.libs.rxandroid
     //
-    implementation project(":utils")
+    implementation rootProject.ext.module.utils
 }

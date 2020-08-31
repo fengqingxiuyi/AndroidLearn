@@ -27,18 +27,6 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation fileTree(dir: "./src/main/jniLibs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    //https://developer.android.com/jetpack/androidx/releases/appcompat
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    /*
-    下面这个库要和androidx.appcompat库一起引入，原因未知，否则会有错误警告：
-    Cannot access androidx.lifecycle.HasDefaultViewModelProviderFactory
-     */
-    //https://developer.android.com/topic/libraries/architecture/viewmodel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    //https://developer.android.com/training/constraint-layout
-    //https://developer.android.com/jetpack/androidx/releases/constraintlayout
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-    //https://mvnrepository.com/artifact/com.google.android.material/material
-    implementation "com.google.android.material:material:$material_version"
+    implementation rootProject.ext.libs.kotlin
+    implementation rootProject.ext.libs.appcompat
 }

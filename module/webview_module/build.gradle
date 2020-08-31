@@ -9,6 +9,6 @@ android {
 }
 
 dependencies {
-    implementation project(":utils")
-    implementation project(":common")
+    implementation rootProject.ext.module.utils
+    implementation rootProject.ext.module.common
 }

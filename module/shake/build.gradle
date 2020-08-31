@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation project(":ui")
-    implementation project(":utils")
-    implementation project(":network")
+    implementation rootProject.ext.module.ui
+    implementation rootProject.ext.module.utils
+    implementation rootProject.ext.libs.retrofit
 }

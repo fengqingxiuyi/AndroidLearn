@@ -1,23 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+
 buildscript { //gradle脚本执行所需依赖
     ext {
         kotlin_version = "1.4.0"
-        room_version = "2.2.5"
-        koin_version= "2.1.6"
-        lifecycle_version= "2.2.0"
-        work_version= "2.4.0"
-        lint_version = '27.0.1'
-        appcompat_version = '1.2.0'
-        constraintlayout_version = '1.1.3'
-        autoService_version = '1.0-rc7'
-        kotlinpoet_version = '1.6.0'
-        junit_version = '4.13'
-        material_version = '1.2.0'
-        retrofit_version = '2.6.2'
-        rxandroid_version = '2.1.1'
-        wechat_version = '5.1.4'
-        weibo_version = '4.2.7'
-        fresco_version = '0.12.0'
     }
     repositories {
         maven{

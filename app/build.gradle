@@ -12,6 +12,8 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        //只支持 中文简体
+        resConfigs "zh-rCN"
     }
     //将res文件夹中的资源以模块的形式分类
     sourceSets {
@@ -35,6 +37,16 @@ android {
                     'src/main/res/ui/webview'
             ]
         }
+        debug {
+            java.srcDirs = ['src/debug/java']
+            res.srcDirs = [
+                    'src/debug/res/fps',
+                    'src/debug/res'
+            ]
+        }
+        release {
+            java.srcDirs = ['src/release/java']
+        }
     }
     //lint配置
     lintOptions {
@@ -52,18 +64,36 @@ android.applicationVariants.all { variant ->
 }
 
 dependencies {
-    //https://developer.android.com/topic/libraries/architecture/room
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-    //https://github.com/InsertKoinIO/koin
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-    //https://developer.android.com/topic/libraries/architecture/workmanager
-    implementation "androidx.work:work-runtime-ktx:$work_version"
-    //编译时注解
-    implementation project(":annotation")
-    kapt project(":annotationcompiler")
-    //业务通用模块
-    implementation project(":common")
-    //Webview
-    implementation project(":webview_module")
+    //library
+    rootProject.ext.libs.each { lib ->
+        if (lib.key == "compiler") {
+            lib.value.each { item ->
+                kapt item.value
+            }
+        } else if (lib.key == "debug") {
+            lib.value.each { item ->
+                debugImplementation item.value
+            }
+        } else if (lib.key == "test" || lib.key == "compileOnly") {
+            //do nothing
+        } else {
+            lib.each { item ->
+                implementation item.value
+            }
+        }
+    }
+    //module
+    rootProject.ext.module.each { lib ->
+        if (lib.key == "compiler") {
+            lib.value.each { item ->
+                kapt item.value
+            }
+        } else if (lib.key == "lint") {
+            //do nothing
+        } else {
+            lib.each { item ->
+                implementation item.value
+            }
+        }
+    }
 }
