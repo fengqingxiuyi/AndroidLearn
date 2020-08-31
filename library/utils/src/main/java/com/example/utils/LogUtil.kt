@@ -124,6 +124,45 @@ object LogUtil {
     }
 
     @JvmStatic
+    fun w(msg: String, lineBreak: Boolean = true) {
+        if (LOG_DEBUG) {
+            if (isEmpty(msg, lineBreak)) return
+            val header = getHeaderInfo()
+            var index = 0
+            val countOfSub = msg.length / maxLength
+            if (countOfSub > 0) {
+                for (i in 0 until countOfSub) {
+                    val sub = msg.substring(index, index + maxLength)
+                    Log.w(TAG, header + sub)
+                    index += maxLength
+                }
+                Log.w(TAG, header + msg.substring(index, msg.length))
+            } else {
+                Log.w(TAG, header + msg)
+            }
+            // 回调
+            logListener?.log(header + msg)
+        }
+    }
+
+    @JvmStatic
+    fun w(vararg messages: Any?) {
+        if (LOG_DEBUG) {
+            val stringBuilder = StringBuilder()
+            for (msg in messages) {
+                if (null == msg) {
+                    continue
+                }
+                stringBuilder.append(msg.toString())
+                stringBuilder.append(" ")
+            }
+            if (stringBuilder.isNotEmpty()) {
+                w(stringBuilder.toString())
+            }
+        }
+    }
+
+    @JvmStatic
     fun e(msg: String, lineBreak: Boolean = true) {
         if (LOG_DEBUG) {
             if (isEmpty(msg, lineBreak)) return

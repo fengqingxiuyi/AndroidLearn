@@ -70,6 +70,7 @@
                     android:scheme="androidlearn" />
             </intent-filter>
         </activity-alias>
+        <activity android:name=".TestActivity" />
         <activity android:name=".ui.social.SocialActivity" />
         <activity android:name=".ui.social.SocialSecondActivity" />
         <activity android:name=".ui.constraint.ConstraintActivity" />

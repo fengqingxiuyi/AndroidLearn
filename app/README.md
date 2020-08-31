@@ -6,6 +6,10 @@
 
 ```
 app
+  |--src/debug/java/com/example/learn //多级目录折叠-debug包专属功能
+       |--fps //FPS功能模块
+       |--AppBlockCanaryContext //BlockCanary配置文件
+       |--Config //配置文件
   |--src/main/java/com/example/learn //多级目录折叠
        |--algorithm //算法
        |--annotation //运行时注解，测试类：MainActivity
@@ -20,6 +24,7 @@ app
        |--ui
            |--anim //实现点赞高光动画
            |--appbarlayout //AppBarLayout使用示例
+           |--banner //轮播组件使用示例
            |--bezier //贝塞尔曲线使用示例
            |--card //卡片形式的View使用示例
            |--constraint //ConstraintLayout与RelativeLayout性能分析
@@ -34,4 +39,6 @@ app
            |--viewswitcher //ViewSwitcher使用示例
            |--webview //WebView
        |--wxapi //微信授权和分享需要的文件夹
+  |--src/release/java/com/example/learn //多级目录折叠-release包专属功能
+       |--Config //配置文件
 ```

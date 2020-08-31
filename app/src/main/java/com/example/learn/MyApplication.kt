@@ -53,6 +53,8 @@ class MyApplication : Application() {
     }
 
     private fun inMainProcess() {
+        //Debug Release Special Compile
+        Config.setting(this)
         initWebview()
         initKoin()
         initNet()
