@@ -18,16 +18,13 @@ android {
 }
 
 dependencies {
-    //依赖LintAAR，引入自定义Lint规则
+    //为每一个业务组件引入自定义的Lint规则
     api rootProject.ext.module.lint.lintaar
-    //业务无关UI组件库
     implementation rootProject.ext.module.ui
-    //业务无关工具库
     implementation rootProject.ext.module.utils
-    //网络组件
     implementation rootProject.ext.module.network
+    implementation rootProject.ext.module.shake
+    //
     implementation rootProject.ext.libs.retrofit
     implementation rootProject.ext.libs.retrofit_rxjava
-    //摇一摇上传屏幕截图
-    implementation rootProject.ext.module.shake
 }

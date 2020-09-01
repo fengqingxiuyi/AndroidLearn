@@ -8,9 +8,9 @@ ext {
             ],
             debug               : [
                     //LeakCanary https://square.github.io/leakcanary/
-                    leakcanary   : 'com.squareup.leakcanary:leakcanary-android:1.6.3',
+                    leakcanary : 'com.squareup.leakcanary:leakcanary-android:1.6.3',
                     //BlockCanary https://github.com/markzhai/AndroidPerformanceMonitor
-                    blockcanary  : 'com.github.markzhai:blockcanary-android:1.5.0',
+                    blockcanary: 'com.github.markzhai:blockcanary-android:1.5.0',
             ],
             test                : [
                     junit     : "junit:junit:4.13",

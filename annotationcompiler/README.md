@@ -18,7 +18,6 @@ apply plugin: 'kotlin'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.libs.kotlin
 }
 ```
 

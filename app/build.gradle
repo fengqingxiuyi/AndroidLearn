@@ -67,34 +67,40 @@ android.applicationVariants.all { variant ->
 dependencies {
     //library
     rootProject.ext.libs.each { lib ->
-        if (lib.key == "compiler") {
-            lib.value.each { item ->
-                kapt item.value
-            }
-        } else if (lib.key == "debug") {
-            lib.value.each { item ->
-                debugImplementation item.value
-            }
-        } else if (lib.key == "test" || lib.key == "compileOnly") {
-            //do nothing
-        } else {
-            lib.each { item ->
-                implementation item.value
-            }
+        switch (lib.key) {
+            case "compiler":
+                lib.value.each { item ->
+                    kapt item.value
+                }
+                break
+            case "debug":
+                lib.value.each { item ->
+                    debugImplementation item.value
+                }
+                break
+            case "test":
+            case "compileOnly":
+                break
+            default:
+                lib.each { item ->
+                    implementation item.value
+                }
         }
     }
     //module
     rootProject.ext.module.each { lib ->
-        if (lib.key == "compiler") {
-            lib.value.each { item ->
-                kapt item.value
-            }
-        } else if (lib.key == "lint") {
-            //do nothing
-        } else {
-            lib.each { item ->
-                implementation item.value
-            }
+        switch (lib.key) {
+            case "compiler":
+                lib.value.each { item ->
+                    kapt item.value
+                }
+                break
+            case "lint":
+                break
+            default:
+                lib.each { item ->
+                    implementation item.value
+                }
         }
     }
 }

@@ -27,6 +27,5 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation fileTree(dir: "./src/main/jniLibs", include: ["*.jar"])
-    implementation rootProject.ext.libs.kotlin
     implementation rootProject.ext.libs.appcompat
 }

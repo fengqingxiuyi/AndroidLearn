@@ -16,7 +16,6 @@ dependencies {
     implementation rootProject.ext.libs.fresco_webp
     // 仅支持 WebP 静态图，需要添加
     implementation rootProject.ext.libs.fresco_webpsupport
-
     // your project's other dependencies
     implementation rootProject.ext.libs.fresco_imagepipeline
 }
