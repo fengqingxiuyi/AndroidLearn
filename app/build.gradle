@@ -44,6 +44,7 @@ android {
                     'src/main/res/ui/partition',
                     'src/main/res/ui/refresh',
                     'src/main/res/ui/social',
+                    'src/main/res/ui/viewattribute',
                     'src/main/res/ui/viewswitcher',
                     'src/main/res/ui/webview',
                     'src/main/res/ui/youtu',

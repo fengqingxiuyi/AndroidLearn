@@ -1,0 +1,9 @@
+<resources>
+
+    <declare-styleable name="ViewAttribute">
+        <attr name="view_attr_text" format="string" />
+        <attr name="view_attr_text_color" format="color" />
+        <attr name="view_attr_round" format="boolean" />
+    </declare-styleable>
+
+</resources>

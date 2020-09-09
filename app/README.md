@@ -39,6 +39,7 @@ app
                |--partition //分区组件使用示例
                |--refresh //刷新加载组件使用示例
                |--social //社会化组件测试
+               |--viewattribute //自定义View并实现属性的设置与使用
                |--viewswitcher //ViewSwitcher使用示例
                |--webview //WebView
                     |--README.md //Java与JS的交互总结
