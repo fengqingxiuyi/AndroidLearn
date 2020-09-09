@@ -25,6 +25,7 @@ import com.example.learn.ui.constraint.ConstraintActivity
 import com.example.learn.ui.download.DownloadActivity
 import com.example.learn.ui.image.ImageActivity
 import com.example.learn.ui.imagescaletype.ImageScaleTypeActivity
+import com.example.learn.ui.layout2bitmap.Layout2BitmapActivity
 import com.example.learn.ui.loop.LoopActivity
 import com.example.learn.ui.network.hello.NetworkHelloActivity
 import com.example.learn.ui.partition.PartitionActivity
@@ -216,6 +217,10 @@ class TestActivity : BaseActivity() {
     fun testAOP(view: View) {
         val arr = arrayListOf<Int>()
         print(arr[1])
+    }
+
+    fun testLayout2Bitmap(view: View) {
+        startActivity(Intent(this, Layout2BitmapActivity::class.java))
     }
 
 }

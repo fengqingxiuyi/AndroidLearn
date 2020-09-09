@@ -190,6 +190,12 @@
                 android:onClick="testAOP"
                 android:text="Test AOP" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testLayout2Bitmap"
+                android:text="Test Layout2Bitmap" />
+
         </LinearLayout>
 
     </ScrollView>

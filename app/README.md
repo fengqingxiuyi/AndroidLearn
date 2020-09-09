@@ -34,6 +34,7 @@ app
                |--download //测试download模块
                |--image //图片组件使用示例
                |--imagescaletype //ImageScaleType各类型区别
+               |--layout2bitmap //Layout 转换为 Bitmap
                |--loop //单个或两个条目无限上下翻滚的View容器使用示例
                |--network //网络请求库测试
                |--partition //分区组件使用示例

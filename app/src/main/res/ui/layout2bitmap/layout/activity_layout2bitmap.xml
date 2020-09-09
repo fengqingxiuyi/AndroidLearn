@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/lbBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Layout-->Bitmap"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+    <RelativeLayout
+        android:id="@+id/lbLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_launcher"
+            android:background="@android:color/holo_red_light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="红色背景所在内容为测试布局"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ImageView
+        android:id="@+id/lbImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="说明：\n1、只要layout的visibility属性不为gone即可转换；\n2、如果是网络图片需要注意，只有加载完成后再转换才有效。"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>
