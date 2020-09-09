@@ -32,6 +32,7 @@ import com.example.learn.ui.social.SocialActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.ui.webview.WebViewSimpleActivity
 import com.example.learn.ui.youtu.YoutuTestActivity
+import com.example.ui.toast.ToastUtil
 import com.example.utils.LogUtil
 import com.example.utils.device.StatusBarUtil
 import com.example.webview_module.WebviewActivity
@@ -186,6 +187,21 @@ class TestActivity : BaseActivity() {
 
     fun testYoutu(view: View) {
         startActivity(Intent(this, YoutuTestActivity::class.java))
+    }
+
+    /**
+     * external：Kotlin里标识一个方法是JNI方法的关键字
+     */
+    external fun stringFromJNI(): String?
+
+    companion object {
+        init {
+            System.loadLibrary("native-lib")
+        }
+    }
+
+    fun testJNI(view: View) {
+        ToastUtil.toast(stringFromJNI())
     }
 
 }

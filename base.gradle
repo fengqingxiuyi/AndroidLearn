@@ -7,6 +7,8 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion project.COMPILE_SDK_VERSION as int
     buildToolsVersion project.BUILD_TOOLS_VERSION
+    //指定NDK版本
+    ndkVersion project.NDK_VERSION
 
     defaultConfig {
         minSdkVersion project.MIN_SDK_VERSION as int
