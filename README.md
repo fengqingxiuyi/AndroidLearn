@@ -17,6 +17,8 @@ learn
   |--gradleplugin //Gradle插件模块，内部示例：APK文件名替换插件
        |--README.md //Gradle插件使用教程
   |--library //存放基础模块的文件夹
+       |--aop //AOP组件
+            |--README.md //AOP组件说明
        |--banner //轮播组件
             |--README.md //轮播组件说明
        |--download //断点下载模块
