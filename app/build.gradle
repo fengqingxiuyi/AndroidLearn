@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply from: '../base.gradle'
+apply from: '../aop.gradle'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'apk-change-name'
 
@@ -61,8 +62,14 @@ android {
     }
     //lint配置
     lintOptions {
+        /**
+         * 暂时设定为false，AGP从4.0.1降到3.6.1之后会报错：
+         * /Users/fqxyi/.gradle/caches/modules-2/files-2.1/com.squareup/kotlinpoet/1.6.0/6ce4c42da0daf2ba11a4180d33360e8c049ef5b8/kotlinpoet-1.6.0.jar:
+         * Error: Invalid package reference in com.squareup:kotlinpoet; not included in Android:
+         * javax.tools. Referenced from com.squareup.kotlinpoet.FileSpec. [InvalidPackage]
+         */
         //true：检测出错时停止构建
-        abortOnError true
+        abortOnError false
     }
 }
 

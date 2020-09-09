@@ -3,4 +3,6 @@ apply plugin: 'kotlin'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //kotlin版本从1.4.0降到了1.3.61，需要指定依赖
+    implementation rootProject.ext.libs.kotlin
 }

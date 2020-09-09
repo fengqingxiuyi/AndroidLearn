@@ -21,6 +21,7 @@ module.forEach { path ->
 
 
 def library = [
+        '/library/aop',
         '/library/banner',
         '/library/download',
         '/library/image',

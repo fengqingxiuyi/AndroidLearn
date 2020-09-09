@@ -175,6 +175,12 @@
                 android:onClick="testJNI"
                 android:text="Test JNI" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testAOP"
+                android:text="Test AOP" />
+
         </LinearLayout>
 
     </ScrollView>

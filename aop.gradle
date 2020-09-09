@@ -1,0 +1,10 @@
+//AOP
+apply plugin: 'com.hujiang.android-aspectjx'
+
+aspectjx {
+    enabled true
+    //2.0.0版本的 include,exclude通过package路径匹配class文件及jar文件，不再支持通过jar物理文件路径匹配的方式
+//    include 'universal-image-loader', 'AspectJX-Demo/library'
+    exclude 'androidx', 'junit', 'jetbrains', 'com.google'
+//    ajcArgs '-Xlint:warning'
+}

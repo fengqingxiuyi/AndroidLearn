@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.annotation.BindCompile
+import com.example.aop.annotation.CrashSafe
 import com.example.common.base.BaseActivity
 import com.example.learn.annotation.BindRuntime
 import com.example.learn.annotation.Binding
@@ -202,6 +203,12 @@ class TestActivity : BaseActivity() {
 
     fun testJNI(view: View) {
         ToastUtil.toast(stringFromJNI())
+    }
+
+    @CrashSafe
+    fun testAOP(view: View) {
+        val arr = arrayListOf<Int>()
+        print(arr[1])
     }
 
 }
