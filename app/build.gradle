@@ -31,6 +31,7 @@ android {
         main {
             res.srcDirs = [
                     'src/main/res/main',
+                    'src/main/res/ui/adapter',
                     'src/main/res/ui/anim',
                     'src/main/res/ui/appbarlayout',
                     'src/main/res/ui/banner',

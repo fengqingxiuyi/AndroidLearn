@@ -25,6 +25,7 @@ app
            |--lint //lint功能验证示例
            |--single //单例汇总
            |--ui
+               |--adapter //CommonAdapter使用示例
                |--anim //实现点赞高光动画
                |--appbarlayout //AppBarLayout使用示例
                |--banner //轮播组件使用示例

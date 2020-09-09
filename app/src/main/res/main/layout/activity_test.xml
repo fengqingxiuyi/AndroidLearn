@@ -196,6 +196,12 @@
                 android:onClick="testLayout2Bitmap"
                 android:text="Test Layout2Bitmap" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testList"
+                android:text="Test List" />
+
         </LinearLayout>
 
     </ScrollView>

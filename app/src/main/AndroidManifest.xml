@@ -99,6 +99,7 @@
         <activity android:name=".ui.card.CardActivity" />
         <activity android:name=".ui.youtu.YoutuTestActivity" />
         <activity android:name=".ui.layout2bitmap.Layout2BitmapActivity" />
+        <activity android:name=".ui.adapter.ListCommonAdapterActivity" />
     </application>
 
 </manifest>

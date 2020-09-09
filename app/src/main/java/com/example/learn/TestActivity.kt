@@ -15,6 +15,7 @@ import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.jetpack.room.RoomTest
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
+import com.example.learn.ui.adapter.ListCommonAdapterActivity
 import com.example.learn.ui.anim.bean.StarIntentParamBean
 import com.example.learn.ui.anim.star.StarAnimActivity
 import com.example.learn.ui.appbarlayout.AppbarLayoutActivity
@@ -221,6 +222,10 @@ class TestActivity : BaseActivity() {
 
     fun testLayout2Bitmap(view: View) {
         startActivity(Intent(this, Layout2BitmapActivity::class.java))
+    }
+
+    fun testList(view: View) {
+        startActivity(Intent(this, ListCommonAdapterActivity::class.java))
     }
 
 }
