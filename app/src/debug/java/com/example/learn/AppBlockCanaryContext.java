@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 
 import com.example.common.global.AppGlobal;
 import com.example.utils.LogUtil;
-import com.example.utils.NetworkUtil;
+import com.example.utils.network.NetworkUtil;
 import com.github.moduth.blockcanary.BlockCanaryContext;
 import com.github.moduth.blockcanary.internal.BlockInfo;
 

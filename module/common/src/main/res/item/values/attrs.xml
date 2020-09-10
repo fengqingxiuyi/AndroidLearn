@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="InfoListView">
+        <attr name="bg_color" format="color" />
+        <!-- left icon -->
+        <attr name="left_icon" format="string" />
+        <attr name="left_icon_size" format="dimension" />
+        <attr name="left_icon_color" format="color" />
+        <!-- left text -->
+        <attr name="left_text" format="string" />
+        <attr name="left_text_size" format="dimension" />
+        <attr name="left_text_color" format="color" />
+        <!-- right text -->
+        <attr name="right_text" format="string" />
+        <attr name="right_text_size" format="dimension" />
+        <attr name="right_text_color" format="color" />
+        <!-- right icon -->
+        <attr name="right_icon" format="string" />
+        <attr name="right_icon_size" format="dimension" />
+        <attr name="right_icon_color" format="color" />
+    </declare-styleable>
+
+</resources>

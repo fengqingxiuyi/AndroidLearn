@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
+import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
@@ -116,6 +117,10 @@ abstract class DialogBaseFragment : DialogFragment() {
     fun setSize(width: Int, height: Int) {
         this.width = width
         this.height = height
+    }
+
+    protected open fun findViewById(@IdRes id: Int): View? {
+        return rootView?.findViewById(id)
     }
 
 }

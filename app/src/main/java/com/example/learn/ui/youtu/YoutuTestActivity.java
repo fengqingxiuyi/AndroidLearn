@@ -12,11 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.common.base.BaseActivity;
-import com.example.common.loading.LoadingUtil;
+import com.example.common.ui.loading.LoadingUtil;
 import com.example.learn.R;
 import com.example.learn.ui.youtu.common.Config;
 import com.example.learn.ui.youtu.util.Util;
-import com.example.social.share.ImageUtil;
+import com.example.utils.view.ImageUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;

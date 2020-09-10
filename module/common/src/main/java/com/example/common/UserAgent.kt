@@ -2,7 +2,7 @@ package com.example.common
 
 import android.content.Context
 import android.os.Build
-import com.example.utils.AppUtil
+import com.example.utils.app.AppUtil
 import com.example.utils.device.DeviceUtil
 
 /**

@@ -9,6 +9,7 @@ import android.text.TextUtils;
 
 import com.example.social.ISocialType;
 import com.example.social.R;
+import com.example.utils.view.ImageUtil;
 
 import java.io.File;
 

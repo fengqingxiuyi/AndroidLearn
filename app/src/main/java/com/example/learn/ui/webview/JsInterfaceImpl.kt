@@ -5,7 +5,7 @@ import android.content.Context
 import android.text.TextUtils
 import com.example.learn.BuildConfig
 import com.example.ui.toast.ToastUtil
-import com.example.utils.ActivitiesManager.Companion.getInstance
+import com.example.utils.activity.ActivitiesManager.Companion.getInstance
 import com.example.webview_module.IWebviewBinderCallback
 import kotlin.math.abs
 

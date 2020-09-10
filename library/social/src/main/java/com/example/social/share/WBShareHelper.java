@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import com.example.social.ISocialType;
 import com.example.social.R;
 import com.example.social.util.Utils;
+import com.example.utils.view.ImageUtil;
 import com.sina.weibo.sdk.WbSdk;
 import com.sina.weibo.sdk.api.BaseMediaObject;
 import com.sina.weibo.sdk.api.ImageObject;

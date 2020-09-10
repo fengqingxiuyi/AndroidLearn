@@ -47,6 +47,8 @@ ext {
             retrofit_scalars    : "com.squareup.retrofit2:converter-scalars:2.6.2",
             //异步框架 https://github.com/ReactiveX/RxAndroid/releases
             rxandroid           : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            //异步框架 https://github.com/ReactiveX/RxJava/releases
+            rxjava              : "io.reactivex.rxjava2:rxjava:2.2.6",
             //图片框架 https://github.com/bumptech/glide/releases
             fresco              : "com.facebook.fresco:fresco:0.12.0",
             fresco_gif          : "com.facebook.fresco:animated-gif:0.12.0",

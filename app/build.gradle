@@ -50,6 +50,7 @@ android {
                     'src/main/res/ui/viewswitcher',
                     'src/main/res/ui/webview',
                     'src/main/res/ui/youtu',
+                    'src/main/res/uiutils',
             ]
         }
         debug {
@@ -85,6 +86,7 @@ android.applicationVariants.all { variant ->
 }
 
 dependencies {
+    implementation files('libs/javassist.jar')
     //library
     rootProject.ext.libs.each { lib ->
         switch (lib.key) {

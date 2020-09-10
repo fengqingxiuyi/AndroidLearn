@@ -112,20 +112,20 @@ gradleplugin
 
 ```groovy
 buildscript {
-    //省略无关内容
+    //省略一些内容
     repositories {
         maven{
             url './gradleplugin/repo/' //这里写的是相对地址，也可以写绝对地址
         }
-        //省略无关内容
+        //省略一些内容
     }
     dependencies {
-        //省略无关内容
+        //省略一些内容
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath "com.example.gradleplugin:gradleplugin:1.0.0"
     }
-    //省略无关内容
+    //省略一些内容
 }
 ```
 

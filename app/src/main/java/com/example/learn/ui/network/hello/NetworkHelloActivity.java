@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.common.base.BaseActivity;
-import com.example.common.loading.LoadingUtil;
 import com.example.common.network.API;
+import com.example.common.ui.loading.LoadingUtil;
 import com.example.learn.R;
 import com.example.learn.ui.network.mvp.view.MvpActivity;
 import com.example.network.RequestManager;

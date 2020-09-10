@@ -35,6 +35,7 @@ import com.example.learn.ui.social.SocialActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.ui.webview.WebViewSimpleActivity
 import com.example.learn.ui.youtu.YoutuTestActivity
+import com.example.learn.uiutils.UiUtilsActivity
 import com.example.ui.toast.ToastUtil
 import com.example.utils.LogUtil
 import com.example.utils.device.StatusBarUtil
@@ -226,6 +227,10 @@ class TestActivity : BaseActivity() {
 
     fun testList(view: View) {
         startActivity(Intent(this, ListCommonAdapterActivity::class.java))
+    }
+
+    fun testUiUtils(view: View) {
+        startActivity(Intent(this, UiUtilsActivity::class.java))
     }
 
 }

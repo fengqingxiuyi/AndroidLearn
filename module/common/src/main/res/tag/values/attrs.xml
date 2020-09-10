@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TagView">
+        <attr name="tag_radius" format="dimension" />
+        <attr name="tag_text" format="string" />
+        <attr name="tag_text_size" format="dimension" />
+        <attr name="tag_text_color" format="color" />
+        <attr name="tag_stroke_width" format="dimension" />
+        <attr name="tag_stroke_color" format="color" />
+        <attr name="tag_color" format="color" />
+        <attr name="tag_padding_left" format="dimension" />
+        <attr name="tag_padding_top" format="dimension" />
+    </declare-styleable>
+
+</resources>

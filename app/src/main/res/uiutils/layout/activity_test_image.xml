@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.common.ui.titlebar.TitleBarView
+                android:id="@+id/test_image_title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title_bar_title="TestImageActivity" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="将要转换为Bitmap的布局："
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <ScrollView
+                android:id="@+id/test_image_convert_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_dark"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你好，我是布局的内容，蓝色背景是布局所占区域"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/ic_launcher" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/test_image_convert_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="viewToBitmap"
+                android:text="生成图片"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/test_image_convert_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/test_image_long_show_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testLongImageShow"
+                android:text="展示长图"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/test_image_long_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/test_image_round_show_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testRoundImageShow"
+                android:text="展示圆角图"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <com.example.ui.circle.RoundImageView2
+                android:id="@+id/test_image_round_view2"
+                android:layout_width="192dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:src="@mipmap/test_image_round"
+                app:radius2="10dp"
+                android:visibility="gone" />
+
+            <com.example.ui.circle.RoundImageView
+                android:id="@+id/test_image_round_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/test_image_round"
+                app:radius="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</merge>

@@ -10,7 +10,11 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/dialog',
+                    'src/main/res/item',
                     'src/main/res/loading',
+                    'src/main/res/tag',
+                    'src/main/res/titlebar',
                     'src/main/res'
             ]
         }

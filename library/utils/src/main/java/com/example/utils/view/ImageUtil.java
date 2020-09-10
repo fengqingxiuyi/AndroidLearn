@@ -1,9 +1,13 @@
-package com.example.social.share;
+package com.example.utils.view;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.opengl.GLES10;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
+import android.view.View;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -15,6 +19,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
 
 /**
  * 图片操作工具类
@@ -384,9 +394,6 @@ public class ImageUtil {
 
     /**
      * bitmap转为base64
-     *
-     * @param bitmap
-     * @return
      */
     public static String bitmapToBase64(Bitmap bitmap) throws IOException {
 
@@ -420,12 +427,158 @@ public class ImageUtil {
 
     /**
      * base64转为bitmap
-     * @param base64Data
-     * @return
      */
     public static Bitmap base64ToBitmap(String base64Data) {
         byte[] bytes = Base64.decode(base64Data, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+    }
+
+    /**
+     * 将view转化为Bitmap并保存在指定的文件中
+     *
+     * @param fileDir 指定的保存Bitmap的目录
+     * @param fileName 指定的保存Bitmap的文件名
+     * @param quality Bitmap的质量 [0, 100] 之间
+     * @return 指定的保存Bitmap的文件的路径
+     */
+    public static String viewToBitmap(View view, File fileDir, String fileName, int quality) {
+        if (quality < 0 || quality > 100) {
+            return null;
+        }
+        return saveBitmap(viewToBitmap(view), fileDir, fileName);
+    }
+
+    public static String viewToBitmap(View view, File fileDir, String fileName) {
+        return viewToBitmap(view, fileDir, fileName, 100);
+    }
+
+    /**
+     * 将view转化为Bitmap
+     */
+    public static Bitmap viewToBitmap(View view) {
+        if (view == null) {
+            return null;
+        }
+        int height = view.getMeasuredHeight();
+        int width = view.getMeasuredWidth();
+        if (0 >= height || 0 >= width) {
+            return null;
+        }
+
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+
+        return bitmap;
+    }
+
+    /**
+     * 保存Bitmap到指定文件
+     *
+     * @param fileDir 指定的保存Bitmap的目录
+     * @param fileName 指定的保存Bitmap的文件名
+     * @return 指定的保存Bitmap的文件的路径
+     */
+    public static String saveBitmap(Bitmap bitmap, File fileDir, String fileName) {
+        if (fileDir == null || TextUtils.isEmpty(fileName) || bitmap == null) {
+            return null;
+        }
+        FileOutputStream fos = null;
+        try {
+            if (!fileDir.exists()) {
+                if (!fileDir.mkdirs()) {
+                    return null;
+                }
+            }
+            File file = new File(fileDir, fileName);
+            if (!file.exists()) {
+                if (!file.createNewFile()) {
+                    return null;
+                }
+            }
+            fos = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            return file.getAbsolutePath();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            bitmap.recycle();
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
+    private static int sGLESTextureLimit = 0; // canvas允许绘制的Bitmap的最大长度，保存在变量中，不用每次读取计算
+
+    /**
+     * 获取当前设备，canvas允许绘制的Bitmap的最大长度
+     * 注释：不知道为什么，在(设备名称：Galaxy Note3)(型号：SM-N9008S)(Android版本：Android5.0)设备上获取到的值为4096，但是设置为3913的时候才能显示图片，所以每次减少1000，看性能消耗相对于其它值而言会好一点
+     */
+    public static int getGLESTextureLimit() {
+        if (sGLESTextureLimit != 0) {
+            return sGLESTextureLimit;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            sGLESTextureLimit = getGLESTextureLimitEqualAboveLollipop();
+        } else {
+            sGLESTextureLimit = getGLESTextureLimitBelowLollipop();
+        }
+        sGLESTextureLimit -= 1000;
+        return sGLESTextureLimit;
+    }
+
+    private static int getGLESTextureLimitBelowLollipop() {
+        int[] maxSize = new int[1];
+        GLES10.glGetIntegerv(GLES10.GL_MAX_TEXTURE_SIZE, maxSize, 0);
+        return maxSize[0];
+    }
+
+    private static int getGLESTextureLimitEqualAboveLollipop() {
+        EGL10 egl = (EGL10) EGLContext.getEGL();
+        EGLDisplay dpy = egl.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
+        int[] vers = new int[2];
+        egl.eglInitialize(dpy, vers);
+        int[] configAttr = {
+                EGL10.EGL_COLOR_BUFFER_TYPE, EGL10.EGL_RGB_BUFFER,
+                EGL10.EGL_LEVEL, 0,
+                EGL10.EGL_SURFACE_TYPE, EGL10.EGL_PBUFFER_BIT,
+                EGL10.EGL_NONE
+        };
+        EGLConfig[] configs = new EGLConfig[1];
+        int[] numConfig = new int[1];
+        egl.eglChooseConfig(dpy, configAttr, configs, 1, numConfig);
+        if (numConfig[0] == 0) {// TROUBLE! No config found.
+        }
+        EGLConfig config = configs[0];
+        int[] surfAttr = {
+                EGL10.EGL_WIDTH, 64,
+                EGL10.EGL_HEIGHT, 64,
+                EGL10.EGL_NONE
+        };
+        EGLSurface surf = egl.eglCreatePbufferSurface(dpy, config, surfAttr);
+        final int EGL_CONTEXT_CLIENT_VERSION = 0x3098;  // missing in EGL10
+        int[] ctxAttrib = {
+                EGL_CONTEXT_CLIENT_VERSION, 1,
+                EGL10.EGL_NONE
+        };
+        EGLContext ctx = egl.eglCreateContext(dpy, config, EGL10.EGL_NO_CONTEXT, ctxAttrib);
+        egl.eglMakeCurrent(dpy, surf, surf, ctx);
+        int[] maxSize = new int[1];
+        GLES10.glGetIntegerv(GLES10.GL_MAX_TEXTURE_SIZE, maxSize, 0);
+        egl.eglMakeCurrent(dpy, EGL10.EGL_NO_SURFACE, EGL10.EGL_NO_SURFACE,
+                EGL10.EGL_NO_CONTEXT);
+        egl.eglDestroySurface(dpy, surf);
+        egl.eglDestroyContext(dpy, ctx);
+        egl.eglTerminate(dpy);
+
+        return maxSize[0];
     }
 
 }

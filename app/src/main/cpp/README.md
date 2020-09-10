@@ -175,7 +175,7 @@ target_link_libraries( # Specifies the target library.
 
 ```groovy
 android {
-    //省略其余配置
+    //省略一些内容
     //指定NDK版本，可选项
     ndkVersion '21.3.6528147'
     // This block is different from the one you use to link Gradle
@@ -188,7 +188,7 @@ android {
             path "src/main/cpp/CMakeLists.txt"
         }
     }
-    //省略其余配置
+    //省略一些内容
 }
 ```
 

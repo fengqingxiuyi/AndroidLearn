@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_info_list_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:minHeight="40dp">
+
+    <com.example.common.ui.text.IconFontTextView
+        android:id="@+id/view_info_list_left_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="&#xe6f0;" />
+
+    <TextView
+        android:id="@+id/view_info_list_left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        tools:text="左侧标题" />
+
+    <TextView
+        android:id="@+id/view_info_list_right_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        tools:text="右侧文本内容" />
+
+    <com.example.common.ui.text.IconFontTextView
+        android:id="@+id/view_info_list_right_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="&#xe6f6;" />
+
+</LinearLayout>

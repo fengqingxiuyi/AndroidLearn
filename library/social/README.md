@@ -13,7 +13,7 @@ open_sdk_r6008_lite.jar：<http://wiki.open.qq.com/wiki/QQ%E7%99%BB%E5%BD%95%E5%
 ```
 allprojects {
     repositories {
-        //省略其余配置
+        //省略一些内容
         maven { url "https://dl.bintray.com/thelasterstar/maven/" }
     }
 }

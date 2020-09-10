@@ -1,4 +1,4 @@
-package com.example.utils
+package com.example.utils.app
 
 import android.app.ActivityManager
 import android.content.Context
@@ -37,11 +37,10 @@ object AppUtil {
     /**
      * 获取当前版本号
      */
+    @JvmStatic
     fun getAppVersionCode(context: Context): Int {
         return try {
-            context.packageManager.getPackageInfo(
-                context.packageName, 0
-            ).versionCode
+            context.packageManager.getPackageInfo(context.packageName, 0).versionCode
         } catch (e: Exception) {
             1
         }
@@ -98,7 +97,6 @@ object AppUtil {
      */
     fun exitApp(context: Context) {
         try {
-            ActivitiesManager.getInstance().finishAllActivity()
             val activityMgr = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
             activityMgr.restartPackage(context.packageName)
             System.exit(0)

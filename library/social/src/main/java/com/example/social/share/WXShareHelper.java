@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import com.example.social.ISocialType;
 import com.example.social.R;
 import com.example.social.util.Utils;
+import com.example.utils.view.ImageUtil;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;

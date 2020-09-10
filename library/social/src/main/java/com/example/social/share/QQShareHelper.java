@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import com.example.social.ISocialType;
 import com.example.social.R;
 import com.example.social.util.Utils;
+import com.example.utils.view.ImageUtil;
 import com.tencent.connect.share.QQShare;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;

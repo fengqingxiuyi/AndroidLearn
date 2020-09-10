@@ -4,7 +4,7 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
-import com.example.utils.NetworkUtil;
+import com.example.utils.network.NetworkUtil;
 
 import java.io.IOException;
 

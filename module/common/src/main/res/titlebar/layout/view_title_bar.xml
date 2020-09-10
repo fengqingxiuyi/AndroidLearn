@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_bar_root"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/black">
+
+        <LinearLayout
+            android:id="@+id/title_bar_left_icon_container"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <com.example.common.ui.text.IconFontTextView
+                android:id="@+id/title_bar_left_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#xe6d5;"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_bar_left_text"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="关闭"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <com.example.ui.text.MarqueeTextView
+            android:id="@+id/title_bar_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="测试标题" />
+
+        <TextView
+            android:id="@+id/title_bar_right_text"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="分享"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/title_bar_right_icon_container"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="invisible">
+
+            <com.example.common.ui.text.IconFontTextView
+                android:id="@+id/title_bar_right_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#xe61f;"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/title_bar_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e6e6e6" />
+
+</LinearLayout>

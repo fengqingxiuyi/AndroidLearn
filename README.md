@@ -12,6 +12,7 @@ learn
        |--README.md //编译时注解使用教程
   |--app //主模块
        |--README.md //app模块说明
+  |--com //javassist修改hyphenatechat_3.4.2.jar包中的EMClient字节码之后的字节码
   |--git //git操作总结
        |--README.md //git操作总结
   |--gradleplugin //Gradle插件模块，内部示例：APK文件名替换插件
@@ -132,9 +133,46 @@ A problem occurred configuring project ':app'.
       <GradleProjectSettings>
         <!-- 新增以下option -->
         <option name="delegatedBuild" value="false" />
-        <!-- 省略其他option -->
+        <!-- 省略一些内容 -->
       </GradleProjectSettings>
     </option>
   </component>
 </project>
 ```
+
+## JCenter
+
+1. 在Project的`build.gradle`中添加以下代码：
+
+```groovy
+buildscript { //gradle脚本执行所需依赖
+    //省略一些内容
+    dependencies {
+        //省略一些内容
+        //上传代码到JCenter的插件
+        classpath 'com.novoda:bintray-release:0.9.2'
+        //省略一些内容
+    }
+    //省略一些内容
+}
+```
+
+2. 在要应用的模块（如：utils）添加以下代码：
+
+```groovy
+//省略一些内容
+//上传代码到JCenter的插件
+apply plugin: 'com.novoda.bintray-release'
+//省略一些内容
+//上传代码到JCenter的插件
+publish {
+    userOrg = 'fqxyi' // bintray.com用户名
+    groupId = 'com.example' // jcenter上的路径
+    artifactId = 'utils' // 项目名称
+    publishVersion = '1.0.0' // 版本号
+    desc = 'Summarize the tools or methods commonly used in routine development' // 描述，不重要
+    website = 'https://github.com/fengqingxiuyi/AndroidLearn/tree/master/library/utils' // 网站，不重要
+}
+```
+
+3. 上传命令：`./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false`

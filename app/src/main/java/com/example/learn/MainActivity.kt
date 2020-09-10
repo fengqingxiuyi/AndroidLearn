@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.view.View
 import com.example.common.base.BaseActivity
 import com.example.ui.toast.ToastUtil
-import com.example.utils.ActivitiesManager
+import com.example.utils.activity.ActivitiesManager
+import com.example.utils.app.AppUtil
 import kotlin.math.abs
 
 class MainActivity : BaseActivity() {
@@ -41,6 +42,7 @@ class MainActivity : BaseActivity() {
         super.onDestroy()
         ToastUtil.onAppExit()
         Config.destroy()
+        AppUtil.exitApp(this)
     }
 
     fun test(view: View) {

@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import androidx.annotation.NonNull;
 
-import com.example.common.loading.LoadingUtil;
+import com.example.common.ui.loading.LoadingUtil;
 import com.example.learn.ui.network.mvp.api.MvpApiService;
 import com.example.learn.ui.network.mvp.bean.MvpBean;
 import com.example.learn.ui.network.mvp.bean.MvpSecondBean;

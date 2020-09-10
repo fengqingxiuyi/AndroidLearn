@@ -10,7 +10,9 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/circle',
                     'src/main/res/dialog',
+                    'src/main/res/drag',
                     'src/main/res/progress',
                     'src/main/res/toast',
                     'src/main/res'

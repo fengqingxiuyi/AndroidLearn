@@ -16,8 +16,8 @@ import android.webkit.WebView;
 
 import androidx.annotation.Nullable;
 
-import com.example.utils.AppUtil;
 import com.example.utils.LogUtil;
+import com.example.utils.app.AppUtil;
 
 public class CustomWebChromeClient extends WebChromeClient {
 

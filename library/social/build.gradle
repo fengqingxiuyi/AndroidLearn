@@ -12,4 +12,5 @@ dependencies {
     implementation rootProject.ext.libs.recyclerview
     implementation rootProject.ext.libs.tencentsdk
     implementation rootProject.ext.libs.weibosdk
+    implementation rootProject.ext.module.utils
 }

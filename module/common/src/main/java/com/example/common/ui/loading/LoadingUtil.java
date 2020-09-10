@@ -1,4 +1,4 @@
-package com.example.common.loading;
+package com.example.common.ui.loading;
 
 import android.app.Activity;
 import android.content.Context;

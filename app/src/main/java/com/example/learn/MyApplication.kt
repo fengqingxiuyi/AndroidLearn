@@ -21,9 +21,10 @@ import com.example.network.observer.IBaseObserver
 import com.example.network.tag.ReqTag
 import com.example.social.SocialHelper
 import com.example.ui.toast.ToastUtil
-import com.example.utils.ActivitiesManager
-import com.example.utils.AppLifecycleMonitor
-import com.example.utils.AppUtil
+import com.example.utils.activity.ActivitiesManager
+import com.example.utils.app.AppLifecycleMonitor
+import com.example.utils.app.AppUtil
+import com.example.utils.storage.StorageManagerUtil
 import com.example.webview_module.js.JsBridge
 import okhttp3.Interceptor
 import org.koin.android.ext.koin.androidContext
@@ -49,6 +50,7 @@ class MyApplication : Application() {
 
     private fun inAllProcess() {
         initAppGlobal()
+        initStorage()
         initToast()
     }
 
@@ -79,6 +81,10 @@ class MyApplication : Application() {
             }
         })
         registerActivityLifecycleCallbacks(appLifecycleMonitor)
+    }
+
+    private fun initStorage() {
+        StorageManagerUtil.init(this)
     }
 
     private fun initToast() {

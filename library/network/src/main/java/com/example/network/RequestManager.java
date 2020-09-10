@@ -22,9 +22,9 @@ import com.example.network.observer.DefaultObserver;
 import com.example.network.observer.IBaseObserver;
 import com.example.network.tag.ReqTag;
 import com.example.network.utils.RequestUtil;
-import com.example.utils.ActivitiesManager;
 import com.example.utils.BuildConfig;
-import com.example.utils.storage.CacheUtil;
+import com.example.utils.activity.ActivitiesManager;
+import com.example.utils.storage.FileUtil;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -286,7 +286,7 @@ public class RequestManager {
                         obj = memoryCache.get(reqTag.getCacheKey());
                     }
                     if (obj == null) {
-                        obj = CacheUtil.getCacheFile(appContext, reqTag.getCacheKey());
+                        obj = FileUtil.getCacheFile(appContext, reqTag.getCacheKey());
                     }
                     t = (T) obj;
                 } catch (Exception e) {
@@ -319,7 +319,7 @@ public class RequestManager {
                     e.printStackTrace();
                 }
                 try {
-                    CacheUtil.saveCacheFile(appContext, reqTag.getCacheKey(), t);
+                    FileUtil.saveCacheFile(appContext, reqTag.getCacheKey(), t);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -394,7 +394,7 @@ public class RequestManager {
      */
     public void switchApi(String api) {
         clearMemoryCache();
-        CacheUtil.delDir(appContext);
+        FileUtil.delCacheDir(appContext);
         if (httpUrlInterceptor != null) {
             httpUrlInterceptor.switchApi(api);
         }

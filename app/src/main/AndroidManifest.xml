@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.learn">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:name=".MyApplication"
         android:icon="@mipmap/ic_launcher"
@@ -100,6 +102,13 @@
         <activity android:name=".ui.youtu.YoutuTestActivity" />
         <activity android:name=".ui.layout2bitmap.Layout2BitmapActivity" />
         <activity android:name=".ui.adapter.ListCommonAdapterActivity" />
+        <activity android:name=".uiutils.UiUtilsActivity"/>
+        <activity android:name=".uiutils.TestIntentActivity"/>
+        <activity android:name=".uiutils.TestOtherActivity"/>
+        <activity android:name=".uiutils.TestUtilActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".uiutils.TestViewActivity"/>
+        <activity android:name=".uiutils.TestImageActivity"/>
+        <activity android:name=".uiutils.TestDrawableActivity"/>
     </application>
 
 </manifest>

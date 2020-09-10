@@ -3,7 +3,7 @@ package com.example.learn.ui.youtu;
 import android.graphics.Bitmap;
 
 import com.example.learn.ui.youtu.sign.YoutuSign;
-import com.example.social.share.ImageUtil;
+import com.example.utils.view.ImageUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
