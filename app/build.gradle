@@ -30,6 +30,7 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
+                    'src/main/res/jetpack/viewmodel',
                     'src/main/res/main',
                     'src/main/res/ui/adapter',
                     'src/main/res/ui/anim',

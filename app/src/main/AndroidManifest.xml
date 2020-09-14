@@ -109,6 +109,7 @@
         <activity android:name=".uiutils.TestViewActivity"/>
         <activity android:name=".uiutils.TestImageActivity"/>
         <activity android:name=".uiutils.TestDrawableActivity"/>
+        <activity android:name=".jetpack.viewmodel.view.ViewModelActivity"/>
     </application>
 
 </manifest>

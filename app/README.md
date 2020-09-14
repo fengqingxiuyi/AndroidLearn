@@ -26,6 +26,7 @@ app
            |--java //Java功能测试模块
            |--jetpack //https://developer.android.com/jetpack
                |--room
+               |--viewmodel //MVVM示例
                |--workmanager
                     |--README.md //WorkManager源码浅析
            |--koin //koin

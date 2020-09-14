@@ -13,6 +13,7 @@ import com.example.learn.fps.Takt
 import com.example.learn.iconchange.IconChangeConstant
 import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.jetpack.room.RoomTest
+import com.example.learn.jetpack.viewmodel.view.ViewModelActivity
 import com.example.learn.jetpack.workmanager.WorkManagerTest
 import com.example.learn.koin.MyViewModel
 import com.example.learn.ui.adapter.ListCommonAdapterActivity
@@ -231,6 +232,10 @@ class TestActivity : BaseActivity() {
 
     fun testUiUtils(view: View) {
         startActivity(Intent(this, UiUtilsActivity::class.java))
+    }
+
+    fun testViewModel(view: View) {
+        startActivity(Intent(this, ViewModelActivity::class.java))
     }
 
 }

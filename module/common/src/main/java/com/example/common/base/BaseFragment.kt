@@ -1,116 +1,107 @@
-package com.example.common.base;
+package com.example.common.base
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import com.example.network.RequestManager;
+import android.content.Context
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import androidx.fragment.app.Fragment
+import com.example.network.RequestManager
 
 /**
  * 不需要Presenter时继承他
  */
-public abstract class BaseFragment extends Fragment {
+abstract class BaseFragment : Fragment() {
 
-    protected BaseActivity activity;
-    protected Context appContext;
+    @JvmField
+    protected var mActivity: BaseActivity? = null
+    @JvmField
+    protected var appContext: Context? = null
+
     //loading
-    private View loadingView;
+    var loadingView: View? = null
+        private set
 
-    private View rootView;
-    private boolean isFirstVisible = true;
-    private boolean isFirstInVisible = true;
+    private var rootView: View? = null
+    var isFirstVisible = true
+        private set
+    private var isFirstInVisible = true
+
     //判断第一次有效载入fragment
-    private boolean isActivityCreated;
+    private var isActivityCreated = false
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        appContext = context.getApplicationContext();
-        if (context instanceof BaseActivity) {
-            activity = (BaseActivity) context;
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        appContext = context.applicationContext
+        if (context is BaseActivity) {
+            mActivity = context
         }
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initPresenter();
-        initData(savedInstanceState);
-        isActivityCreated = true;
-        judgeIsFirstVisible();
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initPresenter()
+        initData(savedInstanceState)
+        isActivityCreated = true
+        judgeIsFirstVisible()
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        rootView = initView(inflater, container);
-        return rootView;
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        rootView = initView(inflater, container)
+        return rootView
     }
 
-    public void addLoadingView(View view, FrameLayout.LayoutParams params) {
-        if (rootView == null) return;
-        loadingView = view;
-        ((ViewGroup) rootView).addView(view, params);
+    fun addLoadingView(view: View?, params: FrameLayout.LayoutParams?) {
+        if (rootView == null) return
+        loadingView = view
+        (rootView as ViewGroup).addView(view, params)
     }
 
-    public void removeLoadingView() {
-        if (loadingView != null && loadingView.getParent() != null) {
-            ((ViewGroup) loadingView.getParent()).removeView(loadingView);
-            loadingView = null;
-        }
+    fun removeLoadingView() {
+        val parent = loadingView?.parent ?: return
+        (parent as ViewGroup).removeView(loadingView)
+        loadingView = null
     }
 
-    public View getLoadingView() {
-        return loadingView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
+    override fun onResume() {
+        super.onResume()
         if (isFirstVisible) {
-            isFirstVisible = false;
+            isFirstVisible = false
         } else {
-            onReUserVisible();
+            onReUserVisible()
         }
     }
 
-    @Override
-    public void onDestroy() {
-        RequestManager.get().destroy(this);
-        super.onDestroy();
+    override fun onDestroy() {
+        RequestManager.get().destroy(this)
+        super.onDestroy()
     }
 
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
         if (!hidden) {
-            onReUserVisible();
+            onReUserVisible()
         }
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        judgeIsFirstVisible();
-        if (getUserVisibleHint()) {
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        judgeIsFirstVisible()
+        if (userVisibleHint) {
             if (isFirstVisible) {
-                isFirstVisible = false;
+                isFirstVisible = false
             } else {
-                onHiddenChanged(false);
+                onHiddenChanged(false)
             }
         } else {
             if (isFirstInVisible) {
-                isFirstInVisible = false;
+                isFirstInVisible = false
             } else {
-                onHiddenChanged(true);
+                onHiddenChanged(true)
             }
         }
     }
@@ -118,52 +109,40 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 判断是否第一次可见
      */
-    private void judgeIsFirstVisible() {
-        if (isActivityCreated && getUserVisibleHint()) {
-            isActivityCreated = false;
-            onFirstUserVisible();
+    private fun judgeIsFirstVisible() {
+        if (isActivityCreated && userVisibleHint) {
+            isActivityCreated = false
+            onFirstUserVisible()
         }
-    }
-
-    public boolean isFirstVisible() {
-        return isFirstVisible;
     }
 
     /**
      * 第一次Fragment可见（进行初始化工作）
      */
-    protected void onFirstUserVisible() {
-
-    }
+    protected fun onFirstUserVisible() {}
 
     /**
      * 除第一次见到Fragment外，之后每次看见Fragment都会执行
      */
-    protected void onReUserVisible() {
-
-    }
+    protected fun onReUserVisible() {}
 
     /**
      * 初始化Presenter
      */
-    protected void initPresenter() {
-
-    }
+    protected fun initPresenter() {}
 
     /**
      * 初始化Presenter的attach方法
      */
-    protected void initPresenterAttach() {
-
-    }
+    protected fun initPresenterAttach() {}
 
     /**
      * 初始化控件
      */
-    protected abstract View initView(LayoutInflater inflater, ViewGroup container);
+    protected abstract fun initView(inflater: LayoutInflater, container: ViewGroup?): View?
 
     /**
      * 初始化数据
      */
-    protected abstract void initData(Bundle savedInstanceState);
+    protected abstract fun initData(savedInstanceState: Bundle?)
 }

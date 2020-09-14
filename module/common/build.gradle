@@ -22,13 +22,15 @@ android {
 }
 
 dependencies {
+    //library
+    implementation rootProject.ext.libs.retrofit
+    implementation rootProject.ext.libs.retrofit_rxjava
+    implementation rootProject.ext.libs.lifecycle_viewmodel
+    //module
     //为每一个业务组件引入自定义的Lint规则
     api rootProject.ext.module.lint.lintaar
     implementation rootProject.ext.module.ui
     implementation rootProject.ext.module.utils
     implementation rootProject.ext.module.network
     implementation rootProject.ext.module.shake
-    //
-    implementation rootProject.ext.libs.retrofit
-    implementation rootProject.ext.libs.retrofit_rxjava
 }
