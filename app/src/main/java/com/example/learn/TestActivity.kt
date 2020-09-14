@@ -31,6 +31,7 @@ import com.example.learn.ui.layout2bitmap.Layout2BitmapActivity
 import com.example.learn.ui.loop.LoopActivity
 import com.example.learn.ui.network.hello.NetworkHelloActivity
 import com.example.learn.ui.partition.PartitionActivity
+import com.example.learn.ui.player.PlayerActivity
 import com.example.learn.ui.refresh.RefreshTestActivity
 import com.example.learn.ui.social.SocialActivity
 import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
@@ -236,6 +237,10 @@ class TestActivity : BaseActivity() {
 
     fun testViewModel(view: View) {
         startActivity(Intent(this, ViewModelActivity::class.java))
+    }
+
+    fun testPlayer(view: View) {
+        startActivity(Intent(this, PlayerActivity::class.java))
     }
 
 }

@@ -10,6 +10,7 @@ rootProject.name = "AndroidLearn"
 
 def module = [
         '/module/common',
+        '/module/player',
         '/module/shake',
         '/module/webview_module',
 ]

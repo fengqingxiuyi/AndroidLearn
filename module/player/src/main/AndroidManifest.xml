@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.player">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+        <activity android:name=".video.VideoActivity" />
+        <service
+            android:name=".service.FPlayerService"
+            android:exported="true"
+            android:process=":player">
+            <intent-filter>
+                <action android:name="com.fqxyi.player.service" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

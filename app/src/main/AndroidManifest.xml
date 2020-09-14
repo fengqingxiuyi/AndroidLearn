@@ -102,6 +102,7 @@
         <activity android:name=".ui.youtu.YoutuTestActivity" />
         <activity android:name=".ui.layout2bitmap.Layout2BitmapActivity" />
         <activity android:name=".ui.adapter.ListCommonAdapterActivity" />
+        <activity android:name=".ui.player.PlayerActivity" />
         <activity android:name=".uiutils.UiUtilsActivity"/>
         <activity android:name=".uiutils.TestIntentActivity"/>
         <activity android:name=".uiutils.TestOtherActivity"/>

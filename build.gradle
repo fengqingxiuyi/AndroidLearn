@@ -9,6 +9,7 @@ buildscript { //gradle脚本执行所需依赖
     ext {
         //为了兼容AOP，所以将kotlin版本从1.4.0降到了1.3.61
         kotlin_version = "1.3.61"
+        player_version = "2.8.2"
     }
     repositories {
         maven{

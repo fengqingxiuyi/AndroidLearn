@@ -206,7 +206,8 @@ object LogUtil {
         errorListener?.error(throwable)
     }
 
-    private fun readThrowable(ex: Throwable): String {
+    @JvmStatic
+    fun readThrowable(ex: Throwable): String {
         val writer: Writer = StringWriter()
         try {
             val printWriter = PrintWriter(writer)

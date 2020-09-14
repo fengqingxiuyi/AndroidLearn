@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+apply from: '../../base.gradle'
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    //library
+    implementation rootProject.ext.libs.exoplayer_core
+    implementation rootProject.ext.libs.exoplayer_dash
+    implementation rootProject.ext.libs.exoplayer_hls
+    implementation rootProject.ext.libs.exoplayer_smoothstreaming
+    implementation rootProject.ext.libs.exoplayer_ui
+    //module
+    implementation rootProject.ext.module.utils
+}
