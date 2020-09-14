@@ -24,6 +24,11 @@ app
            |--annotation //运行时注解，测试类：MainActivity
            |--iconchange //动态切换应用ICON管理类
            |--java //Java功能测试模块
+               |--pic //Java设计模式练习图片
+               |--src //Java设计模式练习代码
+               |--FileUtilTest.txt //JavaTest使用文件
+               |--JavaTest //测试一些Java功能
+               |--README.md //Java设计模式练习总结
            |--jetpack //https://developer.android.com/jetpack
                |--room
                |--viewmodel //MVVM示例

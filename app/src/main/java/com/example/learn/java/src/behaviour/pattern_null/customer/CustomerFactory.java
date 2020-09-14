@@ -1,0 +1,21 @@
+package com.example.learn.java.src.behaviour.pattern_null.customer;
+
+/**
+ * @author ShenBF
+ * @desc
+ * @date 2018/7/31
+ */
+public class CustomerFactory {
+
+    public static final String[] names = {"Rob", "Joe", "Julie"};
+
+    public static AbstractCustomer getCustomer(String name){
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].equalsIgnoreCase(name)){
+                return new RealCustomer(name);
+            }
+        }
+        return new NullCustomer();
+    }
+
+}
