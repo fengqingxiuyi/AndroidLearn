@@ -46,6 +46,7 @@ android {
                     'src/main/res/ui/network',
                     'src/main/res/ui/partition',
                     'src/main/res/ui/player',
+                    'src/main/res/ui/recyclerview',
                     'src/main/res/ui/refresh',
                     'src/main/res/ui/social',
                     'src/main/res/ui/viewattribute',

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:tabIndicatorColor="@color/red"
+        app:tabIndicatorHeight="1dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#ff0000"
+        app:tabTextColor="#000000" />
+
+    <com.example.learn.ui.recyclerview.intab.view.RecyclerInTabViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</merge>

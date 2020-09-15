@@ -220,6 +220,12 @@
                 android:onClick="testPlayer"
                 android:text="Test Player" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testRecyclerView"
+                android:text="Test RecyclerView" />
+
         </LinearLayout>
 
     </ScrollView>

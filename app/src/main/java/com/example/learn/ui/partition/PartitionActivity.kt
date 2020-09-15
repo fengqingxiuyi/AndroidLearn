@@ -11,7 +11,7 @@ import com.example.learn.ui.partition.utils.Util
 import com.example.partition.IPartitionBean
 import com.example.partition.ISpanSize
 import com.example.ui.toast.ToastUtil
-import kotlinx.android.synthetic.main.main_activity.*
+import kotlinx.android.synthetic.main.activity_partition.*
 import java.util.*
 
 class PartitionActivity : BaseActivity(), IPartitionCallback {
@@ -23,7 +23,7 @@ class PartitionActivity : BaseActivity(), IPartitionCallback {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.activity_partition)
         initRecyclerView()
         initAdapter()
     }

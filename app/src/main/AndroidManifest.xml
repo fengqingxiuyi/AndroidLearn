@@ -111,6 +111,7 @@
         <activity android:name=".uiutils.TestImageActivity"/>
         <activity android:name=".uiutils.TestDrawableActivity"/>
         <activity android:name=".jetpack.viewmodel.view.ViewModelActivity"/>
+        <activity android:name=".ui.recyclerview.RecyclerViewActivity"/>
     </application>
 
 </manifest>
