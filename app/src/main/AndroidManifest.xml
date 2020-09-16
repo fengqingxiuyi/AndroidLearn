@@ -112,6 +112,7 @@
         <activity android:name=".uiutils.TestDrawableActivity"/>
         <activity android:name=".jetpack.viewmodel.view.ViewModelActivity"/>
         <activity android:name=".ui.recyclerview.RecyclerViewActivity"/>
+        <activity android:name=".ui.recyclerview.intab.activity.RecyclerInTabActivity"/>
     </application>
 
 </manifest>
