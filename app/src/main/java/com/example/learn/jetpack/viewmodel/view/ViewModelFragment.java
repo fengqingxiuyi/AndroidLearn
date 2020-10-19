@@ -70,7 +70,7 @@ public class ViewModelFragment extends BaseViewModelFragment<MainViewModel> {
         mViewModel.getErrorData().observe(this, new Observer<ErrorBean>() {
             @Override
             public void onChanged(ErrorBean errorBean) {
-                mainFragmentText.setText(errorBean.msg);
+                mainFragmentText.setText(errorBean.getMsg());
             }
         });
     }
