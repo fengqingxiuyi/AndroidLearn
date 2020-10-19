@@ -18,14 +18,14 @@ class OnePartition(context: Context, private val callback: IPartitionCallback?) 
     BasePartition<OneBean>(context) {
 
     override fun getSpanSize(position: Int): Int {
-        return if (position == itemList.size - 1) {
+        return if (position == mItemList.size - 1) {
             ISpanSize.ONE
         } else ISpanSize.ONE
     }
 
     override fun getItemViewTypeBean(position: Int): ItemViewTypeBean {
         val bean = ItemViewTypeBean()
-        if (position == itemList.size - 1) {
+        if (position == mItemList.size - 1) {
             bean.itemViewType = 0
             bean.repeat = false
         } else {
@@ -43,7 +43,7 @@ class OnePartition(context: Context, private val callback: IPartitionCallback?) 
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
         if (viewHolder is OneViewHolder) {
-            viewHolder.oneView.initData(data?.dataBean?.get(position), callback, getPosition())
+            viewHolder.oneView.initData(data?.dataBean?.get(position), callback, position)
         }
         if (viewHolder is LineViewHolder) {
             viewHolder.initData(data?.lineHeight, Color.CYAN)
@@ -51,8 +51,8 @@ class OnePartition(context: Context, private val callback: IPartitionCallback?) 
     }
 
     override fun getItemSize() {
-        itemList.add(position)
-        itemList.add(position)
+        mItemList.add(position)
+        mItemList.add(position)
     }
 
 }
