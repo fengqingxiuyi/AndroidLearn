@@ -6,7 +6,7 @@ import com.example.common.global.AppGlobal
 import com.example.common.network.API
 import com.example.common.network.BusinessObserver
 import com.example.common.network.interceptor.HeaderInterceptor
-import com.example.image.FImageView
+import com.example.image.fresco.FrescoImageView
 import com.example.learn.iconchange.IconChangeConstant
 import com.example.learn.iconchange.IconChangeManager
 import com.example.learn.koin.appModule
@@ -157,6 +157,6 @@ class MyApplication : Application() {
     }
 
     private fun initImage() {
-        FImageView.init(this)
+        FrescoImageView.init(this)
     }
 }
