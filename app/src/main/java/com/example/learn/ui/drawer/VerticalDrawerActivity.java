@@ -30,10 +30,12 @@ public class VerticalDrawerActivity extends Activity {
         Adapter adapter = new Adapter();
         recyclerView.setAdapter(adapter);
 
+//        ScrollView scrollView = findViewById(R.id.scrollView);
+
         VerticalDrawerLayout dragLayout = findViewById(R.id.dragLayout);
         dragLayout.setDragHeightFirst(150);
         dragLayout.setDragHeightSecond(900);
-        dragLayout.setScrollView(recyclerView);
+        dragLayout.setInterceptScrollView(recyclerView);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

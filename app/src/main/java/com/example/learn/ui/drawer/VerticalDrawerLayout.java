@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -24,11 +25,18 @@ public class VerticalDrawerLayout extends ViewGroup {
     private static final String TAG = "DragLayout";
 
     private static final float TOUCH_SLOP_SENSITIVITY = 1.f;
+    private static final int[] LAYOUT_ATTRS = new int[]{
+            android.R.attr.layout_gravity
+    };
+    private static final int[] ORIENTATION = new int[]{
+            Gravity.NO_GRAVITY,Gravity.LEFT,Gravity.TOP,Gravity.RIGHT,Gravity.BOTTOM
+    };
 
     private final ViewDragHelper mBottomDragger;
     private final ViewDragCallback mBottomCallback;
     private final ViewDragHelper mTopDragger;
     private final ViewDragCallback mTopCallback;
+    private int mCurrentOrientation;
 
     //外部设置的参数
     private int mDragHeightFirst = 0; //拖拽View初始阶段显示区域高度，0为全部隐藏
@@ -157,11 +165,7 @@ public class VerticalDrawerLayout extends ViewGroup {
         }
     }
 
-    public static class LayoutParams extends MarginLayoutParams {
-
-        private static final int[] LAYOUT_ATTRS = new int[]{
-                android.R.attr.layout_gravity
-        };
+    public class LayoutParams extends MarginLayoutParams {
 
         public int gravity = Gravity.NO_GRAVITY;
 
@@ -170,6 +174,7 @@ public class VerticalDrawerLayout extends ViewGroup {
 
             final TypedArray a = c.obtainStyledAttributes(attrs, LAYOUT_ATTRS);
             this.gravity = a.getInt(0, Gravity.NO_GRAVITY);
+            mCurrentOrientation = gravity;
             a.recycle();
         }
 
@@ -317,15 +322,22 @@ public class VerticalDrawerLayout extends ViewGroup {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         final boolean interceptForDrag = mTopDragger.shouldInterceptTouchEvent(ev)
                 | mBottomDragger.shouldInterceptTouchEvent(ev);
+        //返回true说明可继续滑动，需要拦截
         boolean childIntercept = false;
         if (mScrollView instanceof RecyclerView) {
             RecyclerView recyclerView = (RecyclerView) mScrollView;
-            if (recyclerView.canScrollVertically(-1)) {
-                //可继续滑动
-                childIntercept = true;
-            } else {
-                //滑动到顶部
-                childIntercept = false;
+            if (mCurrentOrientation == Gravity.BOTTOM) {
+                childIntercept = recyclerView.canScrollVertically(-1);
+            } else if (mCurrentOrientation == Gravity.TOP) {
+                childIntercept = recyclerView.canScrollVertically(1);
+            }
+        } else if (mScrollView instanceof ScrollView) {
+            ScrollView scrollView = (ScrollView) mScrollView;
+            if (mCurrentOrientation == Gravity.BOTTOM) {
+                childIntercept = scrollView.getScrollY() != 0;
+            } else if (mCurrentOrientation == Gravity.TOP) {
+                View contentView = scrollView.getChildAt(0);
+                childIntercept = contentView.getMeasuredHeight() > scrollView.getScrollY() + scrollView.getHeight();
             }
         }
         if (childIntercept) {
@@ -378,7 +390,7 @@ public class VerticalDrawerLayout extends ViewGroup {
         mDragHeightSecond = dragHeight;
     }
 
-    public void setScrollView(View scrollView) {
+    public void setInterceptScrollView(View scrollView) {
         mScrollView = scrollView;
     }
 
