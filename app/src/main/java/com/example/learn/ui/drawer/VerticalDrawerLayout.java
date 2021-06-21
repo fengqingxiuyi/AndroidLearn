@@ -28,9 +28,6 @@ public class VerticalDrawerLayout extends ViewGroup {
     private static final int[] LAYOUT_ATTRS = new int[]{
             android.R.attr.layout_gravity
     };
-    private static final int[] ORIENTATION = new int[]{
-            Gravity.NO_GRAVITY,Gravity.LEFT,Gravity.TOP,Gravity.RIGHT,Gravity.BOTTOM
-    };
 
     private final ViewDragHelper mBottomDragger;
     private final ViewDragCallback mBottomCallback;
