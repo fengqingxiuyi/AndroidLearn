@@ -15,6 +15,7 @@ buildscript { //gradle脚本执行所需依赖
         maven{
             url './gradleplugin/repo/'
         }
+        mavenCentral()
         google()
         jcenter()
     }
@@ -38,10 +39,14 @@ buildscript { //gradle脚本执行所需依赖
 
 allprojects { //项目本身需要的依赖
     repositories {
+        mavenCentral()
         google()
         jcenter()
         //微博SDK需要 https://github.com/sinaweibosdk/weibo_android_sdk
-        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+//        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+        flatDir{
+            dirs 'libs'
+        }
     }
 }
 

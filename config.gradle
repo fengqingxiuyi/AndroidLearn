@@ -58,7 +58,7 @@ ext {
             //微信    https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html
             tencentsdk               : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4",
             //微博sdk https://github.com/sinaweibosdk/weibo_android_sdk
-            weibosdk                 : "com.sina.weibo.sdk:core:4.2.7:openDefaultRelease@aar",
+//            weibosdk                 : "com.sina.weibo.sdk:core:4.2.7:openDefaultRelease@aar",
             //https://github.com/square/kotlinpoet
             kotlinpoet               : "com.squareup:kotlinpoet:1.6.0",
             //ROOM https://developer.android.com/topic/libraries/architecture/room

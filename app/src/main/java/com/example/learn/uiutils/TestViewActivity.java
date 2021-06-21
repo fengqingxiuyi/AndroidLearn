@@ -1,5 +1,6 @@
 package com.example.learn.uiutils;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.example.common.ui.tag.TagView;
 import com.example.common.ui.text.IconFontTextView;
 import com.example.common.ui.titlebar.TitleBarView;
 import com.example.learn.R;
+import com.example.learn.ui.drawer.VerticalDrawerActivity;
 import com.example.ui.circle.CircleView;
 import com.example.ui.container.AutoWrappedViewGroup;
 import com.example.ui.drag.SingleTouchView;
@@ -104,6 +106,13 @@ public class TestViewActivity extends BaseActivity {
      */
     public void testViewDrag(View view) {
         ToastUtil.toast("点击了拖拽View");
+    }
+
+    /**
+     * 模拟滴滴拖拽效果
+     */
+    public void testVerticalDrawer(View view) {
+        startActivity(new Intent(this, VerticalDrawerActivity.class));
     }
 
     @Override
