@@ -44,8 +44,8 @@ allprojects { //项目本身需要的依赖
         jcenter()
         //微博SDK需要 https://github.com/sinaweibosdk/weibo_android_sdk
 //        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
-        flatDir{
-            dirs 'libs'
+        flatDir {
+            dirs project(':social').file('src/main/jniLibs')
         }
     }
 }

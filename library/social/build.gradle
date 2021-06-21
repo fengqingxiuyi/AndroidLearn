@@ -8,6 +8,12 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'src/main/jniLibs'
+    }
+}
+
 dependencies {
     implementation rootProject.ext.libs.recyclerview
     implementation rootProject.ext.libs.tencentsdk
