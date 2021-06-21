@@ -138,6 +138,14 @@
                 app:right_text_color="@android:color/white"
                 app:right_text_size="12sp" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testVerticalDrawer"
+                android:text="模拟滴滴拖拽效果"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
         </LinearLayout>
 
     </ScrollView>
