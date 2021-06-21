@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.customview.widget.ViewDragHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * @author fqxyi
@@ -33,6 +34,7 @@ public class VerticalDrawerLayout extends ViewGroup {
     private int mDragHeightFirst = 0; //拖拽View初始阶段显示区域高度，0为全部隐藏
     private int mDragHeightSecond = 0; //拖拽View第二阶段显示的区域高度
     private int mDragHeightThird = 0; //拖拽View最终阶段显示的区域高度，方向不同值不同
+    private View mScrollView = null; //滚动试图View，可能是RecyclerView，ScrollView等
 
     public VerticalDrawerLayout(Context context) {
         this(context, null);
@@ -313,7 +315,24 @@ public class VerticalDrawerLayout extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return mTopDragger.shouldInterceptTouchEvent(ev) | mBottomDragger.shouldInterceptTouchEvent(ev);
+        final boolean interceptForDrag = mTopDragger.shouldInterceptTouchEvent(ev)
+                | mBottomDragger.shouldInterceptTouchEvent(ev);
+        boolean childIntercept = false;
+        if (mScrollView instanceof RecyclerView) {
+            RecyclerView recyclerView = (RecyclerView) mScrollView;
+            if (recyclerView.canScrollVertically(-1)) {
+                //可继续滑动
+                childIntercept = true;
+            } else {
+                //滑动到顶部
+                childIntercept = false;
+            }
+        }
+        if (childIntercept) {
+            return false;
+        } else {
+            return interceptForDrag;
+        }
     }
 
     @Override
@@ -357,6 +376,10 @@ public class VerticalDrawerLayout extends ViewGroup {
 
     public void setDragHeightSecond(int dragHeight) {
         mDragHeightSecond = dragHeight;
+    }
+
+    public void setScrollView(View scrollView) {
+        mScrollView = scrollView;
     }
 
 }

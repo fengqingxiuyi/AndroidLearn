@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.common.base.BaseActivity
+import com.example.learn.uiutils.UiUtilsActivity
 import com.example.ui.toast.ToastUtil
 import com.example.utils.activity.ActivitiesManager
 import com.example.utils.app.AppUtil
@@ -47,5 +48,9 @@ class MainActivity : BaseActivity() {
 
     fun test(view: View) {
         startActivity(Intent(this, TestActivity::class.java))
+    }
+
+    fun testUiUtils(view: View) {
+        startActivity(Intent(this, UiUtilsActivity::class.java))
     }
 }
