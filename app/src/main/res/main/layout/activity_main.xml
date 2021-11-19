@@ -16,11 +16,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/testUiUtils"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/testBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="testUiUtils"
         android:text="Test UiUtils" />
+
+    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/testUiUtils"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="testARouter"
+        android:text="Test ARouter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

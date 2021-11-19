@@ -4,7 +4,7 @@ ext {
     libs = [
             compiler                 : [
                     //ROOM https://developer.android.com/topic/libraries/architecture/room
-                    room        : "androidx.room:room-compiler:2.2.5",
+                    room            : "androidx.room:room-compiler:2.2.5",
                     /**
                      * AGP从4.0.1降到3.6.1之后会报错，所以将auto_service移到compiler中
                      * Annotation processors must be explicitly declared now.  The following dependencies on the compile classpath are found to contain annotation processor.  Please add them to the annotationProcessor configuration.
@@ -12,7 +12,8 @@ ext {
                      * Alternatively, set android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true to continue with previous behavior.  Note that this option is deprecated and will be removed in the future.
                      */
                     //注解 processor 类，并对其生成 META-INF 的配置信息 https://github.com/google/auto/tree/master/service
-                    auto_service: "com.google.auto.service:auto-service:1.0-rc7",
+                    auto_service    : "com.google.auto.service:auto-service:1.0-rc7",
+//                    arouter_compiler: "com.alibaba:arouter-compiler:1.2.2",
             ],
             debug                    : [
                     //LeakCanary https://square.github.io/leakcanary/
@@ -73,6 +74,8 @@ ext {
             exoplayer_hls            : "com.google.android.exoplayer:exoplayer-hls:$player_version",
             exoplayer_smoothstreaming: "com.google.android.exoplayer:exoplayer-smoothstreaming:$player_version",
             exoplayer_ui             : "com.google.android.exoplayer:exoplayer-ui:$player_version",
+            //
+//            arouter_api              : "com.alibaba:arouter-api:1.5.0",
     ]
     //module
     module = [

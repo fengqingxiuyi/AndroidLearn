@@ -1,8 +1,15 @@
 apply plugin: 'com.android.application'
 apply from: '../base.gradle'
 apply from: '../aop.gradle'
+apply plugin: 'com.alibaba.arouter'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'apk-change-name'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 
 android {
     defaultConfig {
@@ -15,6 +22,12 @@ android {
         }
         //只支持 中文简体
         resConfigs "zh-rCN"
+        //arouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     // This block is different from the one you use to link Gradle
     // to your CMake or ndk-build script.
@@ -129,4 +142,6 @@ dependencies {
                 }
         }
     }
+    api 'com.alibaba:arouter-api:1.5.0'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
 }

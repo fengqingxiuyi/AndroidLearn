@@ -8,7 +8,7 @@ apply from: "config.gradle"
 buildscript { //gradle脚本执行所需依赖
     ext {
         //为了兼容AOP，所以将kotlin版本从1.4.0降到了1.3.61
-        kotlin_version = "1.3.61"
+        kotlin_version = "1.3.72"
         player_version = "2.8.2"
     }
     repositories {
@@ -25,6 +25,8 @@ buildscript { //gradle脚本执行所需依赖
         classpath "com.android.tools.build:gradle:3.6.1"
         //
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        //
+        classpath 'com.alibaba:arouter-register:1.0.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

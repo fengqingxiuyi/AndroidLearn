@@ -2,6 +2,7 @@ package com.example.learn
 
 import android.app.Activity
 import android.app.Application
+import com.alibaba.android.arouter.launcher.ARouter
 import com.example.common.global.AppGlobal
 import com.example.common.network.API
 import com.example.common.network.BusinessObserver
@@ -57,6 +58,7 @@ class MyApplication : Application() {
     private fun inMainProcess() {
         //Debug Release Special Compile
         Config.setting(this)
+        initARouter()
         initWebview()
         initKoin()
         initNet()
@@ -97,6 +99,10 @@ class MyApplication : Application() {
                 return AppGlobal.appForeground
             }
         })
+    }
+
+    private fun initARouter() {
+        ARouter.init(this)
     }
 
     private fun initWebview() {

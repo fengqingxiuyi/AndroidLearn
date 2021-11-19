@@ -3,13 +3,18 @@ package com.example.learn
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.example.common.base.BaseActivity
+import com.example.learn.aroutertest.IProviderTest
+import com.example.learn.aroutertest.SingleInstance
 import com.example.learn.uiutils.UiUtilsActivity
 import com.example.ui.toast.ToastUtil
 import com.example.utils.activity.ActivitiesManager
 import com.example.utils.app.AppUtil
 import kotlin.math.abs
 
+@Route(path = "/app/main")
 class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,5 +57,14 @@ class MainActivity : BaseActivity() {
 
     fun testUiUtils(view: View) {
         startActivity(Intent(this, UiUtilsActivity::class.java))
+    }
+
+    fun testARouter(view: View) {
+        println("xxxxx = " + SingleInstance.getInstance("xxx").testProvider)
+//        val provider = ARouter.getInstance().navigation(SingleInstance::class.java)
+//        provider.testSingleInstance()
+        val provider1 = ARouter.getInstance().navigation(IProviderTest::class.java)
+        provider1.testSingleInstance()
+        println("yyyyyy = " + SingleInstance.getInstance("xxx").testProvider)
     }
 }
