@@ -16,20 +16,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/testUiUtils"
+        android:id="@+id/testLifecycleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="testLifecycle"
+        android:text="打开生命周期测试页面"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/testBtn"
+        app:layout_constraintTop_toBottomOf="@id/testBtn" />
+
+    <Button
+        android:id="@+id/testUiUtils"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="testUiUtils"
-        android:text="Test UiUtils" />
+        android:text="Test UiUtils"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/testLifecycleBtn" />
 
     <Button
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/testUiUtils"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="testARouter"
-        android:text="Test ARouter" />
+        android:text="Test ARouter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/testUiUtils" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,6 +55,10 @@ class MainActivity : BaseActivity() {
         startActivity(Intent(this, TestActivity::class.java))
     }
 
+    fun testLifecycle(view: View) {
+        startActivity(Intent(this, LifecycleActivity::class.java))
+    }
+
     fun testUiUtils(view: View) {
         startActivity(Intent(this, UiUtilsActivity::class.java))
     }
