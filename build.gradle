@@ -33,7 +33,7 @@ buildscript { //gradle脚本执行所需依赖
         //AOP https://github.com/HujiangTechnology/gradle_plugin_android_aspectjx
         classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.10'
         //自定义的Gradle插件
-        classpath "com.example.gradleplugin:gradleplugin:1.0.0"
+//        classpath "com.example.gradleplugin:gradleplugin:1.0.0"
         //上传代码到JCenter的插件
         classpath 'com.novoda:bintray-release:0.9.2'
     }

@@ -3,7 +3,7 @@ apply from: '../base.gradle'
 apply from: '../aop.gradle'
 apply plugin: 'com.alibaba.arouter'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'apk-change-name'
+//apply plugin: 'apk-change-name'
 
 kapt {
     arguments {
