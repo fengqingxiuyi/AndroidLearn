@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.example.common.base.BaseActivity
 import com.example.learn.aroutertest.IProviderTest
 import com.example.learn.aroutertest.SingleInstance
+import com.example.learn.ui.recyclerview.SimpleRecyclerViewActivity
 import com.example.learn.uiutils.UiUtilsActivity
 import com.example.ui.toast.ToastUtil
 import com.example.utils.activity.ActivitiesManager
@@ -70,5 +71,9 @@ class MainActivity : BaseActivity() {
         val provider1 = ARouter.getInstance().navigation(IProviderTest::class.java)
         provider1.testSingleInstance()
         println("yyyyyy = " + SingleInstance.getInstance("xxx").testProvider)
+    }
+
+    fun testEmpty(view: View) {
+        startActivity(Intent(this, SimpleRecyclerViewActivity::class.java))
     }
 }

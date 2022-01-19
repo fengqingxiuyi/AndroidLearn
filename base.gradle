@@ -3,6 +3,7 @@
  */
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion project.COMPILE_SDK_VERSION as int
@@ -24,10 +25,17 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
+    viewBinding {
+        enabled = true
+    }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation fileTree(dir: "./src/main/jniLibs", include: ["*.jar"])
     implementation rootProject.ext.libs.appcompat
+    implementation rootProject.ext.libs.databinding
 }

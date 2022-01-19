@@ -1,5 +1,6 @@
 package com.example.utils.device
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
@@ -17,6 +18,7 @@ import android.widget.LinearLayout
  * @date 2020/8/20
  * Android 状态栏 研究，具体请查看文章[《探索 单个Fragment实现沉浸式，其余Fragment不实现的解决办法》](https://www.fqxyi.top/archives/205/)
  */
+@SuppressLint("StaticFieldLeak")
 object StatusBarUtil {
 
     // 全局保存状态栏颜色
@@ -80,7 +82,7 @@ object StatusBarUtil {
             return
         }
         // 绘制一个和状态栏一样高的View
-        statusView = View(activity)
+        statusView = View(activity.applicationContext)
         val params = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             getStatusBarHeight(activity)

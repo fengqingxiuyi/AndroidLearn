@@ -198,12 +198,17 @@ object LogUtil {
     }
 
     @JvmStatic
-    fun e(throwable: Throwable?) {
+    fun e(tag: String, throwable: Throwable?) {
         if (LOG_DEBUG) {
-            Log.e(TAG, getFullHeaderInfo(), throwable)
+            Log.e(tag, getFullHeaderInfo(), throwable)
         }
         // 回调
         errorListener?.error(throwable)
+    }
+
+    @JvmStatic
+    fun e(throwable: Throwable?) {
+        e(TAG, throwable)
     }
 
     @JvmStatic

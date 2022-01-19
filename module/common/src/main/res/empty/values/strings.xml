@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_error_net_title">Internet error</string>
+    <string name="common_error_net_hint">Internet error. Please check your internet and try again later.</string>
+    <string name="common_error_net_btn">Reload</string>
+    <string name="common_nodata_common_hint">Whoops, nothing is found here…</string>
+</resources>

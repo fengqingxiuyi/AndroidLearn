@@ -1,0 +1,33 @@
+涉及 使用类
+TipViewManager 提示view 管理类
+ITipViewConfig 提示view 的枚举类，具体类型查看此类
+界面销毁的时候 记得调用
+mTipViewManager.onDestroy();方法
+
+初始化 支持设置 titlebar 高度
+new TipViewManager(instance).buildDefault();默认是 44dp
+new TipViewManager(instance).build(); // 不传值 是0
+new TipViewManager(instance).build(50dp);
+初始化 入参instance 可以为 Activity、Fragment、ViewGroup
+但是有一点注意检查，显示 tipView 目前只适用 FrameLayout 、 RelativeLayout、ConstraintLayout 三种根布局
+
+根据某一个类别 扩展 文案或者是图片
+TipContentBean tipContentBean = mTipViewManager.buildTipContentBean(tipConfig);
+tipContentBean.setText("加油吧");
+// 扩展的 类型最好不要和 原有的一样 这个接口里面定义了一些 扩展使用的类型 可供使用
+mTipViewManager.showTipView(ITipConfig.ICustomerTipConfig.CUSTOMER_ONE);
+
+可以自定义 上下左右的 距离
+mTipViewManager.setPaddingRelative(start, top, end, bottom);
+
+显示 和 隐藏
+mTipViewManager.showTipView(ITipConfig.INetRrrorConfig.SERVER_ERROR_CONFIG);
+mTipViewManager.showTipView();
+
+设置 按钮点击监听
+tipViewManager.setOnTipViewClickListener(new OnTipViewClickListener() {
+    @Override
+    public void onClickListener(int tipConfig) {
+
+    }
+});
