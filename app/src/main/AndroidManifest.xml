@@ -116,6 +116,7 @@
         <activity android:name=".ui.recyclerview.intab.activity.RecyclerInTabActivity"/>
         <activity android:name=".ui.drawer.VerticalDrawerActivity"/>
         <activity android:name=".ui.recyclerview.SimpleRecyclerViewActivity"/>
+        <activity android:name=".ui.recyclerview.ChadRecyclerViewActivity"/>
     </application>
 
 </manifest>

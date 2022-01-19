@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.example.common.base.BaseActivity
 import com.example.learn.aroutertest.IProviderTest
 import com.example.learn.aroutertest.SingleInstance
+import com.example.learn.ui.recyclerview.ChadRecyclerViewActivity
 import com.example.learn.ui.recyclerview.SimpleRecyclerViewActivity
 import com.example.learn.uiutils.UiUtilsActivity
 import com.example.ui.toast.ToastUtil
@@ -74,6 +75,6 @@ class MainActivity : BaseActivity() {
     }
 
     fun testEmpty(view: View) {
-        startActivity(Intent(this, SimpleRecyclerViewActivity::class.java))
+        startActivity(Intent(this, ChadRecyclerViewActivity::class.java))
     }
 }

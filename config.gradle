@@ -75,6 +75,7 @@ ext {
             exoplayer_hls            : "com.google.android.exoplayer:exoplayer-hls:$player_version",
             exoplayer_smoothstreaming: "com.google.android.exoplayer:exoplayer-smoothstreaming:$player_version",
             exoplayer_ui             : "com.google.android.exoplayer:exoplayer-ui:$player_version",
+            chadRecyclerView         : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.49-androidx",
             //
 //            arouter_api              : "com.alibaba:arouter-api:1.5.0",
     ]
