@@ -11,9 +11,6 @@ kapt {
 }
 
 android {
-    viewBinding {
-        enabled = true
-    }
     defaultConfig {
         applicationId project.APPLICATION_ID
         versionCode 1
