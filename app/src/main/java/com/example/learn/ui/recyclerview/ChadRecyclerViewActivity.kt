@@ -7,7 +7,7 @@ import com.chad.library.adapter.base.BaseViewHolder
 import com.example.common.base.BaseActivity
 import com.example.common.ui.empty.RVTipViewManager
 import com.example.common.ui.empty.config.ITipViewConfig
-import com.example.common.ui.viewBinding
+import com.example.common.utils.viewBinding
 import com.example.learn.R
 import com.example.learn.databinding.ChadRecyclerviewBinding
 
@@ -19,8 +19,8 @@ import com.example.learn.databinding.ChadRecyclerviewBinding
 class ChadRecyclerViewActivity : BaseActivity() {
 
   private val binding: ChadRecyclerviewBinding by viewBinding()
-  //  private var data = listOf<String>("1","1","1","1","1","1","1","1","1","1","1","1")
-  private var data = listOf<String>()
+    private var data = listOf<String>("1","2","3","4","5","6","7","8","9")
+//  private var data = listOf<String>()
 
   private val tipViewManager by lazy {
     val tipViewManager = RVTipViewManager(this)
@@ -36,12 +36,12 @@ class ChadRecyclerViewActivity : BaseActivity() {
 
   private fun initRecycler() {
     binding.rvChad.layoutManager = LinearLayoutManager(this)
-    val adapter = object : BaseQuickAdapter<String, BaseViewHolder>(R.layout.chad_recyclerview_item, null) {
+    val adapter = object : BaseQuickAdapter<String, BaseViewHolder>(R.layout.chad_recyclerview_item, data) {
       override fun convert(holder: BaseViewHolder, item: String) {
         holder.setText(R.id.tv_text, item)
       }
     }
-    adapter.setEmptyView(tipViewManager.createTipView())
+    adapter.emptyView = tipViewManager.createTipView()
     binding.rvChad.adapter = adapter
     //
     if (data.isEmpty()) {

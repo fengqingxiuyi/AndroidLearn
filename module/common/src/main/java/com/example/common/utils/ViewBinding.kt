@@ -1,4 +1,4 @@
-package com.example.common.ui
+package com.example.common.utils
 
 import android.view.LayoutInflater
 import androidx.activity.ComponentActivity

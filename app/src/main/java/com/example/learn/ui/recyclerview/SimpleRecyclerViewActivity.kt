@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.common.base.BaseActivity
 import com.example.common.ui.empty.TipViewManager
 import com.example.common.ui.empty.config.ITipViewConfig
-import com.example.common.ui.viewBinding
+import com.example.common.utils.viewBinding
 import com.example.learn.databinding.SimpleRecyclerviewBinding
-import com.example.ui.adapter.ViewHolder
 
 /**
  * 略
