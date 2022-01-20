@@ -1,4 +1,4 @@
-package com.example.common.ui.tag;
+package com.example.ui.tag;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,8 +10,8 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.common.R;
-import com.example.utils.device.DensityUtil;
+import com.example.ui.R;
+import com.example.ui.utils.DensityUtil;
 
 /**
  * 自定义的圆角标签

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.common.base.BaseActivity;
-import com.example.common.ui.tag.TagView;
+import com.example.ui.tag.TagView;
 import com.example.common.ui.text.IconFontTextView;
 import com.example.common.ui.titlebar.TitleBarView;
 import com.example.learn.R;

@@ -14,7 +14,6 @@ android {
                     'src/main/res/empty',
                     'src/main/res/item',
                     'src/main/res/loading',
-                    'src/main/res/tag',
                     'src/main/res/titlebar',
                     'src/main/res'
             ]
