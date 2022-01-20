@@ -1,7 +1,7 @@
 package com.example.learn.java.src.structure.pattern_proxy.proxy_static.image;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 接口
  * @date 2018/7/24
  */

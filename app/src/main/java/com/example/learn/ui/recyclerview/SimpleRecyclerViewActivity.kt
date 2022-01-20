@@ -14,7 +14,7 @@ import com.example.learn.databinding.SimpleRecyclerviewBinding
 /**
  * 略
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 class SimpleRecyclerViewActivity : BaseActivity() {
 

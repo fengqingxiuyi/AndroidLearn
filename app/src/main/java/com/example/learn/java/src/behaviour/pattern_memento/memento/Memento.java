@@ -1,7 +1,7 @@
 package com.example.learn.java.src.behaviour.pattern_memento.memento;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc
  * @date 2018/7/31
  */

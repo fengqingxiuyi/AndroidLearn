@@ -18,7 +18,7 @@ import com.example.utils.device.DeviceUtil
 /**
  * 遮挡页面的缺省页
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 class TipViewManager : BaseTipViewManager {
 

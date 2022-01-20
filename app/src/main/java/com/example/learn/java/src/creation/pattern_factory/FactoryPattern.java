@@ -5,7 +5,7 @@ import com.example.learn.java.src.creation.pattern_factory.shape.factory.ShapeFa
 import com.example.learn.java.src.creation.pattern_factory.shape.type.ShapeType;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 工厂模式
  * @date 2018/7/24
  */

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建实现了 Criteria 接口的实体类
  * @date 2018/7/24
  */

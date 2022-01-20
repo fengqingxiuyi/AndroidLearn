@@ -6,7 +6,7 @@ import com.example.learn.java.src.structure.pattern_decorator.shape.impl.Circle;
 import com.example.learn.java.src.structure.pattern_decorator.shape.impl.Rectangle;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用 RedShapeDecorator 来装饰 Shape 对象 新增行为
  * @date 2018/7/24
  */

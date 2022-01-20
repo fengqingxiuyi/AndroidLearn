@@ -6,7 +6,7 @@ import com.example.learn.java.src.structure.pattern_bridge.shape.Shape;
 import com.example.learn.java.src.structure.pattern_bridge.shape.impl.Circle;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用 Shape 和 DrawAPI 类画出不同颜色的圆
  * @date 2018/7/24
  */

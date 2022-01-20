@@ -14,6 +14,7 @@ android {
                     'src/main/res/empty',
                     'src/main/res/item',
                     'src/main/res/loading',
+                    'src/main/res/refresh',
                     'src/main/res/titlebar',
                     'src/main/res'
             ]
@@ -30,6 +31,8 @@ dependencies {
     implementation rootProject.ext.libs.retrofit_rxjava
     implementation rootProject.ext.libs.constraintlayout
     implementation rootProject.ext.libs.viewbinding
+    implementation rootProject.ext.libs.smartRefreshLayout
+    implementation rootProject.ext.libs.recyclerview
     //module
     //为每一个业务组件引入自定义的Lint规则
     api rootProject.ext.module.lint.lintaar

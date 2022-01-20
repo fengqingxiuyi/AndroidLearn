@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_adapter.media.advanced.impl
 import com.example.learn.java.src.structure.pattern_adapter.media.advanced.IAdvancedMediaPlayer;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 实现了 IAdvancedMediaPlayer 接口的实体类
  * @date 2018/7/24
  */

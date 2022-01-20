@@ -10,7 +10,7 @@ import com.example.common.ui.empty.config.ITipViewConfig.*
 /**
  * 略
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 object ErrorImageAndTxtUtils : ITipViewConfig, INetErrorConfig, INoDataConfig, ITipTypeConfig {
   @JvmStatic

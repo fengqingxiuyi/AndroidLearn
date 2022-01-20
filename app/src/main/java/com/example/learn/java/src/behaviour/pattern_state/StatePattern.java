@@ -5,7 +5,7 @@ import com.example.learn.java.src.behaviour.pattern_state.state.StartState;
 import com.example.learn.java.src.behaviour.pattern_state.state.StopState;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用 Context 来查看当状态 State 改变时的行为变化
  * @date 2018/7/31
  */

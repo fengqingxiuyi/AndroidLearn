@@ -4,7 +4,7 @@ import com.example.learn.java.src.creation.pattern_prototype.prototype.Shape;
 import com.example.learn.java.src.creation.pattern_prototype.prototype.cache.ShapeCache;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 原型模式 使用 ShapeCache 类来获取存储在 Hashtable 中的形状的克隆。
  * @date 2018/7/24
  */

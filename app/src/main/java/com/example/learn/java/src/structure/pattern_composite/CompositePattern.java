@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_composite;
 import com.example.learn.java.src.structure.pattern_composite.employee.Employee;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用 Employee 类来创建和打印员工的层次结构
  * @date 2018/7/24
  */

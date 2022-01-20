@@ -4,7 +4,7 @@ import com.example.learn.java.src.creation.pattern_builder.meal.Meal;
 import com.example.learn.java.src.creation.pattern_builder.meal.MealBuilder;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc BuilderPattern 使用 MealBuilder 来演示建造者模式（Builder Pattern）。
  * @date 2018/7/24
  */

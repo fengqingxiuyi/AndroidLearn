@@ -1,7 +1,7 @@
 package com.example.learn.java.src.behaviour.pattern_iterator.iterator;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建实现了 Container 接口的实体类。该类有实现了 Iterator 接口的内部类 NameIterator
  * @date 2018/7/31
  */

@@ -3,7 +3,7 @@ package com.example.learn.java.src.creation.pattern_singleton;
 import com.example.learn.java.src.creation.pattern_singleton.single.SingleObject3;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 单例模式
  *
  * 注意：

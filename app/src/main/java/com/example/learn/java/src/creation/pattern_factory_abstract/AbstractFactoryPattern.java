@@ -9,7 +9,7 @@ import com.example.learn.java.src.creation.pattern_factory_abstract.shape.IShape
 import com.example.learn.java.src.creation.pattern_factory_abstract.shape.type.ShapeType;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 抽象工厂模式
  * @date 2018/7/24
  */

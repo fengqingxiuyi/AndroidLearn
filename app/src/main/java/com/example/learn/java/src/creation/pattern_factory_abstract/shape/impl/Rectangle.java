@@ -3,7 +3,7 @@ package com.example.learn.java.src.creation.pattern_factory_abstract.shape.impl;
 import com.example.learn.java.src.creation.pattern_factory_abstract.shape.IShape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 长方形，具体实现类
  * @date 2018/7/24
  */

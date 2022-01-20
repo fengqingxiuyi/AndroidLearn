@@ -1,7 +1,7 @@
 package com.example.learn.java.src.structure.pattern_adapter.media.audio;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建实现了 IMediaPlayer 接口的实体类。
  * @date 2018/7/24
  */

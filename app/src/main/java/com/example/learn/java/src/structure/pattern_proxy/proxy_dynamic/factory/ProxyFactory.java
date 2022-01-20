@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建动态代理对象，动态代理不需要实现接口,但是需要指定接口类型
  * 代理对象不需要实现接口,但是目标对象一定要实现接口,否则不能用动态代理
  * @date 2018/7/24

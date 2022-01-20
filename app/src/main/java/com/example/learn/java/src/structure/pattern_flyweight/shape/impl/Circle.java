@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_flyweight.shape.impl;
 import com.example.learn.java.src.structure.pattern_flyweight.shape.IShape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 实现接口的实体类
  * @date 2018/7/24
  */

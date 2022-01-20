@@ -1,7 +1,7 @@
 package com.example.learn.java.src.behaviour.pattern_interpreter.expression;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建一个表达式接口
  * @date 2018/7/31
  */

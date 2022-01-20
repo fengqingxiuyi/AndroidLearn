@@ -5,7 +5,7 @@ import com.example.learn.java.src.creation.pattern_builder.pack.IPack;
 import com.example.learn.java.src.creation.pattern_builder.pack.impl.Bottle;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建实现 Item 接口的抽象类，该类提供了默认的功能。
  * @date 2018/7/24
  */

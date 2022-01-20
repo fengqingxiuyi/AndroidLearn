@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_adapter;
 import com.example.learn.java.src.structure.pattern_adapter.media.audio.AudioPlayer;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用 AudioPlayer 来播放不同类型的音频格式。
  * @date 2018/7/24
  */

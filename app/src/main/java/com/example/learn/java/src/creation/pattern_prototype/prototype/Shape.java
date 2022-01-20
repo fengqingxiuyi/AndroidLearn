@@ -1,7 +1,7 @@
 package com.example.learn.java.src.creation.pattern_prototype.prototype;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建一个实现了 Cloneable 接口的抽象类。
  * @date 2018/7/24
  */

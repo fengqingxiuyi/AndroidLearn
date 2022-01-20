@@ -4,7 +4,7 @@ import com.example.learn.java.src.structure.pattern_bridge.draw.DrawAPI;
 import com.example.learn.java.src.structure.pattern_bridge.shape.Shape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 实现了 Shape 接口的实体类
  * @date 2018/7/24
  */

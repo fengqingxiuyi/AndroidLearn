@@ -6,7 +6,7 @@ import com.example.learn.java.src.creation.pattern_builder.item.impl.drink.Coke;
 import com.example.learn.java.src.creation.pattern_builder.item.impl.drink.Pepsi;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建一个 MealBuilder 类，实际的 builder 类负责创建 Meal 对象。
  * @date 2018/7/24
  */

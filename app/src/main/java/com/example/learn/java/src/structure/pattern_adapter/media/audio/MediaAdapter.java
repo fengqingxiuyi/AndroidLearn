@@ -5,7 +5,7 @@ import com.example.learn.java.src.structure.pattern_adapter.media.advanced.impl.
 import com.example.learn.java.src.structure.pattern_adapter.media.advanced.impl.VlcPlayer;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 实现了 IMediaPlayer 接口的适配器类。
  * @date 2018/7/24
  */

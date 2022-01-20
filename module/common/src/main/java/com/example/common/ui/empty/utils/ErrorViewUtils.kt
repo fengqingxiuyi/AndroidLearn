@@ -14,7 +14,7 @@ import com.example.log.LogUtil
 /**
  * 略
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 object ErrorViewUtils {
 

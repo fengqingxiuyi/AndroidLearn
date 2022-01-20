@@ -5,7 +5,7 @@ import com.example.learn.java.src.structure.pattern_filter.criteria.bean.Person;
 import java.util.List;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 为标准（Criteria）创建一个接口
  * @date 2018/7/24
  */

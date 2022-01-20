@@ -7,6 +7,7 @@ import com.example.common.global.AppGlobal
 import com.example.common.network.API
 import com.example.common.network.BusinessObserver
 import com.example.common.network.interceptor.HeaderInterceptor
+import com.example.common.ui.refresh.RefreshComponent
 import com.example.image.fresco.FrescoImageView
 import com.example.learn.iconchange.IconChangeConstant
 import com.example.learn.iconchange.IconChangeManager
@@ -25,6 +26,7 @@ import com.example.ui.toast.ToastUtil
 import com.example.utils.activity.ActivitiesManager
 import com.example.utils.app.AppLifecycleMonitor
 import com.example.utils.app.AppUtil
+import com.example.utils.other.Utils
 import com.example.utils.storage.StorageManagerUtil
 import com.example.webview_module.js.JsBridge
 import okhttp3.Interceptor
@@ -58,6 +60,7 @@ class MyApplication : Application() {
     private fun inMainProcess() {
         //Debug Release Special Compile
         Config.setting(this)
+        initRefresh()
         initARouter()
         initWebview()
         initKoin()
@@ -71,6 +74,7 @@ class MyApplication : Application() {
     }
 
     private fun initAppGlobal() {
+        Utils.init(this)
         AppGlobal.application = this
         AppGlobal.appContext = applicationContext
         val appLifecycleMonitor = AppLifecycleMonitor()
@@ -99,6 +103,10 @@ class MyApplication : Application() {
                 return AppGlobal.appForeground
             }
         })
+    }
+
+    private fun initRefresh() {
+        RefreshComponent.init()
     }
 
     private fun initARouter() {

@@ -1,7 +1,7 @@
 package com.example.learn.java.src.behaviour.pattern_mediator.chat;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建 user 类
  * @date 2018/7/31
  */

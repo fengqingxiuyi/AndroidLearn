@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_facade;
 import com.example.learn.java.src.structure.pattern_facade.shape.ShapeMaker;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用该外观类画出各种类型的形状
  * @date 2018/7/24
  */

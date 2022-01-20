@@ -1,7 +1,7 @@
 package com.example.learn.java.src.structure.pattern_filter.criteria.bean;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 在该类上应用标准
  * @date 2018/7/24
  */

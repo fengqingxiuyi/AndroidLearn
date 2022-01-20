@@ -1,7 +1,7 @@
 package com.example.learn.java.src.structure.pattern_bridge.draw;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 桥接实现接口。
  * @date 2018/7/24
  */

@@ -1,7 +1,6 @@
 package com.example.learn.java.src.behaviour.pattern_chain.logger;
 
 /**
- * @author ShenBF
  * @desc 创建扩展了该记录器类的实体类
  * @date 2018/7/31
  */

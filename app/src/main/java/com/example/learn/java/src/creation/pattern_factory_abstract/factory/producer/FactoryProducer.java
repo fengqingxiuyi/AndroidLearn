@@ -6,7 +6,7 @@ import com.example.learn.java.src.creation.pattern_factory_abstract.factory.type
 import com.example.learn.java.src.creation.pattern_factory_abstract.shape.factory.ShapeFactory;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 工厂创造器/生成器类
  * @date 2018/7/24
  */

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建一个 Meal 类，带有上面定义的 Item 对象。
  * @date 2018/7/24
  */

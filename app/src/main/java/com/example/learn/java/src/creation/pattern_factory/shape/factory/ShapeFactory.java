@@ -7,7 +7,7 @@ import com.example.learn.java.src.creation.pattern_factory.shape.impl.Square;
 import com.example.learn.java.src.creation.pattern_factory.shape.type.ShapeType;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 工厂，生成基于给定信息的实体类的对象
  * @date 2018/7/24
  */

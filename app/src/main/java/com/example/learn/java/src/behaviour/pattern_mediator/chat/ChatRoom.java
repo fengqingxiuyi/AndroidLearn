@@ -3,7 +3,7 @@ package com.example.learn.java.src.behaviour.pattern_mediator.chat;
 import java.util.Date;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建中介类
  * @date 2018/7/31
  */

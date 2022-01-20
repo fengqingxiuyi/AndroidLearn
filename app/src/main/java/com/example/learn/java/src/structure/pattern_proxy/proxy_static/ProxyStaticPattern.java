@@ -5,7 +5,7 @@ import com.example.learn.java.src.structure.pattern_proxy.proxy_static.image.imp
 import com.example.learn.java.src.structure.pattern_proxy.proxy_static.image.impl.RealImage;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 静态代理模式 当被请求时，使用 ProxyImage 来获取 RealImage 类的对象
  * @date 2018/7/24
  */

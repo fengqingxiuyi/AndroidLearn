@@ -4,7 +4,7 @@ import com.example.learn.java.src.creation.pattern_factory_abstract.color.IColor
 import com.example.learn.java.src.creation.pattern_factory_abstract.shape.IShape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 工厂抽象类
  * @date 2018/7/24
  */

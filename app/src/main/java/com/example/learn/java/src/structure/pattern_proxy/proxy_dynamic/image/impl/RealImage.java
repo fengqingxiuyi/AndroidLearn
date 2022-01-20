@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_proxy.proxy_dynamic.image.i
 import com.example.learn.java.src.structure.pattern_proxy.proxy_dynamic.image.IImage;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 实现接口的实体类
  * @date 2018/7/24
  */

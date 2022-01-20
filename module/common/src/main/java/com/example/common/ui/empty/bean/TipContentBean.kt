@@ -6,7 +6,7 @@ import java.io.Serializable
 /**
  * 略
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 data class TipContentBean(
   @DrawableRes val imageRes: Int,

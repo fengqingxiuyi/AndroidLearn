@@ -4,7 +4,7 @@ import com.example.learn.java.src.structure.pattern_flyweight.shape.factory.Shap
 import com.example.learn.java.src.structure.pattern_flyweight.shape.impl.Circle;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用该工厂，通过传递颜色信息来获取实体类的对象
  * @date 2018/7/24
  */

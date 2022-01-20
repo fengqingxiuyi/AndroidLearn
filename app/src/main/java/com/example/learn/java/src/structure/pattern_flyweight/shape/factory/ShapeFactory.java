@@ -6,7 +6,7 @@ import com.example.learn.java.src.structure.pattern_flyweight.shape.impl.Circle;
 import java.util.HashMap;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建一个工厂，生成基于给定信息的实体类的对象
  * @date 2018/7/24
  */

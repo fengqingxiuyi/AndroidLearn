@@ -5,7 +5,7 @@ import com.example.learn.java.src.structure.pattern_facade.shape.impl.Rectangle;
 import com.example.learn.java.src.structure.pattern_facade.shape.impl.Square;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 外观类
  * @date 2018/7/24
  */

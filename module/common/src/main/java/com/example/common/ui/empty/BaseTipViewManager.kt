@@ -16,7 +16,7 @@ import com.example.utils.device.StatusBarUtil
 /**
  * 略
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 abstract class BaseTipViewManager {
 

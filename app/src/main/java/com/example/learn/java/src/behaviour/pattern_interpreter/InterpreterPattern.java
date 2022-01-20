@@ -6,7 +6,7 @@ import com.example.learn.java.src.behaviour.pattern_interpreter.expression.OrExp
 import com.example.learn.java.src.behaviour.pattern_interpreter.expression.TerminalExpression;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 解释器模式
  * InterpreterPattern 使用 Expression 类来创建规则，并解析它们
  * @date 2018/7/31

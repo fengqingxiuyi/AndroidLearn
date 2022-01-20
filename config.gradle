@@ -83,6 +83,8 @@ ext {
             chadRecyclerView         : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.49-androidx",
             //
             gson                     : "com.google.code.gson:gson:2.8.8",
+            //
+            smartRefreshLayout       : "com.scwang.smart:refresh-layout-kernel:2.0.3",
             //arouter
             arouter_api              : "com.alibaba:arouter-api:1.5.0",
     ]

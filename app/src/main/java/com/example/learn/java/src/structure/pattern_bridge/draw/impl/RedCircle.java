@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_bridge.draw.impl;
 import com.example.learn.java.src.structure.pattern_bridge.draw.DrawAPI;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 实现了 DrawAPI 接口的实体桥接实现类
  * @date 2018/7/24
  */

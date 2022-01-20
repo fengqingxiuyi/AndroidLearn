@@ -13,7 +13,7 @@ import com.example.common.databinding.CommonLayoutErrorEmptyViewBinding
 /**
  * 网络请求 或者 服务器请求 异常显示的view
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 class ErrorOrEmptyView  @JvmOverloads constructor(
   context: Context,

@@ -1,7 +1,7 @@
 package com.example.learn.java.src.creation.pattern_factory_abstract.color.type;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 颜色类型
  * @date 2018/7/24
  */

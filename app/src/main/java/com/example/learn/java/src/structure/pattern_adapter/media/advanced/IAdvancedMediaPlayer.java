@@ -1,7 +1,7 @@
 package com.example.learn.java.src.structure.pattern_adapter.media.advanced;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 高级媒体播放器接口
  * @date 2018/7/24
  */

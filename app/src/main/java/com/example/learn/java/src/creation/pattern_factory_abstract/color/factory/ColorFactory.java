@@ -9,7 +9,7 @@ import com.example.learn.java.src.creation.pattern_factory_abstract.factory.Abst
 import com.example.learn.java.src.creation.pattern_factory_abstract.shape.IShape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc
  * @date 2018/7/24
  */

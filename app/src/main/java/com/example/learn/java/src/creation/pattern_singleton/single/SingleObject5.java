@@ -1,7 +1,7 @@
 package com.example.learn.java.src.creation.pattern_singleton.single;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 单例类
  * <p>
  * 登记式/静态内部类

@@ -1,7 +1,7 @@
 package com.example.learn.java.src.creation.pattern_factory_abstract.factory.type;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 工厂类型
  * @date 2018/7/24
  */

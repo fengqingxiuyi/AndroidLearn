@@ -3,7 +3,7 @@ package com.example.learn.java.src.structure.pattern_decorator.shape.decorator;
 import com.example.learn.java.src.structure.pattern_decorator.shape.IShape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 创建扩展了 ShapeDecorator 类的实体装饰类
  * @date 2018/7/24
  */

@@ -1,7 +1,7 @@
 package com.example.learn.java.src.structure.pattern_decorator.shape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc shape接口
  * @date 2018/7/24
  */

@@ -5,7 +5,7 @@ import com.example.learn.java.src.structure.pattern_proxy.proxy_dynamic.image.II
 import com.example.learn.java.src.structure.pattern_proxy.proxy_dynamic.image.impl.RealImage;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 动态代理模式 控制访问
  * @date 2018/7/24
  */

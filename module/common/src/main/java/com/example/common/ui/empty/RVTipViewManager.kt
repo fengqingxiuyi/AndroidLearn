@@ -16,8 +16,6 @@ import com.example.utils.device.DensityUtil
 
 /**
  * 嵌套在Recyclerview中的缺省页
- *
- * @author: shenbf
  */
 open class RVTipViewManager : BaseTipViewManager {
 

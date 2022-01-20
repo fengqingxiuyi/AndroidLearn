@@ -4,7 +4,7 @@ import com.example.learn.java.src.behaviour.pattern_memento.memento.CareTaker;
 import com.example.learn.java.src.behaviour.pattern_memento.memento.Originator;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 备忘录模式（Memento Pattern）保存一个对象的某个状态，以便在适当的时候恢复对象。备忘录模式属于行为型模式。
  * @date 2018/7/31
  */

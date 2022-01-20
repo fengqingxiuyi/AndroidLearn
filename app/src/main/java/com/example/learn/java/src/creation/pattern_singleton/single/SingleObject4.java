@@ -1,7 +1,7 @@
 package com.example.learn.java.src.creation.pattern_singleton.single;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 单例类
  * <p>
  * 双检锁/双重校验锁（DCL，即 double-checked locking）

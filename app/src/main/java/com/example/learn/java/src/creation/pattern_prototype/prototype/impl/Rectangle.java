@@ -3,7 +3,7 @@ package com.example.learn.java.src.creation.pattern_prototype.prototype.impl;
 import com.example.learn.java.src.creation.pattern_prototype.prototype.Shape;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc
  * @date 2018/7/24
  */

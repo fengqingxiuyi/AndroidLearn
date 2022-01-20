@@ -3,7 +3,7 @@ package com.example.common.ui.empty.config
 /**
  * 略
  *
- * @author: shenbf
+ * @author: fqxyi
  */
 interface ITipViewConfig {
   interface IImgSizeConfig {

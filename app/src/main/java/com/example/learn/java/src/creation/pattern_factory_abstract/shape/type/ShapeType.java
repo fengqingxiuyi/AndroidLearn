@@ -1,7 +1,7 @@
 package com.example.learn.java.src.creation.pattern_factory_abstract.shape.type;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 形状类型
  * @date 2018/7/24
  */

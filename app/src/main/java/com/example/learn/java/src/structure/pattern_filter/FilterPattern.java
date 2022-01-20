@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author ShenBF
+ * @author fqxyi
  * @desc 使用不同的标准（Criteria）和它们的结合来过滤 Person 对象的列表。
  * @date 2018/7/24
  */
