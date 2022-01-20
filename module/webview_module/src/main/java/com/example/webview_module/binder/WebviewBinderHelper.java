@@ -8,7 +8,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.webview_module.IWebviewBinder;
 import com.example.webview_module.IWebviewBinderCallback;
 import com.example.webview_module.js.JsInterface;

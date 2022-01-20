@@ -7,7 +7,7 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.annotation.ColorInt
 import com.example.learn.R
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 import com.example.utils.device.DensityUtil.dp2px
 import kotlinx.android.synthetic.main.view_attribute.view.*
 

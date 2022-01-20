@@ -8,7 +8,7 @@ import android.os.StrictMode;
 import com.example.common.global.AppGlobal;
 import com.example.learn.fps.Seat;
 import com.example.learn.fps.Takt;
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.squareup.leakcanary.LeakCanary;
 

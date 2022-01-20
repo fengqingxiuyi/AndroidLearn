@@ -3,7 +3,7 @@ package com.example.webview_module.utils;
 import android.app.ActivityManager;
 import android.content.Context;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.utils.app.AppUtil;
 
 import java.util.List;

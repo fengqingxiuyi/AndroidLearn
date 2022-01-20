@@ -3,7 +3,7 @@ package com.example.learn.jetpack.workmanager
 import android.content.Context
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 
 /**
  * @author fqxyi

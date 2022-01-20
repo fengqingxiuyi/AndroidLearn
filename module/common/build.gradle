@@ -33,6 +33,7 @@ dependencies {
     api rootProject.ext.module.lint.lintaar
     implementation rootProject.ext.module.ui
     implementation rootProject.ext.module.utils
+    api rootProject.ext.module.log
     implementation rootProject.ext.module.network
     implementation rootProject.ext.module.shake
 }

@@ -2,7 +2,7 @@ package com.example.learn.jetpack.workmanager
 
 import android.content.Context
 import androidx.work.*
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 import java.util.concurrent.TimeUnit
 
 /**

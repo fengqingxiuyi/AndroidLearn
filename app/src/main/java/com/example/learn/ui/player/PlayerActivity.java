@@ -15,7 +15,7 @@ import com.example.player.FPlayerServiceHelper;
 import com.example.player.IFPlayer;
 import com.example.player.video.VideoActivity;
 import com.example.ui.toast.ToastUtil;
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 
 import org.jetbrains.annotations.NotNull;
 

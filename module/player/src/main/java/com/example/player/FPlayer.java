@@ -8,7 +8,7 @@ import android.os.RemoteException;
 
 import com.example.player.strategy.CacheDataSourceFactory;
 import com.example.player.strategy.CustomLoadControl;
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
 import com.google.android.exoplayer2.ExoPlaybackException;

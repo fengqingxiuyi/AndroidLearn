@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.webview_module.binder.WebviewBinderCallback;
 import com.example.webview_module.binder.WebviewBinderHelper;
 import com.example.webview_module.constants.WebviewConstant;

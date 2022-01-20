@@ -7,7 +7,7 @@ import com.example.network.exception.ExceptionManager
 import com.example.network.observer.DefaultObserver
 import com.example.network.tag.ReqTag
 import com.example.network.utils.GsonUtil.GsonToString
-import com.example.utils.LogUtil.e
+import com.example.log.LogUtil.e
 import okhttp3.Request
 import retrofit2.HttpException
 

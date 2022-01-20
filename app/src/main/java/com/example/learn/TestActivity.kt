@@ -39,7 +39,7 @@ import com.example.learn.ui.viewswitcher.ViewSwitcherActivity
 import com.example.learn.ui.webview.WebViewSimpleActivity
 import com.example.learn.ui.youtu.YoutuTestActivity
 import com.example.ui.toast.ToastUtil
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 import com.example.utils.device.StatusBarUtil
 import com.example.webview_module.WebviewActivity
 import com.example.webview_module.constants.WebviewConstant

@@ -8,7 +8,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.example.common.UserAgent;
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.webview_module.binder.WebviewBinderHelper;
 import com.example.webview_module.widget.BaseWebview;
 

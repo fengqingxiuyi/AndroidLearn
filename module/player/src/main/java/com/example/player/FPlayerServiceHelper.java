@@ -9,7 +9,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.text.TextUtils;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 
 /**
  * 多进程交互帮助类

@@ -1,6 +1,6 @@
 package com.example.learn.single.kotlin
 
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 
 /**
  * @author fqxyi

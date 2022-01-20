@@ -3,7 +3,7 @@ package com.example.webview_module.js;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.webview_module.IWebviewBinderCallback;
 
 import java.lang.reflect.Method;

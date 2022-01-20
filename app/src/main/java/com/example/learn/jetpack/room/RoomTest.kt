@@ -1,7 +1,7 @@
 package com.example.learn.jetpack.room
 
 import android.content.Context
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 
 /**
  * @author fqxyi

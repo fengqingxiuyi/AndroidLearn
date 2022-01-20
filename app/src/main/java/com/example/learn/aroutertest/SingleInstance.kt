@@ -2,7 +2,7 @@ package com.example.learn.aroutertest
 
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 
 /**
  * ARouter不支持这种形式，会抛出异常： Caused by: com.alibaba.android.arouter.exception.HandlerException: Init provider failed! <init> []

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.utils.encrypt.AesUtils;
 
 import org.json.JSONObject;

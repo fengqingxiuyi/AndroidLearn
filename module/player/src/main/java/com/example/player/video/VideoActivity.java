@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.example.player.FPlayer;
 import com.example.player.R;
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.google.android.exoplayer2.ui.PlayerView;
 
 public class VideoActivity extends Activity {

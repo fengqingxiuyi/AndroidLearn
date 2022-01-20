@@ -95,6 +95,7 @@ ext {
             banner        : project(":banner"),
             download      : project(":download"),
             image         : project(":image"),
+            log           : project(":log"),
             network       : project(":network"),
             partition     : project(":partition"),
             refresh       : project(":refresh"),

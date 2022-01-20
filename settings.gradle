@@ -26,6 +26,7 @@ def library = [
         '/library/banner',
         '/library/download',
         '/library/image',
+        '/library/log',
         '/library/network',
         '/library/partition',
         '/library/refresh',

@@ -7,7 +7,7 @@ import android.webkit.*
 import com.example.common.base.BaseActivity
 import com.example.learn.R
 import com.example.ui.toast.ToastUtil
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 import kotlinx.android.synthetic.main.activity_webview_simple.*
 
 /**

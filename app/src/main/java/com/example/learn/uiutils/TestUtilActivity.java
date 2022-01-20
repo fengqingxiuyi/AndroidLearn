@@ -13,7 +13,7 @@ import com.example.learn.R;
 import com.example.learn.uiutils.event.TestRxBusCancelEvent;
 import com.example.learn.uiutils.event.TestRxBusSendEvent;
 import com.example.ui.toast.ToastUtil;
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.utils.device.CameraUtil;
 import com.example.utils.device.InputMethodUtil;
 import com.example.utils.download.DownloadUtil;

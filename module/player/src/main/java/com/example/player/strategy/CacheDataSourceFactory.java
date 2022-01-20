@@ -2,7 +2,7 @@ package com.example.player.strategy;
 
 import android.content.Context;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;

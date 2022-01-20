@@ -1,7 +1,7 @@
 package com.example.learn.annotation
 
 import android.app.Activity
-import com.example.utils.LogUtil
+import com.example.log.LogUtil
 
 /**
  * @author fqxyi

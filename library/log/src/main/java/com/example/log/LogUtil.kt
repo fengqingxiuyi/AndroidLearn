@@ -1,4 +1,4 @@
-package com.example.utils
+package com.example.log
 
 import android.os.Looper
 import android.text.TextUtils

@@ -3,7 +3,7 @@ package com.example.player.strategy;
 
 import android.content.Context;
 
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 import com.example.utils.network.NetworkUtil;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.LoadControl;

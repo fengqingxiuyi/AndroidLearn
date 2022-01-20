@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import com.example.player.FPlayer;
 import com.example.player.IFPlayer;
 import com.example.player.IFPlayerBinder;
-import com.example.utils.LogUtil;
+import com.example.log.LogUtil;
 
 /**
  * Service
