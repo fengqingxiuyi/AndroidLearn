@@ -14,10 +14,17 @@ android {
                     'src/main/res/dialog',
                     'src/main/res/drag',
                     'src/main/res/progress',
+                    'src/main/res/tablayout',
                     'src/main/res/tag',
                     'src/main/res/toast',
                     'src/main/res'
             ]
         }
     }
+}
+
+dependencies {
+    implementation rootProject.ext.libs.recyclerview
+    implementation rootProject.ext.libs.material
+    implementation rootProject.ext.libs.viewpager2
 }

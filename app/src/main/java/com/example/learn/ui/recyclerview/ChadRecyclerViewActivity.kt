@@ -15,6 +15,7 @@ import com.example.common.ui.refresh.SimpleRefreshLayout
 import com.example.common.utils.viewBinding
 import com.example.learn.R
 import com.example.learn.databinding.ChadRecyclerviewBinding
+import com.example.ui.list.decoration.SimpleLinearItemDecoration
 
 class ChadRecyclerViewActivity : BaseActivity(), IBaseListContract<List<String>> {
 
@@ -82,6 +83,7 @@ class ChadRecyclerViewActivity : BaseActivity(), IBaseListContract<List<String>>
 
   private fun initRecycler() {
     binding.rvChad.layoutManager = LinearLayoutManager(this)
+    binding.rvChad.addItemDecoration(SimpleLinearItemDecoration(10, 10))
     adapter = object : BaseQuickAdapter<String, BaseViewHolder>(R.layout.chad_recyclerview_item, data) {
       override fun convert(holder: BaseViewHolder, item: String) {
         holder.setText(R.id.tv_text, item)
