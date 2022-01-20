@@ -4,7 +4,7 @@ ext {
     libs = [
             compiler                 : [
                     //ROOM https://developer.android.com/topic/libraries/architecture/room
-                    room        : "androidx.room:room-compiler:2.2.5",
+                    room            : "androidx.room:room-compiler:2.2.5",
                     /**
                      * AGP从4.0.1降到3.6.1之后会报错，所以将auto_service移到compiler中
                      * Annotation processors must be explicitly declared now.  The following dependencies on the compile classpath are found to contain annotation processor.  Please add them to the annotationProcessor configuration.
@@ -12,8 +12,8 @@ ext {
                      * Alternatively, set android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true to continue with previous behavior.  Note that this option is deprecated and will be removed in the future.
                      */
                     //注解 processor 类，并对其生成 META-INF 的配置信息 https://github.com/google/auto/tree/master/service
-                    auto_service: "com.google.auto.service:auto-service:1.0-rc7",
-//                    arouter_compiler: "com.alibaba:arouter-compiler:1.2.2",
+                    auto_service    : "com.google.auto.service:auto-service:1.0-rc7",
+                    arouter_compiler: "com.alibaba:arouter-compiler:1.2.2",
             ],
             debug                    : [
                     //LeakCanary https://square.github.io/leakcanary/
@@ -35,13 +35,20 @@ ext {
             //kotlin https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib
             kotlin                   : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
             //material https://material.io/develop/android/docs/getting-started/
-            material                 : "com.google.android.material:material:1.2.0",
+            material                 : "com.google.android.material:material:1.4.0",
             //AndroidX https://developer.android.com/jetpack/androidx/versions
-            databinding              : "androidx.databinding:viewbinding:7.0.4",
-            appcompat                : "androidx.appcompat:appcompat:1.2.0",
+            viewbinding              : "androidx.databinding:viewbinding:7.0.4",
+            //appcompat和core_ktx的版本互有影响，不可随意升级
+            appcompat                : "androidx.appcompat:appcompat:1.3.1",
+            core_ktx                 : "androidx.core:core-ktx:1.6.0",
             constraintlayout         : "androidx.constraintlayout:constraintlayout:2.1.2",
             recyclerview             : 'androidx.recyclerview:recyclerview:1.1.0',
-            lifecycle_viewmodel      : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+            exifinterface            : "androidx.exifinterface:exifinterface:1.3.3",
+            lifecycle_viewmodel      : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            lifecycle_runtime        : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            lifecycle_livedata       : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            //https://developer.android.com/topic/libraries/architecture/workmanager
+            workmanager              : "androidx.work:work-runtime-ktx:2.7.1",
             //网络框架 https://github.com/square/retrofit/blob/master/CHANGELOG.md
             retrofit                 : "com.squareup.retrofit2:retrofit:2.6.2",
             retrofit_gson            : "com.squareup.retrofit2:converter-gson:2.6.2",
@@ -67,8 +74,6 @@ ext {
             room                     : "androidx.room:room-runtime:2.2.5",
             //https://github.com/InsertKoinIO/koin
             koin                     : "org.koin:koin-androidx-viewmodel:2.1.6",
-            //https://developer.android.com/topic/libraries/architecture/workmanager
-            workmanager              : "androidx.work:work-runtime-ktx:2.4.0",
             //ExoPlayer https://github.com/google/ExoPlayer
             exoplayer_core           : "com.google.android.exoplayer:exoplayer-core:$player_version",
             exoplayer_dash           : "com.google.android.exoplayer:exoplayer-dash:$player_version",
@@ -77,7 +82,9 @@ ext {
             exoplayer_ui             : "com.google.android.exoplayer:exoplayer-ui:$player_version",
             chadRecyclerView         : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.49-androidx",
             //
-//            arouter_api              : "com.alibaba:arouter-api:1.5.0",
+            gson                     : "com.google.code.gson:gson:2.8.8",
+            //arouter
+            arouter_api              : "com.alibaba:arouter-api:1.5.0",
     ]
     //module
     module = [

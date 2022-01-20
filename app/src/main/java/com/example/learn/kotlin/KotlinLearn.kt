@@ -8,7 +8,7 @@ package com.example.learn.kotlin
 fun main() {
     println("hello world")
     var name: String?
-    name = null
+    name = ""
     name?.let {
         var length = it.length
     }

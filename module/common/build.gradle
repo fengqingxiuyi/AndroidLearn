@@ -19,14 +19,17 @@ android {
             ]
         }
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     //library
     implementation rootProject.ext.libs.retrofit
     implementation rootProject.ext.libs.retrofit_rxjava
-    implementation rootProject.ext.libs.lifecycle_viewmodel
     implementation rootProject.ext.libs.constraintlayout
+    implementation rootProject.ext.libs.viewbinding
     //module
     //为每一个业务组件引入自定义的Lint规则
     api rootProject.ext.module.lint.lintaar

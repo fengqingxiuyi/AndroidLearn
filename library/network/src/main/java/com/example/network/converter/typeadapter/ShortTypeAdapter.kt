@@ -35,7 +35,7 @@ class ShortTypeAdapter : TypeAdapter<Short>() {
                 //当服务端返回值为浮点型，但是定义类型为整型时，使用nextInt()会报错，故用nextDouble()接收，并强转
                 val value = `in`.nextDouble()
                 if (value >= Short.MIN_VALUE && value <= Short.MAX_VALUE) {
-                    value.toShort()
+                    value.toInt().toShort()
                 } else {
                     0
                 }

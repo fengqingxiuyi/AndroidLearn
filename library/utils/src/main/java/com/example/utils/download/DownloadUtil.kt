@@ -4,7 +4,6 @@ import android.content.Context
 import android.text.TextUtils
 import android.util.Log
 import com.example.utils.device.GalleryUtil.saveImageByScanFile
-import com.example.utils.download.DownloadUtil
 import com.example.utils.network.UrlUtil
 import com.example.utils.storage.FileUtil
 import java.io.*

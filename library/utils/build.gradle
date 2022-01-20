@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply from: '../../base.gradle'
 //上传代码到JCenter的插件
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
     defaultConfig {
@@ -11,20 +11,21 @@ android {
 }
 
 dependencies {
-    /*
-    解决错误警告：
-    Cannot access androidx.lifecycle.HasDefaultViewModelProviderFactory
-     */
-    implementation rootProject.ext.libs.lifecycle_viewmodel
+    implementation rootProject.ext.libs.material
     implementation rootProject.ext.libs.rxjava
+    implementation rootProject.ext.libs.gson
+    implementation rootProject.ext.libs.exifinterface
+    implementation rootProject.ext.libs.workmanager
+    //
+    implementation rootProject.ext.module.log
 }
 
 //上传代码到JCenter的插件
-publish {
-    userOrg = 'fqxyi' // bintray.com用户名
-    groupId = 'com.example' // jcenter上的路径
-    artifactId = 'utils' // 项目名称
-    publishVersion = '1.0.0' // 版本号
-    desc = 'Summarize the tools or methods commonly used in routine development' // 描述，不重要
-    website = 'https://github.com/fengqingxiuyi/AndroidLearn' // 网站，不重要
-}
+//publish {
+//    userOrg = 'fqxyi' // bintray.com用户名
+//    groupId = 'com.example' // jcenter上的路径
+//    artifactId = 'utils' // 项目名称
+//    publishVersion = '1.0.0' // 版本号
+//    desc = 'Summarize the tools or methods commonly used in routine development' // 描述，不重要
+//    website = 'https://github.com/fengqingxiuyi/AndroidLearn' // 网站，不重要
+//}

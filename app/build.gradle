@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply from: '../base.gradle'
-apply from: '../aop.gradle'
+//apply from: '../aop.gradle'
 apply plugin: 'com.alibaba.arouter'
 //apply plugin: 'apk-change-name'
 
@@ -30,14 +30,14 @@ android {
     }
     // This block is different from the one you use to link Gradle
     // to your CMake or ndk-build script.
-    externalNativeBuild {
-        // Encapsulates your CMake build configurations.
-        // cmake选项：https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.ExternalNativeCmakeOptions.html
-        cmake {
-            // Provides a relative path to your CMake build script.
-            path "src/main/cpp/CMakeLists.txt"
-        }
-    }
+//    externalNativeBuild {
+//        // Encapsulates your CMake build configurations.
+//        // cmake选项：https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.ExternalNativeCmakeOptions.html
+//        cmake {
+//            // Provides a relative path to your CMake build script.
+//            path "src/main/cpp/CMakeLists.txt"
+//        }
+//    }
     //将res文件夹中的资源以模块的形式分类
     sourceSets {
         main {
@@ -91,6 +91,9 @@ android {
         //true：检测出错时停止构建
         abortOnError false
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 //配置assemble任务依赖lint，编译时就会执行Lint检查
@@ -141,6 +144,4 @@ dependencies {
                 }
         }
     }
-    api 'com.alibaba:arouter-api:1.5.0'
-    kapt 'com.alibaba:arouter-compiler:1.2.2'
 }

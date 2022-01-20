@@ -25,17 +25,18 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
-    viewBinding {
-        enabled = true
-    }
-    dataBinding {
-        enabled = true
-    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation fileTree(dir: "./src/main/jniLibs", include: ["*.jar"])
     implementation rootProject.ext.libs.appcompat
-    implementation rootProject.ext.libs.databinding
+    implementation rootProject.ext.libs.core_ktx
+    implementation rootProject.ext.libs.lifecycle_runtime
+    implementation rootProject.ext.libs.lifecycle_livedata
+    /*
+    解决错误警告：
+    Cannot access androidx.lifecycle.HasDefaultViewModelProviderFactory
+     */
+    implementation rootProject.ext.libs.lifecycle_viewmodel
 }

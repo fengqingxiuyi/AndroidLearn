@@ -35,7 +35,7 @@ class ByteTypeAdapter : TypeAdapter<Byte>() {
                 //当服务端返回值为浮点型，但是定义类型为整型时，使用nextInt()会报错，故用nextDouble()接收，并强转
                 val value = `in`.nextDouble()
                 if (value >= Byte.MIN_VALUE && value <= Byte.MAX_VALUE) {
-                    value.toByte()
+                    value.toInt().toByte()
                 } else {
                     0
                 }
