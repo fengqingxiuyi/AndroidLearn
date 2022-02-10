@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_light" />
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/main_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/common_white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@mipmap/bottom_nav_shadow" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="73dp"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_bottom_waha_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="13dp"
+                android:src="@mipmap/waha_hide_3" />
+
+            <TextView
+                android:id="@+id/main_bottom_waha_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="6dp"
+                android:text="@string/bottom_view_title_waha"
+                android:textColor="@color/bottom_nav_unselect"
+                android:textSize="12dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@mipmap/bottom_nav_shadow" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="73dp"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_bottom_room_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="13dp"
+                android:src="@mipmap/room_hide_3" />
+
+            <TextView
+                android:id="@+id/main_bottom_room_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="6dp"
+                android:text="@string/bottom_view_title_room"
+                android:textColor="@color/bottom_nav_unselect"
+                android:textSize="12dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@mipmap/bottom_nav_shadow" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="70dp"
+            android:layout_height="73dp"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_bottom_messages_icon"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="13dp"
+                android:src="@mipmap/messages_hide_3" />
+
+            <TextView
+                android:id="@+id/main_bottom_messages_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="6dp"
+                android:text="@string/bottom_view_title_messages"
+                android:textColor="@color/bottom_nav_unselect"
+                android:textSize="12dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@mipmap/bottom_nav_shadow" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

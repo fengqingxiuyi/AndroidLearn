@@ -52,6 +52,7 @@ android {
                     'src/main/res/ui/constraint',
                     'src/main/res/ui/download',
                     'src/main/res/ui/drawer',
+                    'src/main/res/ui/fragment',
                     'src/main/res/ui/image',
                     'src/main/res/ui/imagescaletype',
                     'src/main/res/ui/layout2bitmap',

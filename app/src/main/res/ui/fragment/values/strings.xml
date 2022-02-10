@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottom_view_title_waha">Waha</string>
+    <string name="bottom_view_title_room">Rooms</string>
+    <string name="bottom_view_title_messages">Messages</string>
+</resources>
