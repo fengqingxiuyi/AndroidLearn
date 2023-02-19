@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dolphin_common_text_border_stroke">#FFC67D41</color>
+    <color name="dolphin_common_text_shadow_default">#80000000</color>
+    <color name="dolphin_common_text_gradient_start_default">#FCFFD7</color>
+    <color name="dolphin_common_text_gradient_end_default">#E8AE00</color>
+</resources>
