@@ -114,12 +114,13 @@ open class UnichatTextView @JvmOverloads constructor(
    */
   fun setStroke(@ColorInt color: Int, width: Float = DimenUtil.dp2pxFloat(context, 1.5f)) {
     if (!::borderTextPaint.isInitialized) {
-      borderTextPaint = TextPaint().apply {
-        style = Paint.Style.STROKE
-      }
+      borderTextPaint = TextPaint()
     }
-    borderTextPaint.color = color
-    borderTextPaint.strokeWidth = width
+    borderTextPaint.apply {
+      style = Paint.Style.STROKE //不能只在borderTextPaint第一次初始化的时候设置一次，每次都需要设置
+      this.color = color
+      strokeWidth = width
+    }
   }
 
   /**
