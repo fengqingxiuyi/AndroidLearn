@@ -430,16 +430,19 @@ open class UnichatTextView @JvmOverloads constructor(
     val line = layout.getLineForOffset(offsetIndexList[index]) //获取字符在第几行
     layout.getLineBounds(line, bound) //获取该行的Bound区域
     val top = layout.getLineTop(line)
+    val offset = if (offsetIndexList.size() > index + 1) { //多行
+      val offset1 = layout.getPrimaryHorizontal(offsetIndexList[index])
+      //这里还减去的数值是实验所得，待研究 todo
+      val offset2 = layout.getPrimaryHorizontal(offsetIndexList[index + 1] - 1) - textSize / DimenUtil.dp2px(context, 1.275f)
+      if (offset1 > offset2) offset2 else offset1 //取最小值是为了处理阿语环境下英文文字描边异常或英语环境下阿语文字描边异常的问题
+    } else { //单行
+      val offset1 = layout.getPrimaryHorizontal(offsetIndexList[index])
+      val offset2 = layout.getPrimaryHorizontal(text.length)
+      if (offset1 > offset2) offset2 else offset1 //取最小值是为了处理阿语环境下英文文字描边异常或英语环境下阿语文字描边异常的问题
+    }
     return if (isRtlLayout(context)) {
-      val offset = if (offsetIndexList.size() > index + 1) {
-        //这里还减去了2.5dp是实验所得，待研究 todo
-        layout.getPrimaryHorizontal(offsetIndexList[index + 1] - 1) - DimenUtil.dp2px(context, 2.5f)
-      } else {
-        layout.getPrimaryHorizontal(text.length)
-      }
       Pair(offset + getDrawableEndWidthAndPadding() + paddingEnd, top)
     } else {
-      val offset = layout.getPrimaryHorizontal(offsetIndexList[index])
       Pair(offset + getDrawableStartWidthAndPadding() + paddingStart, top)
     }
   }
