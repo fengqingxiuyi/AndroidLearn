@@ -3,8 +3,11 @@ package com.example.ui.text
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.Drawable
+import android.text.Layout
 import android.text.TextPaint
 import android.util.AttributeSet
+import android.util.SparseArray
+import android.util.SparseIntArray
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatTextView
 import com.example.ui.utils.DimenUtil
@@ -13,19 +16,19 @@ import com.example.ui.utils.isRtlLayout
 /**
  * 统一字体 实现 字体边框、渐变、阴影、字体
  *
- * 存在的Bug：emoji兼容性问题，如果出现emoji与省略号共存的情况，无法给省略号准确的描边。
- *
  * @author shenBF
  */
 open class UnichatTextView @JvmOverloads constructor(
   context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : AppCompatTextView(context, attrs, defStyleAttr) {
 
-  private val TAG = "UnichatTextViewTAG"
+  companion object {
+    private const val TAG = "UnichatTextViewTAG"
+    //自定义的省略号，当遇到需要省略号显示的场景时，会自己计算能显示的内容并拼接上该省略号
+    const val ELLIPSIS = "..."
+  }
 
-  protected val ELLIPSIS = "..."
-
-  //边框相关
+  //描边相关
   private lateinit var borderTextPaint: TextPaint
 
   //渐变相关
@@ -44,12 +47,18 @@ open class UnichatTextView @JvmOverloads constructor(
   private var shadowBlur = 0f
 
   //字体相关
-  private val defaultTypeface =
+  private val defaultTypeface by lazy(LazyThreadSafetyMode.NONE) {
     Typeface.createFromAsset(context.assets, "fonts/unichat_default.ttf")
+  }
 
   init {
     includeFontPadding = false
-    typeface = defaultTypeface
+
+    val a = context.obtainStyledAttributes(attrs, com.example.ui.R.styleable.TextAppearance)
+    if (!a.hasValue(com.example.ui.R.styleable.TextAppearance_android_fontFamily)) {
+      typeface = defaultTypeface
+    }
+    a.recycle()
   }
 
   fun notifyChanged() {
@@ -62,60 +71,71 @@ open class UnichatTextView @JvmOverloads constructor(
   }
 
   /**
-   * 设置字体渐变，仅单行生效
-   * @param orientation OrientationMode
-   * @param startColor Int
-   * @param endColor Int
+   * 设置字体渐变
+   * @param orientation OrientationMode 渐变方向
+   * @param startColor Int 渐变开始颜色
+   * @param endColor Int 渐变结束颜色
+   * @param defaultColor Int 应用于Tab切换时，未选中的Tab需要显示该颜色，而不是渐变色
    */
-  fun setGradientOnSingleLine(
+  fun setGradient(
     orientation: OrientationMode,
     @ColorInt startColor: Int,
-    @ColorInt endColor: Int
+    @ColorInt endColor: Int,
+    @ColorInt defaultColor: Int = Color.WHITE, //非Tab情况随便给个颜色都行，只要不是透明
   ) {
     openGradient = true
+    setTextColor(defaultColor) //必须要写这个，否则和投影叠加的时候颜色会被污染
     this.orientation = orientation
     this.startColor = startColor
     this.endColor = endColor
   }
 
-  fun setGradientOnSingleLineAndNotify(
+  /**
+   * 设置字体渐变，并执行invalidate
+   * @param orientation OrientationMode 渐变方向
+   * @param startColor Int 渐变开始颜色
+   * @param endColor Int 渐变结束颜色
+   * @param defaultColor Int 应用于Tab切换时，未选中的Tab需要显示该颜色，而不是渐变色
+   */
+  fun setGradientThenNotify(
     orientation: OrientationMode,
     @ColorInt startColor: Int,
-    @ColorInt endColor: Int
+    @ColorInt endColor: Int,
+    @ColorInt defaultColor: Int = Color.WHITE, //非Tab情况随便给个颜色都行，只要不是透明
   ) {
-    setGradientOnSingleLine(orientation, startColor, endColor)
+    setGradient(orientation, startColor, endColor, defaultColor)
     notifyChanged()
   }
 
   /**
-   * 设置字体描边，仅单行有效
-   * @param color Int
-   * @param width Float
+   * 设置字体描边
+   * @param color Int 描边颜色
+   * @param width Float 描边宽度
    */
-  fun setStrokeOnSingleLine(
-    @ColorInt color: Int,
-    width: Float = DimenUtil.dp2pxFloat(context, 1.5f)
-  ) {
+  fun setStroke(@ColorInt color: Int, width: Float = DimenUtil.dp2pxFloat(context, 1.5f)) {
     if (!::borderTextPaint.isInitialized) {
-      borderTextPaint = TextPaint()
+      borderTextPaint = TextPaint().apply {
+        style = Paint.Style.STROKE
+      }
     }
-    borderTextPaint.style = Paint.Style.STROKE
     borderTextPaint.color = color
     borderTextPaint.strokeWidth = width
   }
 
-  fun setStrokeOnSingleLineAndNotify(
-    @ColorInt color: Int,
-    width: Float = DimenUtil.dp2pxFloat(context, 1.5f)
-  ) {
-    setStrokeOnSingleLine(color, width)
+  /**
+   * 设置字体描边，并执行requestLayout和invalidate
+   * @param color Int 描边颜色
+   * @param width Float 描边宽度
+   */
+  fun setStrokeThenNotify(@ColorInt color: Int, width: Float = DimenUtil.dp2pxFloat(context, 1.5f)) {
+    setStroke(color, width)
     notifyChanged()
   }
 
   /**
    * 设置从上往下的阴影
-   * @param shadow Float 阴影宽度
-   * @param shadowColor Int
+   * @param shadow Float 阴影在Y轴的偏移量
+   * @param shadowColor Int 阴影颜色
    * @param blur Float 模糊程度，值越大越模糊
    */
   fun setTopToBottomShadow(
@@ -127,9 +147,24 @@ open class UnichatTextView @JvmOverloads constructor(
   }
 
   /**
+   * 设置从上往下的阴影，并执行invalidate
+   * @param shadow Float 阴影在Y轴的偏移量
+   * @param shadowColor Int 阴影颜色
+   * @param blur Float 模糊程度，值越大越模糊
+   */
+  fun setTopToBottomShadowThenNotify(
+    shadow: Float,
+    @ColorInt shadowColor: Int,
+    blur: Float
+  ) {
+    setTopToBottomShadow(shadow, shadowColor, blur)
+    notifyChanged()
+  }
+
+  /**
    * 设置从左右往的阴影
-   * @param shadow Float 阴影宽度
-   * @param shadowColor Int
+   * @param shadow Float 阴影在X轴的偏移量
+   * @param shadowColor Int 阴影颜色
    * @param blur Float 模糊程度，值越大越模糊
    */
   fun setLeftToRightShadow(
@@ -140,20 +175,49 @@ open class UnichatTextView @JvmOverloads constructor(
     setShadow(shadow, 0f, shadowColor, blur)
   }
 
-  private fun setShadow(
+  /**
+   * 设置从左往右的阴影，并执行invalidate
+   * @param shadow Float 阴影在Y轴的偏移量
+   * @param shadowColor Int 阴影颜色
+   * @param blur Float 模糊程度，值越大越模糊
+   */
+  fun setLeftToRightShadowThenNotify(
+    shadow: Float,
+    @ColorInt shadowColor: Int,
+    blur: Float
+  ) {
+    setLeftToRightShadow(shadow, shadowColor, blur)
+    notifyChanged()
+  }
+
+  /**
+   * 设置自定义方向的阴影
+   * @param shadowX Float 阴影在X轴的偏移量
+   * @param shadowY Float 阴影在Y轴的偏移量
+   * @param shadowColor Int 阴影颜色
+   * @param blur Float 模糊程度，值越大越模糊
+   */
+  fun setShadow(
     shadowX: Float,
     shadowY: Float,
     @ColorInt shadowColor: Int,
     blur: Float
   ) {
     openShadow = true
-    this.shadowY = shadowX
+    this.shadowX = shadowX
     this.shadowY = shadowY
     shadowColorValue = shadowColor
     shadowBlur = blur
   }
 
-  private fun setShadowAndNotify(
+  /**
+   * 设置自定义方向的阴影，并执行invalidate
+   * @param shadowX Float 阴影在X轴的偏移量
+   * @param shadowY Float 阴影在Y轴的偏移量
+   * @param shadowColor Int 阴影颜色
+   * @param blur Float 模糊程度，值越大越模糊
+   */
+  fun setShadowThenNotify(
     shadowX: Float,
     shadowY: Float,
     @ColorInt shadowColor: Int,
@@ -163,26 +227,25 @@ open class UnichatTextView @JvmOverloads constructor(
     notifyChanged()
   }
 
+  /**
+   * 移除渐变效果
+   */
   fun removeGradient() {
     openGradient = false
     paint.shader = null
   }
 
+  /**
+   * 移除渐变效果，并执行invalidate
+   */
   fun removeGradientThenNotify() {
     removeGradient()
     notifyChanged()
   }
 
-  fun removeShadow() {
-    openShadow = false
-    paint.clearShadowLayer()
-  }
-
-  fun removeShadowThenNotify() {
-    removeShadow()
-    notifyChanged()
-  }
-
+  /**
+   * 移除描边
+   */
   fun removeStroke() {
     if (!::borderTextPaint.isInitialized) {
       return
@@ -190,17 +253,45 @@ open class UnichatTextView @JvmOverloads constructor(
     borderTextPaint.reset()
   }
 
+  /**
+   * 移除描边，并执行invalidate
+   */
   fun removeStrokeThenNotify() {
+    if (!::borderTextPaint.isInitialized) {
+      return
+    }
     removeStroke()
     notifyChanged()
   }
 
+  /**
+   * 移除投影效果
+   */
+  fun removeShadow() {
+    openShadow = false
+    paint.clearShadowLayer()
+  }
+
+  /**
+   * 移除投影效果，并执行invalidate
+   */
+  fun removeShadowThenNotify() {
+    removeShadow()
+    notifyChanged()
+  }
+
+  /**
+   * 移除渐变和投影效果，并执行invalidate
+   */
   fun removeGradientAndShadowThenNotify() {
     removeGradient()
     removeShadow()
     notifyChanged()
   }
 
+  /**
+   * 移除所有效果，并执行requestLayout和invalidate
+   */
   fun removeAllThenNotify() {
     removeGradient()
     removeShadow()
@@ -209,71 +300,23 @@ open class UnichatTextView @JvmOverloads constructor(
   }
 
   override fun onDraw(canvas: Canvas?) {
+    if (canvas == null) {
+      super.onDraw(null)
+      return
+    }
     //draw shadow
     if (openShadow) {
-      paint.shader = null
-      paint.setShadowLayer(shadowBlur, shadowX, shadowY, shadowColorValue)
+      drawShadow()
       super.onDraw(canvas)
     }
     //draw gradient
     if (openGradient) {
-      paint.clearShadowLayer()
-      when (orientation) {
-        OrientationMode.HORIZONTAL -> {
-          if (::linearHorizontalGradient.isInitialized) {
-            linearHorizontalGradient = LinearGradient(
-              0f,
-              0f,
-              width.toFloat(),
-              0f,
-              startColor,
-              endColor,
-              Shader.TileMode.CLAMP
-            )
-          }
-          paint.shader = linearHorizontalGradient
-
-        }
-        OrientationMode.VERTICAL -> {
-          if (::linearVerticalGradient.isInitialized) {
-            linearVerticalGradient = LinearGradient(
-              0f,
-              0f,
-              0f,
-              height * 0.7f,
-              startColor,
-              endColor,
-              Shader.TileMode.CLAMP
-            )
-          }
-          paint.shader = linearVerticalGradient
-
-        }
-      }
+      drawGradient()
       super.onDraw(canvas)
     }
+    //draw stroke
     if (::borderTextPaint.isInitialized) {
-      //复制参数
-      borderTextPaint.textSize = paint.textSize
-      borderTextPaint.typeface = defaultTypeface
-      borderTextPaint.flags = paint.flags
-      borderTextPaint.alpha = paint.alpha
-
-      //在文本底层画出带描边的文本
-      var text = text.toString()
-      if (width != 0 && borderTextPaint.measureText(text) + paddingStart + paddingEnd > width) {
-        text = getAdjustText(text, "")
-        //再设置一次文本是为了解决边框绘制之后与显示文案不一致的问题
-        setText(text)
-        //解决再次setText导致的移动（wrap_content时）和位置偏移（原本居中现在不居中）问题
-        requestLayout()
-      }
-      canvas?.drawText(
-        text,
-        getStartPositionInTextViewOnSingleLine(),
-        baseline.toFloat(),
-        borderTextPaint
-      )
+      drawStroke(canvas)
       super.onDraw(canvas)
     }
     //else
@@ -282,26 +325,122 @@ open class UnichatTextView @JvmOverloads constructor(
     }
   }
 
-  private fun getStartPositionInTextViewOnSingleLine(): Float {
-    var min = 0f
-    layout?.let {
-      val layout = layout
-      val bound = Rect()
-      val line = layout.getLineForOffset(0) //获取字符在第几行
-      layout.getLineBounds(line, bound) //获取该行的Bound区域
+  private fun drawShadow() {
+    paint.shader = null //清除gradient效果
+    paint.setShadowLayer(shadowBlur, shadowX, shadowY, shadowColorValue)
+  }
 
-      val x1 = layout.getPrimaryHorizontal(0)
-      val x2 = layout.getPrimaryHorizontal(text.length)
-      min = if (x1 > x2) {
-        x2
-      } else {
-        x1
+  private fun drawGradient() {
+    paint.clearShadowLayer()
+    when (orientation) {
+      OrientationMode.HORIZONTAL -> {
+        if (!::linearHorizontalGradient.isInitialized) {
+          linearHorizontalGradient = LinearGradient(
+            0f,
+            0f,
+            width.toFloat(),
+            0f,
+            startColor,
+            endColor,
+            Shader.TileMode.CLAMP
+          )
+        }
+        paint.shader = linearHorizontalGradient
+      }
+      OrientationMode.VERTICAL -> {
+        if (!::linearVerticalGradient.isInitialized) {
+          linearVerticalGradient = LinearGradient(
+            0f,
+            0f,
+            0f,
+            lineHeight * 1f,
+            startColor,
+            endColor,
+            Shader.TileMode.REPEAT
+          )
+        }
+        paint.shader = linearVerticalGradient
       }
     }
+  }
+
+  private fun drawStroke(canvas: Canvas) {
+    val layout = layout ?: return
+    //复制参数
+    borderTextPaint.textSize = paint.textSize
+    borderTextPaint.typeface = defaultTypeface
+    borderTextPaint.flags = paint.flags
+    borderTextPaint.alpha = paint.alpha
+
+    //在文本底层画出带描边的文本
+    val lineCount = lineCount
+    getLineOffsetInfo(layout, lineCount).apply {
+      drawStrokeText(canvas, layout, first, second)
+    }
+  }
+
+  private fun getLineOffsetInfo(layout: Layout, lineCount: Int): Pair<SparseArray<StringBuilder>, SparseIntArray> {
+    val offsetList = SparseArray<StringBuilder>(lineCount)
+    val offsetIndexList = SparseIntArray(lineCount)
+    offsetIndexList.put(0, 0)
+    val availableWidth = width - paddingStart - paddingEnd
+    //使用layout.text，不要使用text，因为如果ellipsize为start之类的，layout.text就是显示文案
+    layout.text.forEachIndexed { index, c ->
+      val line = layout.getLineForOffset(index) //获取字符在第几行
+      if (offsetList.get(line) == null) {
+        offsetList.put(line, StringBuilder(""))
+      }
+      if (availableWidth < layout.getLineMax(line)) { //字符串内容长度超过了显示区域，这种情况是ellipsize为none的时候
+        if (paint.measureText(offsetList.get(line).toString()) < availableWidth) {
+          offsetList.put(line, offsetList.get(line).append(c))
+        }
+      } else {
+        offsetList.put(line, offsetList.get(line).append(c))
+      }
+      if (line > 0 && offsetIndexList[line] == 0) {
+        offsetIndexList.put(line, index)
+      }
+    }
+    return Pair(offsetList, offsetIndexList)
+  }
+
+  private fun drawStrokeText(
+    canvas: Canvas,
+    layout: Layout,
+    offsetList: SparseArray<StringBuilder>,
+    offsetIndexList: SparseIntArray
+  ) {
+    for (line in 0 until lineCount) {
+      val position = getCharPositionInTextView(layout, offsetIndexList, line)
+      canvas.drawText(
+        offsetList[line].toString(),
+        position.first,
+        position.second + baseline.toFloat(),
+        borderTextPaint
+      )
+    }
+  }
+
+  private fun getCharPositionInTextView(
+    layout: Layout,
+    offsetIndexList: SparseIntArray,
+    index: Int
+  ): Pair<Float, Int> {
+    val bound = Rect()
+    val line = layout.getLineForOffset(offsetIndexList[index]) //获取字符在第几行
+    layout.getLineBounds(line, bound) //获取该行的Bound区域
+    val top = layout.getLineTop(line)
     return if (isRtlLayout(context)) {
-      min + getDrawableEndWidthAndPadding() + paddingEnd
+      val offset = if (offsetIndexList.size() > index + 1) {
+        //这里还减去了2.5dp是实验所得，待研究 todo
+        layout.getPrimaryHorizontal(offsetIndexList[index + 1] - 1) - DimenUtil.dp2px(context, 2.5f)
+      } else {
+        layout.getPrimaryHorizontal(text.length)
+      }
+      Pair(offset + getDrawableEndWidthAndPadding() + paddingEnd, top)
     } else {
-      min + getDrawableStartWidthAndPadding() + paddingStart
+      val offset = layout.getPrimaryHorizontal(offsetIndexList[index])
+      Pair(offset + getDrawableStartWidthAndPadding() + paddingStart, top)
     }
   }
 

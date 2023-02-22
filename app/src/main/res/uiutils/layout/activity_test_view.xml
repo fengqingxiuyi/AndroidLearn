@@ -154,7 +154,8 @@
             <com.example.ui.text.UnichatBorderTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="测试多行：：：：：：：：：：：：：：：：：：：：：：：：：：："/>
+                android:lines="2"
+                android:text="测试多行测试多行测试多行测试多行测试多行测试多行测试多行测试多行测试多行"/>
 
         </LinearLayout>
 

@@ -7,4 +7,7 @@
     <declare-styleable name="UnichatEmojiCompatTextView">
         <attr name="adapter_recyclerview" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="UnichatGradientWithShadowTextView">
+        <attr name="enable_effect" format="boolean" />
+    </declare-styleable>
 </resources>

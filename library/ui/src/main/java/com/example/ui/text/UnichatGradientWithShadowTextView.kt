@@ -15,8 +15,16 @@ class UnichatGradientWithShadowTextView @JvmOverloads constructor(
   context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : UnichatTextView(context, attrs, defStyleAttr) {
 
+  private var enable = true
+
   init {
-    setGradientAndShadowThenNotify()
+    val typedArray = context.obtainStyledAttributes(attrs, R.styleable.UnichatGradientWithShadowTextView)
+    enable = typedArray.getBoolean(R.styleable.UnichatGradientWithShadowTextView_enable_effect, enable)
+    typedArray.recycle()
+    //
+    if (enable) {
+      setGradientAndShadowThenNotify()
+    }
   }
 
   fun setGradientAndShadowThenNotify() {
@@ -25,10 +33,11 @@ class UnichatGradientWithShadowTextView @JvmOverloads constructor(
       ContextCompat.getColor(context, R.color.dolphin_common_text_shadow_default),
       DimenUtil.dp2px(context, 1f).toFloat(),
     )
-    setGradientOnSingleLine(
+    setGradient(
       OrientationMode.VERTICAL,
       ContextCompat.getColor(context, R.color.dolphin_common_text_gradient_start_default),
       ContextCompat.getColor(context, R.color.dolphin_common_text_gradient_end_default),
+      currentTextColor
     )
     notifyChanged()
   }
