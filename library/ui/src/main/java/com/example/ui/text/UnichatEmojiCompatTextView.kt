@@ -22,7 +22,8 @@ open class UnichatEmojiCompatTextView @JvmOverloads constructor(
   //自定义属性
   private var adapterRecyclerView = false
   //
-  private var originLayoutParamsWidth = 0
+  private val originLayoutParamsWidthDefault = -1
+  private var originLayoutParamsWidth = originLayoutParamsWidthDefault
   private var originText: CharSequence? = null
   private var originBufferType: BufferType? = null
   //
@@ -75,7 +76,11 @@ open class UnichatEmojiCompatTextView @JvmOverloads constructor(
 
   override fun setText(text: CharSequence?, type: BufferType?) {
     //重置固定的宽度
-    if (adapterRecyclerView && (layoutParams?.width ?: 0) > 0 && originLayoutParamsWidth != 0) {
+    if (
+      adapterRecyclerView
+      && (layoutParams?.width ?: originLayoutParamsWidthDefault) > 0
+      && originLayoutParamsWidth != originLayoutParamsWidthDefault
+    ) {
       layoutParams?.width = originLayoutParamsWidth
     }
     originText = text
@@ -99,7 +104,7 @@ open class UnichatEmojiCompatTextView @JvmOverloads constructor(
 
   override fun setLayoutParams(params: ViewGroup.LayoutParams?) {
     super.setLayoutParams(params)
-    originLayoutParamsWidth = params?.width ?: 0
+    originLayoutParamsWidth = params?.width ?: originLayoutParamsWidthDefault
   }
 
 }
