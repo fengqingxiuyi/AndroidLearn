@@ -81,6 +81,30 @@ class TestActivity : BaseActivity() {
         testWorkManager()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
     private fun testStatusBar() {
         StatusBarUtil.setStatusBarTransparent(this)
         StatusBarUtil.createStatusView(this)

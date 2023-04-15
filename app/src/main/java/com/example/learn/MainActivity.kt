@@ -3,6 +3,7 @@ package com.example.learn
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.DiffUtil
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.common.base.BaseActivity
@@ -20,6 +21,29 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        val adapter = RecyclerView.Adapter<RecyclerView.ViewHolder>()
+//        val callback = MyDiffCallback(adapter.things, things)
+//        val result: DiffUtil.DiffResult = DiffUtil.calculateDiff(callback)
+//        result.dispatchUpdatesTo(adapter)
+    }
+    class MyDiffCallback : DiffUtil.Callback() {
+        override fun getOldListSize(): Int {
+            TODO("Not yet implemented")
+        }
+
+        override fun getNewListSize(): Int {
+            TODO("Not yet implemented")
+        }
+
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            TODO("Not yet implemented")
+        }
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            TODO("Not yet implemented")
+        }
+
     }
 
     /** 点两次退出应用 start  */
