@@ -27,8 +27,9 @@
                 <EditText
                     android:id="@+id/test_edit"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="2"
+                    android:inputType="text"
                     android:hint="测试软键盘的显隐" />
 
                 <Button
@@ -187,6 +188,24 @@
                 android:text="数字格式化"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+
+            <com.example.learn.ui.FqxyiRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:id="@+id/tv_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"/>
+
+                <Button
+                    android:layout_toRightOf="@id/tv_test"
+                    android:layout_width="300dp"
+                    android:text="哈哈"
+                    android:layout_height="50dp"/>
+
+            </com.example.learn.ui.FqxyiRelativeLayout>
 
         </LinearLayout>
 

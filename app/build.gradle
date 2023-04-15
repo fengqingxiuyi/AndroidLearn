@@ -18,7 +18,7 @@ android {
         versionName "1.0"
         //设置支持的SO库架构
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters "armeabi-v7a", "x86_64"
         }
         //只支持 中文简体
         resConfigs "zh-rCN"
